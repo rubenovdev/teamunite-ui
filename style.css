@@ -86,8 +86,6 @@
     width: 23px;
 }
 
-
-
 .menu {
     display: grid;
     justify-items: center;
@@ -105,6 +103,7 @@
     width: 82%;
     border-radius: 10px;
     background: linear-gradient(to bottom, #ffffff 82%, #242424 18%);
+    box-shadow: 0 3px 6px #0000003c;
 }
 
 .menu__section-title {
