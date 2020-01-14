@@ -183,6 +183,10 @@
     border-radius: 0 0 10px 10px;
 }
 
+.announcement-board__announcements::-webkit-scrollbar {
+    width: 0;
+}
+
 .announcement-board__announcements {
     padding: 25px 10px;
     padding-bottom: 10px;
