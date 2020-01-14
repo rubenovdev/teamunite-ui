@@ -332,3 +332,72 @@
         grid-area: 1 / 2 / 3 / 3;
     }
 }
+
+@media (min-width: 1300px) {
+    .wrapper {
+        max-width: 1080px;
+        padding: 10px 0;
+    }
+
+    .header__wrapper {
+        max-width: 1200px;
+        padding: 30px 0;
+    }
+
+    .main__content {
+        grid-column-gap: 100px;
+        grid-row-gap: 35px;
+    }
+
+    .menu {
+        grid-column-gap: 100px;
+    }
+
+    .days-timer__text {
+        font-size: 20px;
+    }
+
+    .days-timer__counter-text {
+        font-size: 32px;
+    }
+
+    .menu__section-title {
+        font-size: 20px;
+        max-width: 132px;
+    }
+
+    .bulletin-board__title {
+        font-size: 20px;
+    }
+
+    .bulletin-board__text {
+        font-size: 17px;
+    }
+
+    .bulletin-board__author {
+        font-size: 12px;
+    }
+
+    .button {
+        font-size: 18px;
+    }
+
+    .title {
+        font-size: 32px;
+    }
+}
+
+@media (min-width: 1500px) {
+    .wrapper {
+        max-width: 70%;
+    }
+
+    .header__wrapper {
+        max-width: 80%;
+        padding-bottom: 40px;
+    }
+
+    .header__logo-wrapper {
+        max-width: 170px;
+    }
+}
