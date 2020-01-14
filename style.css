@@ -159,6 +159,9 @@
     color: #ffffff;
     box-shadow: 0 3px 6px #0000003c;
     border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
 }
 
 .bulletin-board__title-wrapper {
@@ -172,16 +175,22 @@
 }
 
 .bulletin-board__announcements-wrapper {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     background-color: #ffffff;
     border-radius: 0 0 10px 10px;
 }
 
 .bulletin-board__announcements {
     padding: 25px 10px;
-    padding-bottom: 45px;
+    padding-bottom: 10px;
     display: flex;
     flex-direction: column;
     align-items: center;
+    height: 270px;
+    overflow-y: scroll;
 }
 
 .bulletin-board__announcement {
@@ -211,7 +220,8 @@
 .bulletin-board__button-wrapper {
     display: flex;
     justify-content: center;
-    padding: 20px 0;
+    padding-bottom: 20px;
+    padding-top: 30px;
 }
 
 .modal-wrapper {
@@ -387,6 +397,8 @@
 
     .bulletin-board__announcements {
         padding: 25px 15px;
+        padding-bottom: 10px;
+        height: 320px;
     }
 }
 
