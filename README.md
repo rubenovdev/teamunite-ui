@@ -40,3 +40,13 @@ git pull - извлечение данных с удаленного репоз�
 git branch - создание новой ветки
 git checkout - переход на другую ветку
 ```
+
+### Media-запросы
+
+```
+min-width: 320px // mobile
+min-width: 768px // tablet
+min-width: 1024px // desktop
+min-width: 1400px // full-desktop
+min-width: 2000px // tv
+```
