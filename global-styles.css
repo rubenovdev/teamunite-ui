@@ -7,6 +7,7 @@
 body {
     background-color: #f7f5f8;
     font-family: 'Roboto', sans-serif;
+    color: #242424;
 }
 
 ol, ul {
@@ -20,6 +21,17 @@ button {
     color: inherit;
     background-color: transparent;
     cursor: pointer;
+}
+
+input {
+    border: none;
+}
+
+button:focus,
+input:focus,
+textarea:focus,
+a:focus {
+    outline: none;
 }
 
 a {
@@ -51,4 +63,8 @@ img {
     white-space: nowrap !important;
     overflow: hidden !important;
     user-select: none !important;
+}
+
+.overflow-hidden {
+    overflow: hidden;
 }
