@@ -102,3 +102,33 @@ function hideModal() {
 buttonsToCallModal.forEach(button => button.addEventListener('click', showModal))
 buttonsToCloseModal.forEach(button => button.addEventListener('click', hideModal))
 /* Модальные окна - конец */
+
+/* Пасхалка - начало */
+const hourglass = document.querySelector('.days-timer__picture-wrapper')
+const initialSideMenu = sideMenuElements.innerHTML
+let changeContent
+
+buttonToOpenSideMenu.addEventListener('click', () => {
+  let count = 0
+
+  if (changeContent) {
+    sideMenuElements.innerHTML = initialSideMenu
+    sideMenuElements.classList.remove('easter-egg')
+    changeContent = false
+  }
+
+  function showEasterEgg() {
+    count++
+
+    if (count === 3) {
+      sideMenuElements.innerHTML = 'ЧИКУНОВ one love <span style="color: red; margin-left: 10px; font-size: 32px;">♥️</span>'
+      sideMenuElements.classList.add('easter-egg')
+      openSideMenu()
+      hourglass.removeEventListener('click', showEasterEgg)
+      changeContent = true
+    }
+  }
+
+  hourglass.addEventListener('click', showEasterEgg)
+})
+/* Пасхалка - конец */
