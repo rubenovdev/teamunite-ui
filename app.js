@@ -10,7 +10,7 @@ const sideMenuElements = document.querySelector('.sitetoolbar__sections-list')
 const buttonToCloseSideMenu = document.querySelector('.sitetoolbar__close-button')
 let timerId = undefined
 
-function openCloseSideMenu() {
+function openSideMenu() {
   backgroundCircle.classList.add('sitetoolbar__circle-background--active')
   sideMenu.classList.add('sitetoolbar__sections--active')
   body.classList.add('overflow-hidden')
@@ -50,7 +50,7 @@ function closeSideMenu() {
   document.removeEventListener('click', hideSideMenuByBackgroundClick)
 }
 
-buttonToOpenSideMenu.addEventListener('click', openCloseSideMenu)
+buttonToOpenSideMenu.addEventListener('click', openSideMenu)
 buttonToCloseSideMenu.addEventListener('click', closeSideMenu)
 /* Side menu - конец */
 
