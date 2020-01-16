@@ -13,7 +13,9 @@
 </head>
 <body>
     <header>
-        <h1 class="visually-hidden">Подбор студенческих команд в Московском политехе</h1>
+        <h1 class="visually-hidden">
+            Подбор студенческих команд в Московском политехе
+        </h1>
         <div class="wrapper header__wrapper">
             <div class="sitetoolbar">
                 <button class="sitetoolbar__button" type="button">
@@ -29,28 +31,36 @@
                         </button>
                     </div>
                     <ul class="sitetoolbar__sections-list">
-                        <li class="sitetoolbar__section sitetoolbar__section--current">
+                        <li class="sitetoolbar__section sitetoolbar__section--current" data-side-menu-element>
                             <button class="sitetoolbar__section-button" type="button">
                                 <div class="sitetoolbar__section-image-wrapper">
                                     <img class="sitetoolbar__section-image" src="img/home.svg" alt="Главная">
                                 </div>
-                                <h3 class="sitetoolbar__section-title">Главная</h3>
+                                <h3 class="sitetoolbar__section-title">
+                                    Главная
+                                </h3>
                             </button>
                         </li>
-                        <li class="sitetoolbar__section">
+                        <li class="sitetoolbar__section" data-side-menu-element>
                             <button class="sitetoolbar__section-button" type="button">
                                 <div class="sitetoolbar__section-image-wrapper">
-                                    <img class="sitetoolbar__section-image" src="img/calendar.svg" alt="Мой проект">
+                                    <img class="sitetoolbar__section-image sitetoolbar__section-image--mobile" src="img/calendar.svg" alt="Мой проект">
+                                    <img class="sitetoolbar__section-image sitetoolbar__section-image--desktop" src="img/calendar-black.svg" alt="Мой проект">
                                 </div>
-                                <h3 class="sitetoolbar__section-title">Мой проект</h3>
+                                <h3 class="sitetoolbar__section-title">
+                                    Мой проект
+                                </h3>
                             </button>
                         </li>
-                        <li class="sitetoolbar__section">
+                        <li class="sitetoolbar__section" data-side-menu-element>
                             <button class="sitetoolbar__section-button" type="button">
                                 <div class="sitetoolbar__section-image-wrapper">
-                                    <img class="sitetoolbar__section-image" src="img/personal-account.svg" alt="Мой профиль">
+                                    <img class="sitetoolbar__section-image sitetoolbar__section-image--mobile" src="img/personal-account.svg" alt="Мой профиль">
+                                    <img class="sitetoolbar__section-image sitetoolbar__section-image--desktop" src="img/personal-account-black.svg" alt="Мой профиль">
                                 </div>
-                                <h3 class="sitetoolbar__section-title">Мой профиль</h3>
+                                <h3 class="sitetoolbar__section-title">
+                                    Мой профиль
+                                </h3>
                             </button>
                         </li>
                     </ul>
@@ -195,5 +205,6 @@
     </div>
 
     <script src="app.js"></script>
+
 </body>
 </html>

@@ -1,9 +1,15 @@
 'use strict'
 
 const body = document.body
+let desktop = document.documentElement.clientWidth > 1024
 
-/* Side menu - начало */
+window.addEventListener('resize', () => {
+  desktop = document.documentElement.clientWidth > 1024
+})
+
+/* Боковое меню - начало */
 const buttonToOpenSideMenu = document.querySelector('.sitetoolbar__button')
+const linesOfbuttonToOpenSideMenu = document.querySelector('.sitetoolbar__button-line')
 const backgroundCircle = document.querySelector('.sitetoolbar__circle-background')
 const sideMenu = document.querySelector('.sitetoolbar__sections')
 const sideMenuElements = document.querySelector('.sitetoolbar__sections-list')
@@ -11,18 +17,29 @@ const buttonToCloseSideMenu = document.querySelector('.sitetoolbar__close-button
 let timerId = undefined
 
 function openSideMenu() {
-  backgroundCircle.classList.add('sitetoolbar__circle-background--active')
-  sideMenu.classList.add('sitetoolbar__sections--active')
-  body.classList.add('overflow-hidden')
-  
-  clearTimeout(timerId)
-  timerId = setTimeout(() => {
-    sideMenuElements.classList.add('sitetoolbar__sections-list--active')
-    buttonToCloseSideMenu.classList.add('sitetoolbar__close-button--active')
-  }, 300)
+  if (desktop) {
+    linesOfbuttonToOpenSideMenu.classList.add('sitetoolbar__button-line--active')
+    sideMenu.classList.add('sitetoolbar__sections--active')
+
+    clearTimeout(timerId)
+    timerId = setTimeout(() => {
+      sideMenuElements.classList.add('sitetoolbar__sections-list--active')
+    }, 10)
+  } else {
+    linesOfbuttonToOpenSideMenu.classList.add('sitetoolbar__button-line--active')
+    backgroundCircle.classList.add('sitetoolbar__circle-background--active')
+    sideMenu.classList.add('sitetoolbar__sections--active')
+    body.classList.add('overflow-hidden')
+
+    clearTimeout(timerId)
+    timerId = setTimeout(() => {
+      sideMenuElements.classList.add('sitetoolbar__sections-list--active')
+      buttonToCloseSideMenu.classList.add('sitetoolbar__close-button--active')
+    }, 300)
+  }
 
   document.addEventListener('keydown', hideSideMenuByEscape)
-  document.addEventListener('click', hideSideMenuByBackgroundClick)
+  setTimeout(() => {document.addEventListener('click', hideSideMenuByBackgroundClick)}, 10)
 }
 
 function hideSideMenuByEscape() {
@@ -31,20 +48,31 @@ function hideSideMenuByEscape() {
 
 function hideSideMenuByBackgroundClick(event) {
   const target = event.target
-  if (target.classList.value.includes('sitetoolbar__sections')) closeSideMenu()
+  if (!target.closest('[data-side-menu-element]')) closeSideMenu()
 }
 
 function closeSideMenu() {
-  buttonToOpenSideMenu.classList.remove('sitetoolbar__button--active')
-  sideMenuElements.classList.remove('sitetoolbar__sections-list--active')
-  buttonToCloseSideMenu.classList.remove('sitetoolbar__close-button--active')
-  body.classList.remove('overflow-hidden')
-
-  clearTimeout(timerId)
-  timerId = setTimeout(() => {
-    sideMenu.classList.remove('sitetoolbar__sections--active')
-    backgroundCircle.classList.remove('sitetoolbar__circle-background--active')
-  }, 200)
+  if (desktop) {
+    linesOfbuttonToOpenSideMenu.classList.remove('sitetoolbar__button-line--active')
+    sideMenuElements.classList.remove('sitetoolbar__sections-list--active')
+    
+    clearTimeout(timerId)
+    timerId = setTimeout(() => {
+      sideMenu.classList.remove('sitetoolbar__sections--active')
+    }, 200)
+  } else {
+    linesOfbuttonToOpenSideMenu.classList.remove('sitetoolbar__button-line--active')
+    buttonToOpenSideMenu.classList.remove('sitetoolbar__button--active')
+    sideMenuElements.classList.remove('sitetoolbar__sections-list--active')
+    buttonToCloseSideMenu.classList.remove('sitetoolbar__close-button--active')
+    body.classList.remove('overflow-hidden')
+  
+    clearTimeout(timerId)
+    timerId = setTimeout(() => {
+      sideMenu.classList.remove('sitetoolbar__sections--active')
+      backgroundCircle.classList.remove('sitetoolbar__circle-background--active')
+    }, 200)
+  }
 
   document.removeEventListener('keydown', hideSideMenuByEscape)
   document.removeEventListener('click', hideSideMenuByBackgroundClick)
@@ -53,7 +81,6 @@ function closeSideMenu() {
 buttonToOpenSideMenu.addEventListener('click', openSideMenu)
 buttonToCloseSideMenu.addEventListener('click', closeSideMenu)
 /* Side menu - конец */
-
 
 /* Модальные окна - начало */
 // временно
