@@ -66,5 +66,7 @@ min-width: 2000px // tv
 
 ### Подключение к серверу через FTP
 Хост: teamunite.ru
+
 Имя пользователя: u0712620_team
+
 Пароль: CdSTePakJ2ycw3Q8
