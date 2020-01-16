@@ -84,8 +84,8 @@ buttonToCloseSideMenu.addEventListener('click', closeSideMenu)
 
 /* Модальные окна - начало */
 // временно
-const buttonToSentForm = document.querySelector('.modal__button')
-buttonToSentForm.addEventListener('click', () => { event.preventDefault() })
+const buttonToSentForm = document.querySelector('.modal__button') || undefined
+buttonToSentForm && buttonToSentForm.addEventListener('click', () => { event.preventDefault() })
 //
 
 const buttonsToCallModal = [...document.querySelectorAll('[data-button-to-call-modal]')]
@@ -131,7 +131,7 @@ buttonsToCloseModal.forEach(button => button.addEventListener('click', hideModal
 /* Модальные окна - конец */
 
 /* Пасхалка - начало */
-const hourglass = document.querySelector('.days-timer__picture-wrapper')
+const hourglass = document.querySelector('.days-timer__picture-wrapper') || undefined
 const initialSideMenu = sideMenuElements.innerHTML
 let changeContent
 
@@ -156,6 +156,6 @@ buttonToOpenSideMenu.addEventListener('click', () => {
     }
   }
 
-  hourglass.addEventListener('click', showEasterEgg)
+  hourglass && hourglass.addEventListener('click', showEasterEgg)
 })
 /* Пасхалка - конец */
