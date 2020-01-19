@@ -1,0 +1,206 @@
+body {
+    min-height: 100vh;
+}
+
+.main__title {
+    margin-bottom: 50px;
+}
+
+.add-project {
+    max-width: 990px;
+    margin: 0 auto;
+}
+
+.add-project__main-content {
+    max-width: 990px;
+    background-color: #ffffff;
+    border-radius: 10px 10px 0 0;
+    box-shadow: 0 3px 6px #0000003c;
+    padding: 25px 15px;
+    padding-bottom: 50px;
+}
+
+.add-project__project-introduction-title {
+    font-weight: 300;
+    font-size: 21px;
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.add-project__project-introduction-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.add-project__download-file-input {
+    outline: 0;
+    opacity: 0;
+    pointer-events: none;
+    user-select: none;
+    width: 0;
+    max-width: 0;
+    height: 0;
+    max-height: 0;
+    overflow: hidden;
+    z-index: -1;
+}
+
+.add-project__download-file-button-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 100px;
+    min-height: 100px;
+    background-color: #FCFCFF;
+    border: 1px solid #CCCCCC;
+    border-radius: 10px;
+    margin-bottom: 25px;
+}
+
+.add-project__download-file-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    border: 1px solid #bebebe;
+    color: #bebebe;
+    font-size: 20px;
+    font-weight: 300;
+}
+
+.add-project__input {
+    color: rgba(0, 0, 0, .5);
+    margin-bottom: 25px;
+    max-width: 450px;
+}
+
+.add-project__input:last-child {
+    margin-bottom: 0;
+}
+
+.add-project__input-select {
+    padding: 0 12px;
+    font-weight: 500;
+}
+
+.add-project__steps {
+    display: flex;
+    justify-content: space-between;
+    padding: 16px 15px;
+    background-color: #000000;
+    box-shadow: 0px 3px 6px #0000003c;
+    border-radius: 0px 0px 10px 10px;
+}
+
+.steps__switch-step-button-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.steps__switch-step-button-title {
+    font-size: 17px;
+    color: #ffffff;
+}
+
+.steps__switch-step-button-title--ml15 {
+    margin-left: 15px;
+}
+
+.steps__switch-step-button-title--mr15 {
+    margin-right: 15px;
+}
+
+.steps__steps-numbers {
+    display: flex;
+    align-items: center;
+}
+
+.steps__step-number {
+    min-width: 30px;
+    min-height: 30px;
+    border: 1px solid #ffffff;
+    border-radius: 50%;
+    color: #ffffff;
+    font-size: 14px;
+    font-weight: 300;
+    opacity: .4;
+}
+
+.steps__step-number--current {
+    opacity: 1;
+}
+
+.steps__step-number-separator {
+    display: block;
+    min-width: 30px;
+    height: 1px;
+    background-color: #707070;
+}
+
+.steps__switch-step-button--right {
+    transform: rotate(180deg);
+}
+
+@media (min-width: 420px) {
+    .add-project__download-file-button-wrapper {
+        min-width: 150px;
+        min-height: 150px;
+    }
+
+    .add-project__download-file-button {
+        width: 40px;
+        height: 40px;
+    }
+}
+
+@media (min-width: 1024px) {
+    .add-project__project-introduction-form {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .add-project__download-file-button-wrapper {
+        margin-bottom: 0;
+        min-width: 205px;
+        min-height: 198px;
+    }
+
+    .add-project__download-file-button {
+        width: 50px;
+        height: 50px;
+    }
+
+    .add-project__main-content {
+        padding: 45px 90px;
+        padding-bottom: 90px;
+    }
+
+    .add-project__project-introduction-title {
+        margin-bottom: 35px;
+    }
+}
+
+@media (min-width: 1300px) {
+    .add-project__download-file-button-wrapper {
+        min-width: 240px;
+        min-height: 232px;
+    }
+
+    .add-project__download-file-button {
+        width: 64px;
+        height: 64px;
+    }
+
+    .add-project__project-introduction-title {
+        font-size: 25px;
+    }
+
+    .steps__step-number {
+        font-size: 20px;
+    }
+}

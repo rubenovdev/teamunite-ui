@@ -90,32 +90,34 @@
                         <h3 class="add-project__project-introduction-title">
                             Ваш проект
                         </h3>
-    
+
                         <div class="add-project__project-introduction-form">
-                            <label class="add-project__download-file-button-wrapper" for="download-file-input">
+                            <label class="add-project__download-file-button-wrapper">
                                 <div class="add-project__download-file-button">
                                     +
                                 </div>
+                                <input class="add-project__download-file-input" type="file">
                             </label>
-                            <input class="add-project__input add-project__download-file-input" id="download-file-input" type="file">
-                            <input class="input add-project__input add-project__project-title" type="text" placeholder="Название">
-                            <select class="input add-project__input add-project__input-select" aria-placeholder="sd">
-                                <option value="none" selected>
-                                    Выберите направление
-                                </option>
-                                <option value="data-analysis">
-                                    Анализ данных
-                                </option>
-                                <option value="internet-of-things">
-                                    Интернет вещей
-                                </option>
-                                <option value="blockchain">
-                                    Блокчейн
-                                </option>
-                                <option value="machine-learning">
-                                    Машинное обучение
-                                </option>
-                            </select>
+                            <div class="add-project__input-group">
+                                <input class="input add-project__input add-project__project-title" type="text" placeholder="Название">
+                                <select class="input add-project__input add-project__input-select" aria-placeholder="sd">
+                                    <option value="none" selected>
+                                        Выберите направление
+                                    </option>
+                                    <option value="data-analysis">
+                                        Анализ данных
+                                    </option>
+                                    <option value="internet-of-things">
+                                        Интернет вещей
+                                    </option>
+                                    <option value="blockchain">
+                                        Блокчейн
+                                    </option>
+                                    <option value="machine-learning">
+                                        Машинное обучение
+                                    </option>
+                                </select>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -124,6 +126,9 @@
                 <div class="add-project__steps">
                     <button class="steps__switch-step-button-wrapper" type="button">
                         <img class="steps__switch-step-button" src="../img/arrow-left.svg" alt="Назад">
+                        <span class="steps__switch-step-button-title steps__switch-step-button-title--ml15">
+                            Выйти
+                        </span>
                     </button>
                     <div class="steps__steps-numbers">
                         <button class="steps__step-number steps__step-number--current" type="button">1</button>
@@ -133,6 +138,9 @@
                         <button class="steps__step-number" type="button">3</button>
                     </div>
                     <button class="steps__switch-step-button-wrapper" type="button">
+                        <span class="steps__switch-step-button-title steps__switch-step-button-title--mr15">
+                            Далее
+                        </span>
                         <img class="steps__switch-step-button steps__switch-step-button--right" src="../img/arrow-left.svg" alt="Вперед">
                     </button>
                 </div>
