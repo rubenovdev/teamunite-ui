@@ -33,7 +33,7 @@
                     </div>
                     <ul class="sitetoolbar__sections-list">
                         <li class="sitetoolbar__section sitetoolbar__section--current" data-side-menu-element>
-                            <button class="sitetoolbar__section-button" type="button">
+                            <button class="sitetoolbar__section-button" type="button" onclick="location.href='/'">
                                 <div class="sitetoolbar__section-image-wrapper">
                                     <img class="sitetoolbar__section-image" src="../img/home.svg" alt="Главная">
                                 </div>
@@ -78,6 +78,67 @@
         </div>
     </header>
 
+    <main role="main">
+        <div class="wrapper">
+            <h2 class="title main__title">
+                Создание проекта
+            </h2>
+
+            <div class="add-project">
+                <div class="add-project__main-content">
+                    <div data-for-javascript class="add-project__project-introduction">
+                        <h3 class="add-project__project-introduction-title">
+                            Ваш проект
+                        </h3>
+    
+                        <div class="add-project__project-introduction-form">
+                            <label class="add-project__download-file-button-wrapper" for="download-file-input">
+                                <div class="add-project__download-file-button">
+                                    +
+                                </div>
+                            </label>
+                            <input class="add-project__input add-project__download-file-input" id="download-file-input" type="file">
+                            <input class="input add-project__input add-project__project-title" type="text" placeholder="Название">
+                            <select class="input add-project__input add-project__input-select" aria-placeholder="sd">
+                                <option value="none" selected>
+                                    Выберите направление
+                                </option>
+                                <option value="data-analysis">
+                                    Анализ данных
+                                </option>
+                                <option value="internet-of-things">
+                                    Интернет вещей
+                                </option>
+                                <option value="blockchain">
+                                    Блокчейн
+                                </option>
+                                <option value="machine-learning">
+                                    Машинное обучение
+                                </option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="add-project__steps">
+                    <button class="steps__switch-step-button-wrapper" type="button">
+                        <img class="steps__switch-step-button" src="../img/arrow-left.svg" alt="Назад">
+                    </button>
+                    <div class="steps__steps-numbers">
+                        <button class="steps__step-number steps__step-number--current" type="button">1</button>
+                        <span class="steps__step-number-separator"></span>
+                        <button class="steps__step-number" type="button">2</button>
+                        <span class="steps__step-number-separator"></span>
+                        <button class="steps__step-number" type="button">3</button>
+                    </div>
+                    <button class="steps__switch-step-button-wrapper" type="button">
+                        <img class="steps__switch-step-button steps__switch-step-button--right" src="../img/arrow-left.svg" alt="Вперед">
+                    </button>
+                </div>
+            </div>
+        </div>
+    </main>
 
     <script src="../app.js"></script>
 
