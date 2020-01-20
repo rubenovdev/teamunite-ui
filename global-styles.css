@@ -38,6 +38,17 @@ input {
     color: #242424;
 }
 
+.textarea {
+    width: 100%;
+    border: 1px solid #bebebe;
+    border-radius: 10px;
+    height: 120px;
+    padding: 10px 15px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 14px;
+    resize: none;
+}
+
 button:focus,
 input:focus,
 textarea:focus,

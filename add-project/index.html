@@ -79,27 +79,28 @@
     </header>
 
     <main role="main">
-        <div class="wrapper">
+        <div class="wrapper add-project__wrapper">
             <h2 class="title main__title">
                 Создание проекта
             </h2>
 
             <div class="add-project">
                 <div class="add-project__main-content">
-                    <div data-for-javascript class="add-project__project-introduction">
-                        <h3 class="add-project__project-introduction-title">
+                    <!-- Шаг #1. На следующей строке "style="display: block;"" временно, пока нет переключения шагов -->
+                    <div style="display: block;" class="add-project__project-introduction">
+                        <h3 class="add-project__main-content-title">
                             Ваш проект
                         </h3>
 
                         <div class="add-project__project-introduction-form">
-                            <label class="add-project__download-file-button-wrapper">
-                                <div class="add-project__download-file-button">
+                            <label class="add-project__clip-image-button-wrapper">
+                                <div class="add-project__clip-image-button">
                                     +
                                 </div>
-                                <input class="add-project__download-file-input" type="file">
+                                <input class="add-project__file-input" type="file">
                             </label>
                             <div class="add-project__input-group">
-                                <input class="input add-project__input add-project__project-title" type="text" placeholder="Название">
+                                <input class="input add-project__input add-project__project-title" type="text" placeholder="Название" autofocus>
                                 <select class="input add-project__input add-project__input-select" aria-placeholder="sd">
                                     <option value="none" selected>
                                         Выберите направление
@@ -119,6 +120,34 @@
                                 </select>
                             </div>
                         </div>
+                    </div>
+
+                    <!-- Шаг #2. На следующей строке "style="display: none;"" временно, пока нет переключения шагов -->
+                    <div style="display: none;" class="add-project__project-description">
+                        <h3 class="add-project__main-content-title">
+                            Описание проекта
+                        </h3>
+
+                        <div class="add-project__project-description-form">
+                            <p class="add-project__project-description-paragraph">Укажите основную идею и направленность вашего проекта</p>
+                            <textarea class="textarea add-project__project-description-textarea" placeholder="Описание"></textarea>
+                            <label  class="add-project__clip-file-button-wrapper">
+                                <p class="add-project__clip-file-paragraph">Файл с подробным описанием</p>
+                                <div class="add-project__clip-file-image-wrapper">
+                                    <img class="add-project__clip-file-image" src="../img/clip.svg" alt="Прикрепить">
+                                </div>
+                                <input class="add-project__file-input" type="file">
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Шаг #3. На следующей строке "style="display: none;"" временно, пока нет переключения шагов -->
+                    <div style="display: none;" class="add-project__vacancies">
+                        <h3 class="add-project__main-content-title">
+                            Вакансии
+                        </h3>
+
+                        <div class="">Вакансии</div>
                     </div>
                 </div>
 

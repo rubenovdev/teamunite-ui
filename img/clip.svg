@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="33" height="33" viewBox="0 0 33 33">
+  <g id="Group_17" data-name="Group 17" transform="translate(-813 -601)">
+    <g id="dark-paperclip" transform="translate(833.478 604.101) rotate(41)">
+      <g id="Group_15" data-name="Group 15">
+        <path id="Path_200" data-name="Path 200" d="M5.458,25.094A5.464,5.464,0,0,1,0,19.636V3.693a.871.871,0,0,1,.124-.451A4.267,4.267,0,0,1,8.533,4.267V16.529a3.075,3.075,0,1,1-6.151,0V6.964a.879.879,0,1,1,1.759,0v9.565a1.317,1.317,0,1,0,2.633,0V4.267a2.508,2.508,0,0,0-5.015,0V19.636a3.7,3.7,0,1,0,7.4,0V6.963a.879.879,0,1,1,1.759,0V19.636A5.464,5.464,0,0,1,5.458,25.094Z" fill="#242424"/>
+      </g>
+    </g>
+    <g id="Rectangle_93" data-name="Rectangle 93" transform="translate(813 601)" fill="none" stroke="#000" stroke-width="1">
+      <rect width="33" height="33" rx="9" stroke="none"/>
+      <rect x="0.5" y="0.5" width="32" height="32" rx="8.5" fill="none"/>
+    </g>
+  </g>
+</svg>
