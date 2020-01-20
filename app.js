@@ -91,6 +91,7 @@ buttonToSentForm && buttonToSentForm.addEventListener('click', () => { event.pre
 const buttonsToCallModal = [...document.querySelectorAll('[data-button-to-call-modal]')]
 const buttonsToCloseModal = [...document.querySelectorAll('[data-button-to-close-modal]')]
 let openedModal = ''
+const contentWrapper = document.querySelector('.content-wrapper')
 
 function showModal(event) {
   const targetButton = event.target
@@ -103,6 +104,8 @@ function showModal(event) {
   openedModal = modal
   modal.classList.add('active')
   body.classList.add('overflow-hidden')
+  contentWrapper.classList.add('content-hidden')
+  contentWrapper.classList.remove('content-show')
 
   document.addEventListener('keydown', hideModalByEscape)
   document.addEventListener('click', hideModalByBackgroundClick)
@@ -121,6 +124,8 @@ function hideModal() {
   openedModal.classList.remove('active')
   openedModal = ''
   body.classList.remove('overflow-hidden')
+  contentWrapper.classList.remove('content-hidden')
+  contentWrapper.classList.add('content-show')
 
   document.removeEventListener('keydown', hideModalByEscape)
   document.removeEventListener('click', hideModalByBackgroundClick)
