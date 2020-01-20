@@ -127,6 +127,10 @@ function hideModal() {
   contentWrapper.classList.remove('content-hidden')
   contentWrapper.classList.add('content-show')
 
+  setTimeout(() => {
+    contentWrapper.classList.remove('content-show')
+  }, 500)
+
   document.removeEventListener('keydown', hideModalByEscape)
   document.removeEventListener('click', hideModalByBackgroundClick)
 }

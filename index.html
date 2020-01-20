@@ -16,183 +16,183 @@
 
 <body>
     <div class="content-wrapper">
-        <header>
-            <h1 class="visually-hidden">
-                Подбор студенческих команд в Московском политехе
-            </h1>
-            <div class="wrapper header__wrapper">
-                <div class="sitetoolbar">
-                    <button class="sitetoolbar__button" type="button">
-                        <span class="sitetoolbar__button-line"></span>
+    <header>
+        <h1 class="visually-hidden">
+            Подбор студенческих команд в Московском политехе
+        </h1>
+        <div class="wrapper header__wrapper">
+            <div class="sitetoolbar">
+                <button class="sitetoolbar__button" type="button">
+                    <span class="sitetoolbar__button-line"></span>
+                </button>
+
+                <div class="sitetoolbar__circle-background"></div>
+
+                <div class="sitetoolbar__sections">
+                    <div class="sitetoolbar__close-button-wrapper">
+                        <button class="sitetoolbar__close-button" type="button">
+                            <img class="sitetoolbar__close-button-image" src="img/cross.svg" alt="Закрыть">
+                        </button>
+                    </div>
+                    <ul class="sitetoolbar__sections-list">
+                        <li class="sitetoolbar__section sitetoolbar__section--current" data-side-menu-element>
+                            <button class="sitetoolbar__section-button" type="button">
+                                <div class="sitetoolbar__section-image-wrapper">
+                                    <img class="sitetoolbar__section-image" src="img/home.svg" alt="Главная">
+                                </div>
+                                <h3 class="sitetoolbar__section-title">
+                                    Главная
+                                </h3>
+                            </button>
+                        </li>
+                        <li class="sitetoolbar__section" data-side-menu-element>
+                            <button class="sitetoolbar__section-button" type="button">
+                                <div class="sitetoolbar__section-image-wrapper">
+                                    <img class="sitetoolbar__section-image sitetoolbar__section-image--mobile"
+                                        src="img/calendar.svg" alt="Мой проект">
+                                    <img class="sitetoolbar__section-image sitetoolbar__section-image--desktop"
+                                        src="img/calendar-black.svg" alt="Мой проект">
+                                </div>
+                                <h3 class="sitetoolbar__section-title">
+                                    Мой проект
+                                </h3>
+                            </button>
+                        </li>
+                        <li class="sitetoolbar__section" data-side-menu-element>
+                            <button class="sitetoolbar__section-button" type="button">
+                                <div class="sitetoolbar__section-image-wrapper">
+                                    <img class="sitetoolbar__section-image sitetoolbar__section-image--mobile"
+                                        src="img/personal-account.svg" alt="Мой профиль">
+                                    <img class="sitetoolbar__section-image sitetoolbar__section-image--desktop"
+                                        src="img/personal-account-black.svg" alt="Мой профиль">
+                                </div>
+                                <h3 class="sitetoolbar__section-title">
+                                    Мой профиль
+                                </h3>
+                            </button>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="header__logo-wrapper">
+                <button onclick="location.href='/'">
+                    <img class="header__logo" src="img/logo-mospolytech.svg" alt="Московский политех" width="115"
+                        height="30" />
+                </button>
+            </div>
+            <button class="button header__button" type="button">
+                Войти
+            </button>
+        </div>
+    </header>
+
+    <main role="main">
+        <div class="wrapper main__wrapper">
+            <h2 class="title main__title">
+                Главная
+            </h2>
+
+            <div class="main__content">
+                <div class="days-timer">
+                    <p class="days-timer__text">
+                        До защиты осталось
+                    </p>
+                    <div class="days-timer__counter-wrapper">
+                        <p class="days-timer__counter-text">
+                            <span>15</span> дней
+                        </p>
+                        <div class="days-timer__picture-wrapper">
+                            <img class="days-timer__picture" src="img/hourglass.svg" alt="!">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="menu main__menu">
+                    <button class="menu__section" type="button" onclick="location.href='/projects-search/'">
+                        <h3 class="menu__section-title">
+                            Поиск проектов
+                        </h3>
+                        <div class="menu__section-image-wrapper menu__section-image-projects-search">
+                            <img class="menu__section-image" src="img/projects-search.svg" alt="Раздел меню">
+                        </div>
                     </button>
 
-                    <div class="sitetoolbar__circle-background"></div>
-
-                    <div class="sitetoolbar__sections">
-                        <div class="sitetoolbar__close-button-wrapper">
-                            <button class="sitetoolbar__close-button" type="button">
-                                <img class="sitetoolbar__close-button-image" src="img/cross.svg" alt="Закрыть">
-                            </button>
+                    <button class="menu__section" type="button" onclick="location.href='/add-project/'">
+                        <h3 class="menu__section-title">
+                            Создать проект
+                        </h3>
+                        <div class="menu__section-image-wrapper menu__section-image-create-project">
+                            <img class="menu__section-image" src="img/create-project.svg" alt="Раздел меню">
                         </div>
-                        <ul class="sitetoolbar__sections-list">
-                            <li class="sitetoolbar__section sitetoolbar__section--current" data-side-menu-element>
-                                <button class="sitetoolbar__section-button" type="button">
-                                    <div class="sitetoolbar__section-image-wrapper">
-                                        <img class="sitetoolbar__section-image" src="img/home.svg" alt="Главная">
-                                    </div>
-                                    <h3 class="sitetoolbar__section-title">
-                                        Главная
-                                    </h3>
+                    </button>
+
+                    <button class="menu__section" type="button">
+                        <h3 class="menu__section-title">
+                            О проектной деятельности
+                        </h3>
+                        <div class="menu__section-image-wrapper menu__section-image-about-project-activities">
+                            <img class="menu__section-image" src="img/about-project-activities.svg" alt="Раздел меню">
+                        </div>
+                    </button>
+
+                    <button class="menu__section" type="button">
+                        <h3 class="menu__section-title">
+                            Хакатоны
+                        </h3>
+                        <div class="menu__section-image-wrapper menu__section-image-hackathons">
+                            <img class="menu__section-image" src="img/hackathons.svg" alt="Раздел меню">
+                        </div>
+                    </button>
+                </div>
+
+                <div class="announcement-board main__announcement-board">
+                    <div class="announcement-board__title-wrapper">
+                        <h3 class="announcement-board__title">
+                            Доска объявлений
+                        </h3>
+                    </div>
+
+                    <div class="announcement-board__announcements-wrapper">
+                        <ul class="announcement-board__announcements">
+                            <li class="announcement-board__announcement">
+                                <p class="announcement-board__text">
+                                    Открыта регистрация на хакатон
+                                </p>
+                                <button class="announcement-board__author">
+                                    Даньшина М.В.
                                 </button>
                             </li>
-                            <li class="sitetoolbar__section" data-side-menu-element>
-                                <button class="sitetoolbar__section-button" type="button">
-                                    <div class="sitetoolbar__section-image-wrapper">
-                                        <img class="sitetoolbar__section-image sitetoolbar__section-image--mobile"
-                                            src="img/calendar.svg" alt="Мой проект">
-                                        <img class="sitetoolbar__section-image sitetoolbar__section-image--desktop"
-                                            src="img/calendar-black.svg" alt="Мой проект">
-                                    </div>
-                                    <h3 class="sitetoolbar__section-title">
-                                        Мой проект
-                                    </h3>
+                            <li class="announcement-board__announcement">
+                                <p class="announcement-board__text">
+                                    Открыта регистрация на хакатон
+                                </p>
+                                <button class="announcement-board__author">
+                                    Даньшина М.В.
                                 </button>
                             </li>
-                            <li class="sitetoolbar__section" data-side-menu-element>
-                                <button class="sitetoolbar__section-button" type="button">
-                                    <div class="sitetoolbar__section-image-wrapper">
-                                        <img class="sitetoolbar__section-image sitetoolbar__section-image--mobile"
-                                            src="img/personal-account.svg" alt="Мой профиль">
-                                        <img class="sitetoolbar__section-image sitetoolbar__section-image--desktop"
-                                            src="img/personal-account-black.svg" alt="Мой профиль">
-                                    </div>
-                                    <h3 class="sitetoolbar__section-title">
-                                        Мой профиль
-                                    </h3>
+                            <li class="announcement-board__announcement">
+                                <p class="announcement-board__text">
+                                    Открыта регистрация на хакатон
+                                </p>
+                                <button class="announcement-board__author">
+                                    Даньшина М.В.
                                 </button>
                             </li>
                         </ul>
-                    </div>
-                </div>
-                <div class="header__logo-wrapper">
-                    <button onclick="location.href='/'">
-                        <img class="header__logo" src="img/logo-mospolytech.svg" alt="Московский политех" width="115"
-                            height="30" />
-                    </button>
-                </div>
-                <button class="button header__button" type="button">
-                    Войти
-                </button>
-            </div>
-        </header>
 
-        <main role="main">
-            <div class="wrapper main__wrapper">
-                <h2 class="title main__title">
-                    Главная
-                </h2>
-
-                <div class="main__content">
-                    <div class="days-timer">
-                        <p class="days-timer__text">
-                            До защиты осталось
-                        </p>
-                        <div class="days-timer__counter-wrapper">
-                            <p class="days-timer__counter-text">
-                                <span>15</span> дней
-                            </p>
-                            <div class="days-timer__picture-wrapper">
-                                <img class="days-timer__picture" src="img/hourglass.svg" alt="!">
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="menu main__menu">
-                        <button class="menu__section" type="button" onclick="location.href='/projects-search/'">
-                            <h3 class="menu__section-title">
-                                Поиск проектов
-                            </h3>
-                            <div class="menu__section-image-wrapper menu__section-image-projects-search">
-                                <img class="menu__section-image" src="img/projects-search.svg" alt="Раздел меню">
-                            </div>
-                        </button>
-
-                        <button class="menu__section" type="button" onclick="location.href='/add-project/'">
-                            <h3 class="menu__section-title">
-                                Создать проект
-                            </h3>
-                            <div class="menu__section-image-wrapper menu__section-image-create-project">
-                                <img class="menu__section-image" src="img/create-project.svg" alt="Раздел меню">
-                            </div>
-                        </button>
-
-                        <button class="menu__section" type="button">
-                            <h3 class="menu__section-title">
-                                О проектной деятельности
-                            </h3>
-                            <div class="menu__section-image-wrapper menu__section-image-about-project-activities">
-                                <img class="menu__section-image" src="img/about-project-activities.svg"
-                                    alt="Раздел меню">
-                            </div>
-                        </button>
-
-                        <button class="menu__section" type="button">
-                            <h3 class="menu__section-title">
-                                Хакатоны
-                            </h3>
-                            <div class="menu__section-image-wrapper menu__section-image-hackathons">
-                                <img class="menu__section-image" src="img/hackathons.svg" alt="Раздел меню">
-                            </div>
-                        </button>
-                    </div>
-
-                    <div class="announcement-board main__announcement-board">
-                        <div class="announcement-board__title-wrapper">
-                            <h3 class="announcement-board__title">
-                                Доска объявлений
-                            </h3>
-                        </div>
-
-                        <div class="announcement-board__announcements-wrapper">
-                            <ul class="announcement-board__announcements">
-                                <li class="announcement-board__announcement">
-                                    <p class="announcement-board__text">
-                                        Открыта регистрация на хакатон
-                                    </p>
-                                    <button class="announcement-board__author">
-                                        Даньшина М.В.
-                                    </button>
-                                </li>
-                                <li class="announcement-board__announcement">
-                                    <p class="announcement-board__text">
-                                        Открыта регистрация на хакатон
-                                    </p>
-                                    <button class="announcement-board__author">
-                                        Даньшина М.В.
-                                    </button>
-                                </li>
-                                <li class="announcement-board__announcement">
-                                    <p class="announcement-board__text">
-                                        Открыта регистрация на хакатон
-                                    </p>
-                                    <button class="announcement-board__author">
-                                        Даньшина М.В.
-                                    </button>
-                                </li>
-                            </ul>
-
-                            <div class="announcement-board__button-wrapper">
-                                <button class="button announcement-board__button" type="button"
-                                    data-button-to-call-modal='modal-to-add-announcement'>
-                                    Добавить
-                                </button>
-                            </div>
+                        <div class="announcement-board__button-wrapper">
+                            <button class="button announcement-board__button" type="button"
+                                data-button-to-call-modal='modal-to-add-announcement'>
+                                Добавить
+                            </button>
                         </div>
                     </div>
                 </div>
             </div>
-        </main>
+        </div>
+    </main>
     </div>
+
 
     <div class="modal-wrapper" data-modal-to-add-announcement>
         <div class="modal">
