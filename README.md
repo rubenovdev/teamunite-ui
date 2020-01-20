@@ -75,9 +75,10 @@ git checkout - переход на другую ветку
 ```
 min-width: 320px // mobile
 min-width: 768px // tablet
-min-width: 1024px // desktop
-min-width: 1400px // full-desktop
-min-width: 2000px // tv
+min-width: 1024px // desktop-11
+min-width: 1300px // desktop-13
+min-width: 1500px // desktop-15
+min-width: 2048px // tv
 ```
 
 ### Подключение к серверу через FTP
