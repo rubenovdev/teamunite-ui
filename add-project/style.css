@@ -188,6 +188,63 @@ body {
     align-items: center;
 }
 
+.add-project__vacancies {
+    min-height: 400px;
+}
+
+.add-project__vacancies-main-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 25px;
+}
+
+.add-project__vacancies-list {
+    margin-bottom: 25px;
+    width: 100%;
+    max-width: 380px;
+}
+
+.add-project__vacancy {
+    margin-bottom: 25px;
+}
+
+.add-project__vacancy:last-of-type {
+    margin-bottom: 0;
+}
+
+.add-project__vacancy-button {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 15px;
+    font-weight: 400;
+    width: 100%;
+}
+
+.add-project__vacancy-title {
+    font-size: 14px;
+}
+
+.add-project__vacancies-number-image-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 10px;
+    margin-right: 3px;
+}
+
+.add-project__vacancies-number-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.add-project__vacancies-button {
+    font-size: 14px;
+    max-width: 130px;
+}
+
 @media (min-width: 420px) {
     .add-project__clip-image-button-wrapper {
         min-width: 150px;
@@ -207,6 +264,15 @@ body {
 
     .add-project__wrapper {
         padding: 10px 0;
+    }
+
+    .add-project__vacancies-main-content {
+        align-items: flex-start;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: 1fr;
+        grid-column-gap: 40px;
+        padding-top: 15px;
     }
 }
 
@@ -277,5 +343,19 @@ body {
 
     .add-project__clip-file-paragraph {
         font-size: 16px;
+    }
+
+    .add-project__vacancy-title {
+        font-size: 17px;
+    }
+    
+    .add-project__vacancies-button {
+        max-width: 150px;
+        font-size: 18px;
+    }
+
+    .add-project__vacancies-number-image-wrapper {
+        width: 13px;
+        margin-right: 4px;
     }
 }

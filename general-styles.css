@@ -7,13 +7,16 @@
 }
 
 .button {
-    max-width: 150px;
     background-color: #460EDE;
     color: #ffffff;
     font-weight: 300;
     padding: 10px 30px;
     border-radius: 10px;
     box-shadow: 0 3px 6px #00000029;
+}
+
+.button--pink {
+    background-color: #d90778;
 }
 
 .header__wrapper {
