@@ -159,3 +159,46 @@ buttonToOpenSideMenu.addEventListener('click', () => {
   hourglass && hourglass.addEventListener('click', showEasterEgg)
 })
 /* Пасхалка - конец */
+
+
+
+function showStep2(){
+  let elems1 = document.getElementsByClassName('add-project__project-introduction')
+  for(let i=0; i<elems1.length; i++){
+    elems1[i].style.display='none';
+  }
+
+  let elems = document.getElementsByClassName('add-project__project-description')
+  for(let i=0; i<elems.length; i++){
+    elems[i].style.display='block';
+  }
+
+  let step = document.getElementsByClassName('steps__step-number')
+    step[1].classList.add('steps__step-number--current')
+
+  let a  = document.getElementsByClassName('steps__switch-step-button-title steps__switch-step-button-title--ml15')
+    a[0].innerHTML = 'Назад'
+
+}
+
+function quit(){
+ let button = document.getElementsByClassName('steps__switch-step-button-title steps__switch-step-button-title--ml15')
+ if (button[0].innerText == 'Назад'){
+   
+  let elems1 = document.getElementsByClassName('add-project__project-introduction')
+  for(let i=0; i<elems1.length; i++){
+    elems1[i].style.display='block';
+  }
+
+  let elems = document.getElementsByClassName('add-project__project-description')
+  for(let i=0; i<elems.length; i++){
+    elems[i].style.display='none';
+  }
+
+  let step = document.getElementsByClassName('steps__step-number')
+    step[1].classList.remove('steps__step-number--current')
+   
+  let a  = document.getElementsByClassName('steps__switch-step-button-title steps__switch-step-button-title--ml15')
+    a[0].innerHTML = 'Выход'
+ }
+}
