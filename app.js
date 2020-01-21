@@ -39,7 +39,7 @@ function openSideMenu() {
   }
 
   document.addEventListener('keydown', hideSideMenuByEscape)
-  setTimeout(() => {document.addEventListener('click', hideSideMenuByBackgroundClick)}, 10)
+  setTimeout(() => { document.addEventListener('click', hideSideMenuByBackgroundClick) }, 10)
 }
 
 function hideSideMenuByEscape() {
@@ -55,7 +55,7 @@ function closeSideMenu() {
   if (desktop) {
     linesOfbuttonToOpenSideMenu.classList.remove('sitetoolbar__button-line--active')
     sideMenuElements.classList.remove('sitetoolbar__sections-list--active')
-    
+
     clearTimeout(timerId)
     timerId = setTimeout(() => {
       sideMenu.classList.remove('sitetoolbar__sections--active')
@@ -66,7 +66,7 @@ function closeSideMenu() {
     sideMenuElements.classList.remove('sitetoolbar__sections-list--active')
     buttonToCloseSideMenu.classList.remove('sitetoolbar__close-button--active')
     body.classList.remove('overflow-hidden')
-  
+
     clearTimeout(timerId)
     timerId = setTimeout(() => {
       sideMenu.classList.remove('sitetoolbar__sections--active')
@@ -160,45 +160,48 @@ buttonToOpenSideMenu.addEventListener('click', () => {
 })
 /* Пасхалка - конец */
 
+let showStep2 = document.querySelectorAll('.steps__switch-step-button-title')[1]
+showStep2.addEventListener('click', () => {
 
+  document.querySelector('.add-project__project-introduction').style.display = 'none'
 
-function showStep2(){
-  let elems1 = document.getElementsByClassName('add-project__project-introduction')
-  for(let i=0; i<elems1.length; i++){
-    elems1[i].style.display='none';
-  }
+  document.querySelector('.add-project__project-description').style.display = 'block'
 
-  let elems = document.getElementsByClassName('add-project__project-description')
-  for(let i=0; i<elems.length; i++){
-    elems[i].style.display='block';
-  }
+  document.querySelectorAll('.steps__step-number')[1].classList.add('steps__step-number--current')
 
-  let step = document.getElementsByClassName('steps__step-number')
-    step[1].classList.add('steps__step-number--current')
-
-  let a  = document.getElementsByClassName('steps__switch-step-button-title steps__switch-step-button-title--ml15')
-    a[0].innerHTML = 'Назад'
-
+  document.querySelector('.steps__switch-step-button-title').textContent = 'Назад'
 }
+)
 
-function quit(){
- let button = document.getElementsByClassName('steps__switch-step-button-title steps__switch-step-button-title--ml15')
- if (button[0].innerText == 'Назад'){
-   
-  let elems1 = document.getElementsByClassName('add-project__project-introduction')
-  for(let i=0; i<elems1.length; i++){
-    elems1[i].style.display='block';
+
+// function showStep3() {
+  
+//   document.querySelector('.add-project__project-description').style.display = 'none'
+
+//   document.querySelector('.add-project__vacancies').style.display = 'block'
+
+
+//   document.querySelectorAll('.steps__step-number')[2].classList.add('steps__step-number--current')
+
+//   document.querySelector('.steps__switch-step-button-title').textContent = 'Назад'
+// }
+
+
+let quit = document.querySelectorAll('.steps__switch-step-button-title')[0]
+
+quit.addEventListener('click', () => {
+  if (quit.textContent === "Назад") {
+
+    document.querySelector('.add-project__project-introduction').style.display = 'block'
+
+    document.querySelector('.add-project__project-description').style.display = 'none'
+
+    document.querySelectorAll('.steps__step-number')[1].classList.remove('steps__step-number--current')
+
+    document.querySelector('.steps__switch-step-button-title').textContent = 'Выйти'
+  } else if (quit.textContent === "Выйти"){
+    window.location.href('http://www.teamunite.ru')
   }
-
-  let elems = document.getElementsByClassName('add-project__project-description')
-  for(let i=0; i<elems.length; i++){
-    elems[i].style.display='none';
-  }
-
-  let step = document.getElementsByClassName('steps__step-number')
-    step[1].classList.remove('steps__step-number--current')
-   
-  let a  = document.getElementsByClassName('steps__switch-step-button-title steps__switch-step-button-title--ml15')
-    a[0].innerHTML = 'Выход'
- }
 }
+)
+
