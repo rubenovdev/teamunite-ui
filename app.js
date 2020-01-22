@@ -168,10 +168,3 @@ buttonToOpenSideMenu.addEventListener('click', () => {
   hourglass && hourglass.addEventListener('click', showEasterEgg)
 })
 /* Пасхалка - конец */
-
-
-
-
-
-
-
