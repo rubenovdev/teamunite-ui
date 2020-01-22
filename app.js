@@ -159,78 +159,10 @@ buttonToOpenSideMenu.addEventListener('click', () => {
   hourglass && hourglass.addEventListener('click', showEasterEgg)
 })
 /* Пасхалка - конец */
-let currentStep = 1;
-
-let showStep = document.querySelectorAll('.steps__switch-step-button-title')[1]
-showStep.addEventListener('click', () => {
-  
-
-  if (currentStep === 1) {
-    document.querySelector('.add-project__project-introduction').style.display = 'none'
-
-    document.querySelector('.add-project__project-description').style.display = 'block'
-
-    document.querySelectorAll('.steps__step-number')[1].classList.add('steps__step-number--current')
-
-    document.querySelector('.steps__switch-step-button-title').textContent = 'Назад'
-
-    currentStep++
-  } else if (currentStep === 2) {
-
-    document.querySelector('.add-project__project-description').style.display = 'none'
-
-    document.querySelector('.add-project__vacancies').style.display = 'block'
 
 
-    document.querySelectorAll('.steps__step-number')[2].classList.add('steps__step-number--current')
-
-    document.querySelector('.steps__switch-step-button-title').textContent = 'Назад'
-
-    document.querySelectorAll('.steps__switch-step-button-title')[1].textContent = 'Завершить'
-    currentStep++
-  }
-
-  else if (currentStep === 3){
-    window.location.href('http://www.teamunite.ru')
-  }
-
-})
 
 
-let quit = document.querySelectorAll('.steps__switch-step-button-title')[0]
 
-quit.addEventListener('click', () => {
-  if (currentStep === 2) {
 
-    document.querySelector('.add-project__project-introduction').style.display = 'block'
-
-    document.querySelector('.add-project__project-description').style.display = 'none'
-
-    document.querySelectorAll('.steps__step-number')[1].classList.remove('steps__step-number--current')
-
-    document.querySelector('.steps__switch-step-button-title').textContent = 'Выйти'
-
-    
-
-    currentStep--
-  } else if (currentStep === 3) {
-
-    document.querySelector('.add-project__vacancies').style.display = 'none'
-
-    document.querySelector('.add-project__project-description').style.display = 'block'
-
-    document.querySelectorAll('.steps__step-number')[2].classList.remove('steps__step-number--current')
-
-    document.querySelector('.steps__switch-step-button-title').textContent = 'Назад'
-    
-    document.querySelectorAll('.steps__switch-step-button-title')[1].textContent = 'Далее'
-
-    
-
-    currentStep--
-  }else if (quit.textContent === "Выйти") {
-    window.location.href('http://www.teamunite.ru')
-  }
-}
-)
 
