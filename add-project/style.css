@@ -17,6 +17,7 @@ body {
 
 .add-project__main-content {
     max-width: 990px;
+    height: 360px;
     background-color: #ffffff;
     border-radius: 10px 10px 0 0;
     box-shadow: 0 3px 6px #0000003c;
@@ -35,7 +36,6 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding-bottom: 50px;
 }
 
 .add-project__file-input {
@@ -188,10 +188,6 @@ body {
     align-items: center;
 }
 
-.add-project__vacancies {
-    min-height: 400px;
-}
-
 .add-project__vacancies-main-content {
     display: flex;
     flex-direction: column;
@@ -289,7 +285,6 @@ body {
         flex-direction: row;
         justify-content: space-between;
         align-items: center;
-        padding-bottom: 90px;
     }
 
     .add-project__clip-image-button-wrapper {
@@ -306,6 +301,7 @@ body {
     .add-project__main-content {
         padding: 0 90px;
         padding-top: 45px;
+        height: 420px;
     }
 
     .add-project__main-content-title {
