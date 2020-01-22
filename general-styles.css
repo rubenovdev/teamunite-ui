@@ -326,8 +326,6 @@
     font-size: 15px;
 }
 
-@media (min-width: 360px) {}
-
 @media (min-width: 420px) {
     .wrapper {
         max-width: 420px;
@@ -464,7 +462,6 @@
 
     .sitetoolbar__section--current {
         background-color: #333333;
-        /* border-color: */
     }
 
     .sitetoolbar__section-button {
