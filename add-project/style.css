@@ -103,8 +103,12 @@ body {
 
 .steps__switch-step-button-wrapper {
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
+}
+
+.steps__switch-step-button-wrapper--right {
+    justify-content: flex-end;
 }
 
 .steps__switch-step-button-title {
@@ -146,6 +150,10 @@ body {
     min-width: 30px;
     height: 1px;
     background-color: #707070;
+}
+
+.steps__switch-step-button {
+    max-width: 17px;
 }
 
 .steps__switch-step-button--right {
@@ -256,6 +264,10 @@ body {
 @media (min-width: 768px) {
     .steps__switch-step-button-title {
         display: inline-block;
+    }
+
+    .steps__switch-step-button-wrapper {
+        min-width: 130px;
     }
 
     .add-project__wrapper {
