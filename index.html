@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="ru">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,7 +13,9 @@
     <link rel="stylesheet" href="style.css">
     <title>Главная</title>
 </head>
+
 <body>
+    <div class="content-wrapper">
     <header>
         <h1 class="visually-hidden">
             Подбор студенческих команд в Московском политехе
@@ -45,8 +48,10 @@
                         <li class="sitetoolbar__section" data-side-menu-element>
                             <button class="sitetoolbar__section-button" type="button">
                                 <div class="sitetoolbar__section-image-wrapper">
-                                    <img class="sitetoolbar__section-image sitetoolbar__section-image--mobile" src="img/calendar.svg" alt="Мой проект">
-                                    <img class="sitetoolbar__section-image sitetoolbar__section-image--desktop" src="img/calendar-black.svg" alt="Мой проект">
+                                    <img class="sitetoolbar__section-image sitetoolbar__section-image--mobile"
+                                        src="img/calendar.svg" alt="Мой проект">
+                                    <img class="sitetoolbar__section-image sitetoolbar__section-image--desktop"
+                                        src="img/calendar-black.svg" alt="Мой проект">
                                 </div>
                                 <h3 class="sitetoolbar__section-title">
                                     Мой проект
@@ -56,8 +61,10 @@
                         <li class="sitetoolbar__section" data-side-menu-element>
                             <button class="sitetoolbar__section-button" type="button">
                                 <div class="sitetoolbar__section-image-wrapper">
-                                    <img class="sitetoolbar__section-image sitetoolbar__section-image--mobile" src="img/personal-account.svg" alt="Мой профиль">
-                                    <img class="sitetoolbar__section-image sitetoolbar__section-image--desktop" src="img/personal-account-black.svg" alt="Мой профиль">
+                                    <img class="sitetoolbar__section-image sitetoolbar__section-image--mobile"
+                                        src="img/personal-account.svg" alt="Мой профиль">
+                                    <img class="sitetoolbar__section-image sitetoolbar__section-image--desktop"
+                                        src="img/personal-account-black.svg" alt="Мой профиль">
                                 </div>
                                 <h3 class="sitetoolbar__section-title">
                                     Мой профиль
@@ -69,7 +76,8 @@
             </div>
             <div class="header__logo-wrapper">
                 <button onclick="location.href='/'">
-                    <img class="header__logo" src="img/logo-mospolytech.svg" alt="Московский политех" width="115" height="30" />
+                    <img class="header__logo" src="img/logo-mospolytech.svg" alt="Московский политех" width="115"
+                        height="30" />
                 </button>
             </div>
             <button class="button header__button" type="button">
@@ -171,9 +179,10 @@
                                 </button>
                             </li>
                         </ul>
-                        
+
                         <div class="announcement-board__button-wrapper">
-                            <button class="button announcement-board__button" type="button" data-button-to-call-modal='modal-to-add-announcement'>
+                            <button class="button announcement-board__button" type="button"
+                                data-button-to-call-modal='modal-to-add-announcement'>
                                 Добавить
                             </button>
                         </div>
@@ -182,6 +191,8 @@
             </div>
         </div>
     </main>
+    </div>
+
 
     <div class="modal-wrapper" data-modal-to-add-announcement>
         <div class="modal">
@@ -208,4 +219,5 @@
     <script src="app.js"></script>
 
 </body>
+
 </html>

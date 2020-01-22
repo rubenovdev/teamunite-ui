@@ -1,3 +1,49 @@
+@keyframes blowUpContentHide {
+    0% {
+        transform: scale(1);
+        opacity: 1;
+    }
+
+    99.9% {
+        transform: scale(0.5);
+        opacity: 0;
+    }
+
+    100% {
+        transform: scale(0);
+    }
+}
+
+@keyframes blowUpContentShow {
+    0% {
+        transform: scale(0.5);
+        opacity: 0;
+    }
+
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+@keyframes blowUpModalShow {
+    0% {
+        transform: scale(0);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+.content-hidden {
+    animation: blowUpContentHide .5s cubic-bezier(0.165, 0.840, 0.440, 1.000) forwards;
+}
+
+.content-show {
+    animation: blowUpContentShow .5s cubic-bezier(0.165, 0.840, 0.440, 1.000) forwards;
+}
+
 .wrapper {
     padding: 10px 35px;
 }
@@ -46,7 +92,9 @@
     height: 21px;
 }
 
-.sitetoolbar__button-line, .sitetoolbar__button-line::before, .sitetoolbar__button-line::after {
+.sitetoolbar__button-line,
+.sitetoolbar__button-line::before,
+.sitetoolbar__button-line::after {
     position: absolute;
     top: 50%;
     left: 0;
@@ -57,11 +105,14 @@
     transition: width .2s;
 }
 
-.sitetoolbar__button-line--active, .sitetoolbar__button-line--active::before, .sitetoolbar__button-line--active::after {
+.sitetoolbar__button-line--active,
+.sitetoolbar__button-line--active::before,
+.sitetoolbar__button-line--active::after {
     width: 0;
 }
 
-.sitetoolbar__button-line::before, .sitetoolbar__button-line::after {
+.sitetoolbar__button-line::before,
+.sitetoolbar__button-line::after {
     content: '';
     display: block;
 }
@@ -86,10 +137,12 @@
     align-items: center;
     padding: 0 20px;
     z-index: 5;
+    animation: blowUpModalShow .5s cubic-bezier(0.165, 0.840, 0.440, 1.000) forwards;
 }
 
 .modal-wrapper.active {
     display: flex;
+    animation: blowUpModalShow .5s cubic-bezier(0.165, 0.840, 0.440, 1.000) backwards;
 }
 
 .modal {
@@ -100,6 +153,7 @@
     border-radius: 10px;
     padding: 40px 15px;
     padding-top: 60px;
+    animation: blowUpModalShow .5s cubic-bezier(0.165, 0.840, 0.440, 1.000) forwards;
 }
 
 .modal__content {
@@ -272,9 +326,7 @@
     font-size: 15px;
 }
 
-@media (min-width: 360px) {
-
-}
+@media (min-width: 360px) {}
 
 @media (min-width: 420px) {
     .wrapper {
@@ -348,7 +400,8 @@
         display: none;
     }
 
-    .sitetoolbar__button-line, .sitetoolbar__button-line::after {
+    .sitetoolbar__button-line,
+    .sitetoolbar__button-line::after {
         top: 0;
         width: 3px;
         height: 60px;
@@ -356,7 +409,8 @@
         transition: height .2s;
     }
 
-    .sitetoolbar__button-line--active, .sitetoolbar__button-line--active::after {
+    .sitetoolbar__button-line--active,
+    .sitetoolbar__button-line--active::after {
         height: 0;
     }
 
@@ -410,7 +464,7 @@
 
     .sitetoolbar__section--current {
         background-color: #333333;
-        border-color: 
+        /* border-color: */
     }
 
     .sitetoolbar__section-button {
