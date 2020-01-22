@@ -39,7 +39,7 @@ function openSideMenu() {
   }
 
   document.addEventListener('keydown', hideSideMenuByEscape)
-  setTimeout(() => {document.addEventListener('click', hideSideMenuByBackgroundClick)}, 10)
+  setTimeout(() => { document.addEventListener('click', hideSideMenuByBackgroundClick) }, 10)
 }
 
 function hideSideMenuByEscape() {
@@ -55,7 +55,7 @@ function closeSideMenu() {
   if (desktop) {
     linesOfbuttonToOpenSideMenu.classList.remove('sitetoolbar__button-line--active')
     sideMenuElements.classList.remove('sitetoolbar__sections-list--active')
-    
+
     clearTimeout(timerId)
     timerId = setTimeout(() => {
       sideMenu.classList.remove('sitetoolbar__sections--active')
@@ -66,7 +66,7 @@ function closeSideMenu() {
     sideMenuElements.classList.remove('sitetoolbar__sections-list--active')
     buttonToCloseSideMenu.classList.remove('sitetoolbar__close-button--active')
     body.classList.remove('overflow-hidden')
-  
+
     clearTimeout(timerId)
     timerId = setTimeout(() => {
       sideMenu.classList.remove('sitetoolbar__sections--active')
@@ -168,3 +168,10 @@ buttonToOpenSideMenu.addEventListener('click', () => {
   hourglass && hourglass.addEventListener('click', showEasterEgg)
 })
 /* Пасхалка - конец */
+
+
+
+
+
+
+
