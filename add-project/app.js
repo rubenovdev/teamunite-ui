@@ -26,6 +26,8 @@ function switchToNextStep() {
     if (currentStep < 3) currentStep++
 
     stepsNumbers[currentStep - 1].classList.add('steps__step-number--current')
+
+    buttonToNextStep.blur()
 }
 
 function switchToPreviousStep() {
