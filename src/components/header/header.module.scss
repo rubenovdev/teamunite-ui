@@ -49,19 +49,10 @@ header {
     .logoWrapper {
       width: 41%;
       max-width: 155px;
-    }
 
-    .loginButton {
-      display: none;
-      max-width: 150px;
-      width: 130px;
-      background-color: #460ede;
-      color: #ffffff;
-      font-weight: 300;
-      padding: 10px 30px;
-      border-radius: 10px;
-      text-align: center;
-      box-shadow: 0 3px 6px #00000029;
+      a {
+        display: flex;
+      }
     }
   }
 }
@@ -119,10 +110,6 @@ header {
             transition: height 0.2s;
           }
         }
-      }
-
-      .loginButton {
-        display: block !important;
       }
     }
   }
