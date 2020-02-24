@@ -1,19 +1,28 @@
-import React, { useState } from 'react'
-import ReactDOM, { createPortal } from 'react-dom'
+import React, { useState, forwardRef, useImperativeHandle } from 'react'
+import { createPortal } from 'react-dom'
 import styles from './modal.module.scss'
 
 interface Props {
   children: React.HTMLAttributes<HTMLElement>
+  ref: React.Ref<unknown>
 }
 
-const Modal: React.FC<Props> = ({ children }) => {
-  const [display, setDisplay] = useState<boolean>(true)
+const Modal: React.FC<Props> = forwardRef(({ children }, ref) => {
+  const [display, setDisplay] = useState<boolean>(false)
 
-  const openModal = () => {
+  useImperativeHandle(ref, (): {
+    openModal: () => void
+    closeModal: () => void
+  } => ({
+    openModal,
+    closeModal,
+  }))
+
+  const openModal = (): void => {
     setDisplay(true)
   }
 
-  const closeModal = () => {
+  const closeModal = (): void => {
     setDisplay(false)
   }
 
@@ -29,6 +38,6 @@ const Modal: React.FC<Props> = ({ children }) => {
         )}
     </>
   )
-}
+})
 
 export default Modal
