@@ -1,5 +1,6 @@
 import React from 'react'
 import styles from './app.module.scss'
+import Modal from '../modal'
 
 const App = () => {
   const openModal = () => {
@@ -11,6 +12,7 @@ const App = () => {
       <button type="button" onClick={openModal}>
         Добавить
       </button>
+      <Modal />
     </div>
   )
 }
