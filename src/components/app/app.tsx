@@ -16,21 +16,41 @@ const App = () => {
     modalRef.current.closeModal()
   }
 
+  const renderModalContent = () => {
+    return (
+      <form className={styles.modalContent}>
+        <input
+          className={styles.formTitle}
+          type="text"
+          placeholder="Заголовок объявления"
+        />
+        <textarea
+          className={styles.formText}
+          placeholder="Текст объявления"
+        ></textarea>
+      </form>
+    )
+  }
+
+  const renderAction = () => {
+    return (
+      <button className={styles.addButton} type="button" onClick={closeModal}>
+        Добавить
+      </button>
+    )
+  }
+
   return (
     <div>
       <button type="button" onClick={openModal}>
         Добавить
       </button>
-      <Modal ref={modalRef}>
-        <h2 className={styles.modalTitle}>Hello</h2>
-        <p>
-          Lorem, ipsum dolor sit amet consectetur adipisicing elit. In deserunt
-          corrupti autem dolor nulla ipsam officia consequuntur, laborum porro
-          aspernatur hic nostrum inventore unde ea tenetur alias aliquam
-          eligendi itaque.
-        </p>
-        <span onClick={closeModal}>&#10005;</span>
-      </Modal>
+      <Modal
+        ref={modalRef}
+        title="Добавление объявления"
+        content={renderModalContent()}
+        action={renderAction()}
+      />
     </div>
   )
 }

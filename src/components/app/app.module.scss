@@ -1,0 +1,29 @@
+.modalContent {
+  max-width: 432px;
+  width: 90%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.formTitle {
+  border: 1px solid #bebebe;
+  padding: 1em;
+  margin-bottom: 2em;
+}
+
+.formText {
+  resize: none;
+  border: 1px solid #bebebe;
+  padding: 1em;
+  height: 100px;
+  margin-bottom: 3em;
+}
+
+.addButton {
+  background-color: #707070;
+  color: #fff;
+  padding: 1em;
+  width: 145px;
+  margin-bottom: 1em;
+}
