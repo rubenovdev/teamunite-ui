@@ -94,7 +94,7 @@ header {
 
           .line {
             &::after {
-              transform: translate(15px, 0) !important;
+              transform: translate(15px, 0);
             }
             &::before {
               display: none;
@@ -131,7 +131,7 @@ header {
 @media (min-width: 1500px) {
   header {
     .wrapper {
-      max-width: 80%;
+      width: 80%;
       padding-bottom: 40px;
 
       .logo-wrapper {

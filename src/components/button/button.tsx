@@ -5,10 +5,10 @@ interface Props {
   text: string
 }
 
-const Button = (props: Props) => {
+const Button = ({ text }: Props) => {
   return (
     <button className={styles.button} type="button">
-      {props.text}
+      {text}
     </button>
   )
 }
