@@ -40,8 +40,12 @@ const App = () => {
     )
   }
 
+  const onEscape = (e: React.KeyboardEvent): void => {
+    e.which === 27 && closeModal()
+  }
+
   return (
-    <div>
+    <div onKeyDown={onEscape}>
       <button type="button" onClick={openModal}>
         Добавить
       </button>
@@ -50,6 +54,7 @@ const App = () => {
         title="Добавление объявления"
         content={renderModalContent()}
         action={renderAction()}
+        onEscape={onEscape}
       />
     </div>
   )

@@ -6,44 +6,51 @@ interface Props {
   title: string
   content: JSX.Element
   action: JSX.Element
+  onEscape: (e: React.KeyboardEvent) => void
   ref: React.Ref<unknown>
 }
 
-const Modal: React.FC<Props> = forwardRef(({ title, content, action }, ref) => {
-  const [display, setDisplay] = useState<boolean>(false)
+const Modal: React.FC<Props> = forwardRef(
+  ({ title, content, action, onEscape }, ref) => {
+    const [display, setDisplay] = useState<boolean>(false)
 
-  useImperativeHandle(ref, (): {
-    openModal: () => void
-    closeModal: () => void
-  } => ({ openModal, closeModal }))
+    useImperativeHandle(ref, (): {
+      openModal: () => void
+      closeModal: () => void
+    } => ({ openModal, closeModal }))
 
-  const openModal = (): void => {
-    setDisplay(true)
+    const openModal = (): void => {
+      setDisplay(true)
+    }
+
+    const closeModal = (): void => {
+      setDisplay(false)
+    }
+
+    return (
+      <>
+        {display &&
+          createPortal(
+            <div
+              className={styles.modalWrapper}
+              tabIndex={0}
+              onKeyDown={onEscape}
+            >
+              <div onClick={closeModal} className={styles.modalBackdrop} />
+              <div className={styles.modalBox}>
+                <span onClick={closeModal} className={styles.closeButton}>
+                  &#10005;
+                </span>
+                <h3 className={styles.modalTitle}>{title}</h3>
+                {content}
+                {action}
+              </div>
+            </div>,
+            document.querySelector('#modal-root') as HTMLElement
+          )}
+      </>
+    )
   }
-
-  const closeModal = (): void => {
-    setDisplay(false)
-  }
-
-  return (
-    <>
-      {display &&
-        createPortal(
-          <div className={styles.modalWrapper}>
-            <div onClick={closeModal} className={styles.modalBackdrop} />
-            <div className={styles.modalBox}>
-              <span onClick={closeModal} className={styles.closeButton}>
-                &#10005;
-              </span>
-              <h3 className={styles.modalTitle}>{title}</h3>
-              {content}
-              {action}
-            </div>
-          </div>,
-          document.querySelector('#modal-root') as HTMLElement
-        )}
-    </>
-  )
-})
+)
 
 export default Modal
