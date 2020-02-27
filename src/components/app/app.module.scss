@@ -1,3 +1,7 @@
+html {
+  font-size: 10px;
+}
+
 .modalContent {
   max-width: 432px;
   width: 90%;
@@ -7,23 +11,39 @@
 }
 
 .formTitle {
+  font-size: 1.2rem;
   border: 1px solid #bebebe;
   padding: 1em;
   margin-bottom: 2em;
+  border-radius: 10px;
+  outline: none;
 }
 
 .formText {
-  resize: none;
+  font-size: 1.4rem;
   border: 1px solid #bebebe;
-  padding: 1em;
+  resize: none;
+  padding-left: 1em;
+  padding-top: 0.8em;
   height: 100px;
-  margin-bottom: 3em;
+  margin-bottom: 2em;
+  border-radius: 10px;
+  outline: none;
 }
 
 .addButton {
-  background-color: #707070;
+  font-size: 1.2rem;
+  background-color: #460ede;
+  border: none;
   color: #fff;
-  padding: 1em;
-  width: 145px;
+  padding: 1em 2.5em;
+  border-radius: 10px;
+  box-shadow: 0 0 2px rgba(0, 0, 0, 0.16);
   margin-bottom: 1em;
+}
+
+@media screen and (min-width: 768px) {
+  html {
+    font-size: 12px;
+  }
 }

@@ -41,7 +41,7 @@ const Modal: React.FC<Props> = forwardRef(
                 <span onClick={closeModal} className={styles.closeButton}>
                   &#10005;
                 </span>
-                <h3 className={styles.modalTitle}>{title}</h3>
+                <h2 className={styles.modalTitle}>{title}</h2>
                 {content}
                 {action}
               </div>
