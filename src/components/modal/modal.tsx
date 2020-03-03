@@ -1,6 +1,7 @@
 import React, { useState, forwardRef, useImperativeHandle } from 'react'
 import { createPortal } from 'react-dom'
 import styles from './modal.module.scss'
+import CloseButton from '../close-button'
 
 interface Props {
   title: string
@@ -12,7 +13,7 @@ interface Props {
 
 const Modal: React.FC<Props> = forwardRef(
   ({ title, content, action, onEscape }, ref) => {
-    const [display, setDisplay] = useState<boolean>(false)
+    const [display, setDisplay] = useState<boolean>(true)
 
     useImperativeHandle(ref, (): {
       openModal: () => void
@@ -39,7 +40,7 @@ const Modal: React.FC<Props> = forwardRef(
               <div onClick={closeModal} className={styles.modalBackdrop} />
               <div className={styles.modalBox}>
                 <span onClick={closeModal} className={styles.closeButton}>
-                  &#10005;
+                  <CloseButton />
                 </span>
                 <h2 className={styles.modalTitle}>{title}</h2>
                 {content}

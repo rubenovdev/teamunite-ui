@@ -12,25 +12,31 @@
   bottom: 0;
   left: 0;
   right: 0;
-  z-index: 100;
+  z-index: 1;
   background-color: rgba(0, 0, 0, 0.8);
+
+  @media screen and (min-width: 768px) {
+    & {
+      background-color: rgba(0, 0, 0, 0.2);
+    }
+  }
 }
 
 .modalBox {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 1em;
+  padding: 15px 15px 40px 15px;
   position: relative;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   max-width: 800px;
   width: 80%;
-  height: 73%;
+  height: 100%;
   max-height: 385px;
   background-color: #fff;
-  z-index: 101;
+  z-index: 5;
   overflow-y: scroll;
   border-radius: 10px;
 }
@@ -41,28 +47,30 @@
 
 .closeButton {
   position: absolute;
-  right: 0.5em;
+  right: 17px;
   cursor: pointer;
-  font-size: 2rem;
+  font-size: 21px;
   color: #a5a4a4;
-  z-index: 1001;
+
+  @media screen and (min-width: 768px) {
+    & {
+      right: 20px;
+      top: 20px;
+    }
+  }
 }
 
 .modalTitle {
   font-weight: normal;
-  margin-top: 1.2em;
-  margin-bottom: 1.2em;
-  font-size: 2rem;
-}
+  margin-top: 30px;
+  margin-bottom: 25px;
+  font-size: 20px;
 
-@media screen and (min-width: 768px) {
-  .modalTitle {
-    margin-top: 1em;
-  }
-}
-
-@media screen and (min-width: 768px) {
-  .modalBackdrop {
-    background-color: rgba(0, 0, 0, 0.2);
+  @media screen and (min-width: 768px) {
+    & {
+      margin-top: 5px;
+      font-size: 30px;
+      margin-bottom: 30px;
+    }
   }
 }
