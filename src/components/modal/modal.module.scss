@@ -15,7 +15,7 @@
   z-index: 1;
   background-color: rgba(0, 0, 0, 0.8);
 
-  @media screen and (min-width: 768px) {
+  @media screen and (min-width: 500px) {
     & {
       background-color: rgba(0, 0, 0, 0.2);
     }
@@ -26,7 +26,9 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 15px 15px 40px 15px;
+  padding-top: 50px;
+  padding-left: 15px;
+  padding-right: 15px;
   position: relative;
   top: 50%;
   left: 50%;
@@ -39,6 +41,12 @@
   z-index: 5;
   overflow-y: scroll;
   border-radius: 10px;
+
+  @media screen and (min-width: 500px) {
+    & {
+      padding-top: 9px;
+    }
+  }
 }
 
 .modalBox::-webkit-scrollbar {
@@ -46,31 +54,37 @@
 }
 
 .closeButton {
+  background: none;
+  border: none;
   position: absolute;
-  right: 17px;
+  top: 18px;
+  right: 7px;
   cursor: pointer;
   font-size: 21px;
   color: #a5a4a4;
 
   @media screen and (min-width: 768px) {
     & {
-      right: 22px;
-      top: 25px;
+      right: 17px;
+      top: 23px;
     }
   }
 }
 
 .modalTitle {
   font-weight: normal;
-  margin-top: 30px;
   margin-bottom: 25px;
   font-size: 20px;
 
   @media screen and (min-width: 768px) {
     & {
-      margin-top: 14px;
+      font-size: 25px;
+    }
+  }
+
+  @media screen and (min-width: 1024px) {
+    & {
       font-size: 30px;
-      margin-bottom: 30px;
     }
   }
 }

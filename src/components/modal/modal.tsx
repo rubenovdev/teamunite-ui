@@ -39,9 +39,9 @@ const Modal: React.FC<Props> = forwardRef(
             >
               <div onClick={closeModal} className={styles.modalBackdrop} />
               <div className={styles.modalBox}>
-                <span onClick={closeModal} className={styles.closeButton}>
+                <button onClick={closeModal} className={styles.closeButton}>
                   <CloseButton />
-                </span>
+                </button>
                 <h2 className={styles.modalTitle}>{title}</h2>
                 {content}
                 {action}
