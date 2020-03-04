@@ -15,8 +15,8 @@ const CloseButton: React.FC = () => {
 
   return (
     width && width < 768
-      ? <img style={{ display: 'block' }} src={lightCloseButton} alt="close button" />
-      : <img style={{ display: 'block' }} src={boldCloseButton} alt="close button" />
+      ? <img style={{ display: 'block' }} src={lightCloseButton} alt="Закрыть модальное окно" />
+      : <img style={{ display: 'block' }} src={boldCloseButton} alt="Закрыть модальное окно" />
   )
 }
 

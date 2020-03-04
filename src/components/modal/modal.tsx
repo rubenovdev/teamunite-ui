@@ -39,7 +39,7 @@ const Modal: React.FC<Props> = forwardRef(
             >
               <div onClick={closeModal} className={styles.modalBackdrop} />
               <div className={styles.modalBox}>
-                <button onClick={closeModal} className={styles.closeButton}>
+                <button type="button" onClick={closeModal} className={styles.closeButton}>
                   <CloseButton />
                 </button>
                 <h2 className={styles.modalTitle}>{title}</h2>
