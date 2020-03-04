@@ -13,7 +13,7 @@ interface Props {
 
 const Modal: React.FC<Props> = forwardRef(
   ({ title, content, action, onEscape }, ref) => {
-    const [display, setDisplay] = useState<boolean>(true)
+    const [display, setDisplay] = useState<boolean>(false)
 
     useImperativeHandle(ref, (): {
       openModal: () => void
