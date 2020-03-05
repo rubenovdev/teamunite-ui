@@ -1,0 +1,96 @@
+.modalWrapper {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.modalBackdrop {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 1;
+  background-color: rgba(0, 0, 0, 0.8);
+
+  @media screen and (min-width: 500px) {
+    & {
+      background-color: rgba(0, 0, 0, 0.2);
+    }
+  }
+}
+
+.modalBox {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 50px;
+  padding-left: 15px;
+  padding-right: 15px;
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  max-width: 800px;
+  width: 80%;
+  height: 90%;
+  max-height: 385px;
+  background-color: #fff;
+  z-index: 5;
+  overflow-y: scroll;
+  border-radius: 10px;
+
+  @media screen and (min-width: 500px) {
+    & {
+      padding-top: 9px;
+    }
+  }
+}
+
+.modalBox::-webkit-scrollbar {
+  display: none;
+}
+
+.closeButton {
+  padding: 0;
+  width: 22px;
+  height: 22px;
+  outline: none;
+  background: none;
+  border: none;
+  position: absolute;
+  top: 18px;
+  right: 15px;
+  cursor: pointer;
+  font-size: 21px;
+  color: #a5a4a4;
+
+  @media screen and (min-width: 768px) {
+    & {
+      width: 29px;
+      height: 29px;
+      right: 17px;
+      top: 23px;
+    }
+  }
+}
+
+.modalTitle {
+  font-weight: normal;
+  margin-bottom: 25px;
+  font-size: 20px;
+
+  @media screen and (min-width: 768px) {
+    & {
+      font-size: 25px;
+    }
+  }
+
+  @media screen and (min-width: 1024px) {
+    & {
+      font-size: 30px;
+    }
+  }
+}
