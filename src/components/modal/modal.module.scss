@@ -54,23 +54,25 @@
 }
 
 .closeButton {
-  width: 36px;
-  height: 36px;
+  padding: 0;
+  width: 22px;
+  height: 22px;
+  outline: none;
   background: none;
   border: none;
   position: absolute;
-  top: 11px;
-  right: 7px;
+  top: 18px;
+  right: 15px;
   cursor: pointer;
   font-size: 21px;
   color: #a5a4a4;
 
   @media screen and (min-width: 768px) {
     & {
-      width: 40px;
-      height: 40px;
+      width: 29px;
+      height: 29px;
       right: 17px;
-      top: 18px;
+      top: 23px;
     }
   }
 }
