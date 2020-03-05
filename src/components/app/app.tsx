@@ -1,8 +1,10 @@
 import React, { useRef } from 'react'
+import { BrowserRouter } from 'react-router-dom'
 import styles from './app.module.scss'
 import Modal from '../modal'
+import Header from '../header'
 
-const App = () => {
+const App: React.FC = () => {
   const modalRef = useRef() as React.MutableRefObject<{
     openModal: () => void
     closeModal: () => void
@@ -46,9 +48,12 @@ const App = () => {
 
   return (
     <div onKeyDown={onEscape}>
-      <button type="button" onClick={openModal}>
-        Добавить
-      </button>
+      <BrowserRouter>
+        <Header />
+        <button type="button" onClick={openModal}>
+          Добавить
+        </button>
+      </BrowserRouter>
       <Modal
         ref={modalRef}
         title="Добавление объявления"
