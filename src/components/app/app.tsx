@@ -1,8 +1,10 @@
 import React, { useRef } from 'react'
-import { BrowserRouter } from 'react-router-dom'
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 import styles from './app.module.scss'
 import Modal from '../modal'
 import Header from '../header'
+import Homepage from '../homepage'
+import Wrapper from '../wrapper'
 
 const App: React.FC = () => {
   const modalRef = useRef() as React.MutableRefObject<{
@@ -18,7 +20,7 @@ const App: React.FC = () => {
     modalRef.current.closeModal()
   }
 
-  const renderModalContent = () => {
+  const renderModalContent = (): JSX.Element => {
     return (
       <form className={styles.modalContent}>
         <input
@@ -34,7 +36,7 @@ const App: React.FC = () => {
     )
   }
 
-  const renderAction = () => {
+  const renderAction = (): JSX.Element => {
     return (
       <button className={styles.addButton} type="button" onClick={closeModal}>
         Добавить
@@ -48,12 +50,17 @@ const App: React.FC = () => {
 
   return (
     <div onKeyDown={onEscape}>
-      <BrowserRouter>
+      <Router>
         <Header />
-        <button type="button" onClick={openModal}>
+        {/* <button type="button" onClick={openModal}>
           Добавить
-        </button>
-      </BrowserRouter>
+        </button> */}
+        <Wrapper>
+          <Switch>
+            <Route exact path="/" component={Homepage} />
+          </Switch>
+        </Wrapper>
+      </Router>
       <Modal
         ref={modalRef}
         title="Добавление объявления"
