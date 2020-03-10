@@ -1,0 +1,68 @@
+.menuCard {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-left: 10px;
+  width: 82%;
+  border-radius: 10px;
+  background: linear-gradient(to bottom, #ffffff 82%, #242424 18%);
+  box-shadow: 0 3px 6px #0000003c;
+
+  @media screen and (min-width: 768px) {
+    & {
+      width: 100%;
+    }
+  }
+}
+
+.menuCardTitle {
+  margin-bottom: 20px;
+  text-align: left;
+  font-size: 14px;
+  max-width: 92px;
+  word-wrap: break-word;
+
+  @media screen and (min-width: 360px) {
+    & {
+      font-size: 16px;
+      max-width: 108px;
+    }
+  }
+
+  @media screen and (min-width: 1300px) {
+    & {
+      font-size: 20px;
+      max-width: 132px;
+    }
+  }
+}
+
+.menuCardImgProjectsSearch {
+  width: 43%;
+  position: relative;
+  right: 4%;
+}
+
+.menuCardImgCreateProject {
+  width: 58%;
+  position: relative;
+  bottom: 12px;
+}
+
+.menuCardImgProjectActivity {
+  width: 31%;
+  position: relative;
+  bottom: 5px;
+  right: 2%;
+}
+
+.menuCardImgHackathon {
+  width: 51%;
+  position: relative;
+  top: 10px;
+}
+
+.menuCardImg {
+  width: 100%;
+  height: auto;
+}

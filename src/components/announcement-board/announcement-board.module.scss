@@ -1,0 +1,119 @@
+.announcementBoard {
+  background-color: #ffffff;
+  color: #ffffff;
+  box-shadow: 0 3px 6px #0000003c;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+
+  @media screen and (min-width: 768px) {
+    & {
+      grid-area: 3 / 1 / 4 / 2;
+    }
+  }
+
+  @media screen and (min-width: 1024px) {
+    & {
+      grid-area: 1 / 2 / 3 / 3;
+    }
+  }
+}
+
+.announcementBoardTitleWrapper {
+  background-color: #242424;
+  border-radius: 10px 10px 0 0;
+  padding: 10px 10px;
+}
+
+.announcementBoardTitle {
+  font-size: 14px;
+
+  @media screen and (min-width: 360px) {
+    & {
+      font-size: 16px;
+    }
+  }
+
+  @media screen and (min-width: 1300px) {
+    & {
+      font-size: 20px;
+    }
+  }
+}
+
+.announcementsWrapper {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: #ffffff;
+  border-radius: 0 0 10px 10px;
+}
+
+.announcements {
+  padding: 25px 10px;
+  padding-bottom: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 270px;
+  overflow-y: scroll;
+
+  @media screen and (min-width: 768px) {
+    & {
+      padding: 25px 15px;
+      padding-bottom: 10px;
+      height: 320px;
+    }
+  }
+}
+
+.announcement {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  background-color: #242424;
+  border-radius: 20px;
+  box-shadow: 0 3px 6px #00000029;
+  padding: 10px 15px;
+  margin-bottom: 20px;
+}
+
+.announcementText {
+  word-wrap: break-word;
+  font-size: 12px;
+  margin-bottom: 4px;
+
+  @media screen and (min-width: 360px) {
+    & {
+      font-size: 14px;
+    }
+  }
+
+  @media screen and (min-width: 1300px) {
+    & {
+      font-size: 17px;
+    }
+  }
+}
+
+.announcementAuthor {
+  color: #fff;
+  word-wrap: break-word;
+  font-size: 10px;
+  text-decoration: underline;
+
+  @media screen and (min-width: 360px) {
+    & {
+      font-size: 11px;
+    }
+  }
+}
+
+.announcementsButtonWrapper {
+  display: flex;
+  justify-content: center;
+  padding-bottom: 20px;
+  padding-top: 30px;
+}
