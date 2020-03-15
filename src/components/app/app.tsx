@@ -1,9 +1,10 @@
 import React, { useRef } from 'react'
-import { BrowserRouter } from 'react-router-dom'
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 import styles from './app.module.scss'
 import Modal from '../modal'
 import Header from '../header'
-import ProjectSearch from '../project-search'
+import Homepage from '../homepage'
+import Wrapper from '../wrapper'
 
 const App: React.FC = () => {
   const modalRef = useRef() as React.MutableRefObject<{
@@ -49,13 +50,17 @@ const App: React.FC = () => {
 
   return (
     <div onKeyDown={onEscape}>
-      <BrowserRouter>
+      <Router>
         <Header />
         {/* <button type="button" onClick={openModal}>
           Добавить
         </button> */}
-        <ProjectSearch />
-      </BrowserRouter>
+        <Wrapper>
+          <Switch>
+            <Route exact path="/" component={Homepage} />
+          </Switch>
+        </Wrapper>
+      </Router>
       <Modal
         ref={modalRef}
         title="Добавление объявления"
