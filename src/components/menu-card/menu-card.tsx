@@ -13,21 +13,24 @@ const MenuCard: FC<Props> = ({ title, href, src }: Props) => {
     switch (title) {
       case 'Поиск проектов':
         return styles.menuCardImgProjectsSearch
-      case 'Создать проект':
-        return styles.menuCardImgCreateProject
-      case 'Хакатоны':
-        return styles.menuCardImgHackathon
-      case 'О проектной деятельности':
-        return styles.menuCardImgProjectActivity
+      case 'Инженерное проектирование':
+        return styles.menuCardImgEngeneerActivity
+      case 'Инициативный проект':
+        return styles.menuCardImgInitiativeProject
+      case 'Проекты партнеров':
+        return styles.menuCardImgPartnersProjects
     }
   }
 
   return (
     <NavLink className={styles.menuCard} to={href}>
-      <h3 className={styles.menuCardTitle}>{title}</h3>
-      <div className={renderImgWrapperClassName()}>
-        <img className={styles.menuCardImg} src={src} alt={title} />
+      <div className={styles.menuCardContent}>
+        <h3 className={styles.menuCardTitle}>{title}</h3>
+        <div className={renderImgWrapperClassName()}>
+          <img className={styles.menuCardImg} src={src} alt={title} />
+        </div>
       </div>
+      <div className={styles.blackBorderBottom}>&nbsp;</div>
     </NavLink>
   )
 }

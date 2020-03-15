@@ -2,9 +2,9 @@ import React, { FC } from 'react'
 import styles from './homepage.module.scss'
 import hourglass from '../../assets/images/hourglass.svg'
 import projectsSearch from '../../assets/images/projects-search.svg'
-import createProject from '../../assets/images/create-project.svg'
-import hackathon from '../../assets/images/hackathon.svg'
-import projectActivity from '../../assets/images/project-activity.svg'
+import initiativeProject from '../../assets/images/initiative-project.svg'
+import engeneerActivity from '../../assets/images/engeneer-activity.svg'
+import partnersProjects from '../../assets/images/partners-projects.svg'
 import MenuCard from '../menu-card'
 import AnnouncementBoard from '../announcement-board'
 
@@ -30,15 +30,19 @@ const Homepage: FC = () => {
             src={projectsSearch}
           />
           <MenuCard
-            title="Создать проект"
-            href="add-project"
-            src={createProject}
+            title="Инженерное проектирование"
+            href="engeneer-activity"
+            src={engeneerActivity}
           />
-          <MenuCard title="Хакатоны" href="hackathon" src={hackathon} />
           <MenuCard
-            title="О проектной деятельности"
-            href="project-activity"
-            src={projectActivity}
+            title="Инициативный проект"
+            href="initiative-project"
+            src={initiativeProject}
+          />
+          <MenuCard
+            title="Проекты партнеров"
+            href="partners-projects"
+            src={partnersProjects}
           />
         </div>
         <AnnouncementBoard />
