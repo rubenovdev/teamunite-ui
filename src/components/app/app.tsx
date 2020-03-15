@@ -3,6 +3,7 @@ import { BrowserRouter } from 'react-router-dom'
 import styles from './app.module.scss'
 import Modal from '../modal'
 import Header from '../header'
+import ProjectSearch from '../project-search'
 
 const App: React.FC = () => {
   const modalRef = useRef() as React.MutableRefObject<{
@@ -18,7 +19,7 @@ const App: React.FC = () => {
     modalRef.current.closeModal()
   }
 
-  const renderModalContent = () => {
+  const renderModalContent = (): JSX.Element => {
     return (
       <form className={styles.modalContent}>
         <input
@@ -34,7 +35,7 @@ const App: React.FC = () => {
     )
   }
 
-  const renderAction = () => {
+  const renderAction = (): JSX.Element => {
     return (
       <button className={styles.addButton} type="button" onClick={closeModal}>
         Добавить
@@ -50,9 +51,10 @@ const App: React.FC = () => {
     <div onKeyDown={onEscape}>
       <BrowserRouter>
         <Header />
-        <button type="button" onClick={openModal}>
+        {/* <button type="button" onClick={openModal}>
           Добавить
-        </button>
+        </button> */}
+        <ProjectSearch />
       </BrowserRouter>
       <Modal
         ref={modalRef}

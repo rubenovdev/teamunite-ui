@@ -1,0 +1,271 @@
+.tittle {
+  font-size: 25px;
+  font-weight: 200;
+  margin-bottom: 22px;
+}
+
+.searchWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  .searchLabel {
+    position: relative;
+
+    &:before {
+      content: '';
+      position: absolute;
+      left: 16px;
+      top: 15px;
+      width: 13px;
+      height: 13px;
+      background: url('../../assets/images/search-icon.svg') center / contain
+        no-repeat;
+      opacity: 0.3;
+    }
+
+    .searchInput {
+      width: 246px;
+      height: 40px;
+      padding-left: 41px;
+      padding-right: 15px;
+      margin-bottom: 22px;
+      border-radius: 10px;
+      font-size: 14px;
+      box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3);
+
+      &::placeholder {
+        color: rgba(0, 0, 0, 0.3);
+      }
+    }
+  }
+
+  .sortingLabel {
+    position: relative;
+
+    &:before {
+      content: '';
+      position: absolute;
+      right: 15px;
+      top: 16px;
+      width: 19px;
+      height: 10px;
+      background: url('../../assets/images/select-arrow.svg') center / contain
+        no-repeat;
+    }
+
+    .sortingSelect {
+      width: 246px;
+      height: 40px;
+      padding-left: 16px;
+      margin-bottom: 22px;
+      border: none;
+      border-radius: 10px;
+      font-size: 14px;
+      color: rgba(0, 0, 0, 0.3);
+      background-color: white;
+      box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3);
+      appearance: none;
+    }
+  }
+}
+
+.projects {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  .project {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 246px;
+    height: 170px;
+    border-radius: 10px;
+    margin-bottom: 38px;
+    padding-top: 16px;
+    background-color: white;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3);
+
+    .logoAndPlaces {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 214px;
+      margin-bottom: 21px;
+
+      .logo {
+        width: 131px;
+        height: 31px;
+      }
+
+      .companyName {
+        font-size: 15px;
+        font-weight: 600;
+      }
+
+      .places {
+        font-size: 15px;
+        color: #959595;
+      }
+    }
+
+    .description {
+      width: 202px;
+      max-height: 45px;
+      font-size: 13px;
+      line-height: 22px;
+      margin-bottom: 21px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      display: -webkit-box;
+      -webkit-box-orient: vertical;
+      -webkit-line-clamp: 2;
+    }
+
+    .detailed {
+      font-size: 13px;
+      font-weight: 200;
+      text-transform: uppercase;
+      border-bottom: 1px solid black;
+      padding-bottom: 5.5px;
+    }
+  }
+}
+
+@media (min-width: 414px) {
+  .tittle {
+    font-size: 32px;
+    margin-bottom: 32px;
+  }
+
+  .searchWrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .searchLabel {
+      &:before {
+        left: 17px;
+        top: 20px;
+        width: 17px;
+        height: 17px;
+      }
+
+      .searchInput {
+        width: 362px;
+        height: 54px;
+        margin-bottom: 32px;
+        padding-left: 49px;
+        font-size: 17px;
+        box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3);
+      }
+    }
+
+    .sortingLabel {
+      &:before {
+        right: 23px;
+        top: 22px;
+      }
+
+      .sortingSelect {
+        width: 362px;
+        height: 54px;
+        margin-bottom: 32px;
+        font-size: 17px;
+      }
+    }
+  }
+
+  .projects {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .project {
+      width: 276px;
+      height: 184px;
+      margin-bottom: 48px;
+
+      .logoAndPlaces {
+        width: 245px;
+      }
+
+      .description {
+        width: 233px;
+        font-size: 15px;
+        line-height: 25px;
+        margin-left: 15px;
+        align-self: flex-start;
+      }
+
+      .detailed {
+        align-self: flex-start;
+        margin-left: 15px;
+      }
+    }
+  }
+}
+
+@media (min-width: 768px) {
+  .projects {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    justify-items: self-end;
+
+    .project {
+      .logoAndPlaces {
+        .companyName {
+          font-size: 17px;
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: 1024px) {
+  .tittle {
+    font-size: 32px;
+    margin-bottom: 32px;
+  }
+
+  .searchWrapper {
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    margin-bottom: 48px;
+
+    .searchLabel {
+      .searchInput {
+        width: 362px;
+        height: 54px;
+        margin-right: 62px;
+        margin-bottom: 0;
+        border-radius: 10px;
+        font-size: 17px;
+      }
+    }
+
+    .sortingLabel {
+      &:before {
+        right: 85px;
+        top: 23px;
+      }
+
+      .sortingSelect {
+        width: 260px;
+        height: 54px;
+        margin-right: 62px;
+        padding-left: 19px;
+        margin-bottom: 0;
+        font-size: 17px;
+      }
+    }
+  }
+
+  .projects {
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    justify-items: center;
+  }
+}

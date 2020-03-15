@@ -1,4 +1,4 @@
-.button {
+.enter {
   max-width: 150px;
   width: 130px;
   background-color: #460ede;
@@ -8,4 +8,34 @@
   border-radius: 10px;
   text-align: center;
   box-shadow: 0 3px 6px #00000029;
+}
+
+.filters {
+  width: 122px;
+  height: 39px;
+  margin-bottom: 41px;
+  border-radius: 10px;
+  font-size: 14px;
+  font-weight: 200;
+  color: white;
+  background-color: black;
+}
+
+@media (min-width: 414px) {
+  .filters {
+    width: 168px;
+    height: 54px;
+    margin-bottom: 41px;
+    border-radius: 10px;
+    font-size: 17px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .filters {
+    width: 168px;
+    height: 54px;
+    margin-bottom: 0;
+    font-size: 17px;
+  }
 }
