@@ -1,0 +1,117 @@
+.announcementBoard {
+  background-color: #fff;
+  color: #fff;
+  box-shadow: 0 3px 6px #0000003c;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+
+  @media screen and (min-width: 768px) {
+    margin-top: 30px;
+  }
+
+  @media screen and (min-width: 1024px) {
+    margin-top: 0;
+    grid-row: 1/3;
+  }
+}
+
+.announcementBoardTitleWrapper {
+  background-color: #242424;
+  border-radius: 10px 10px 0 0;
+  padding: 5px 11px;
+
+  @media screen and (min-width: 1024px) {
+    padding: 7.5px 16px;
+  }
+}
+
+.announcementBoardTitle {
+  font-size: 13px;
+  font-weight: lighter;
+
+  @media screen and (min-width: 360px) {
+    font-size: 16px;
+  }
+
+  @media screen and (min-width: 1024px) {
+    font-size: 20px;
+  }
+}
+
+.announcementsWrapper {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.announcements {
+  display: flex;
+  padding: 22px 11px;
+  flex-direction: column;
+  height: 241px;
+  overflow-y: scroll;
+
+  @media screen and (min-width: 768px) {
+    padding: 25px 15px;
+    height: 291px;
+  }
+}
+
+.announcement {
+  width: 100%;
+  padding: 4px 14px 7px 14px;
+  background-color: #242424;
+  box-shadow: 0 3px 6px #00000029;
+  border-radius: 15px;
+  margin-bottom: 16px;
+  display: flex;
+  flex-direction: column;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  @media screen and (min-width: 1024px) {
+    margin-bottom: 27px;
+    padding: 8px 15px 11px 15px;
+  }
+}
+
+.announcementText {
+  font-size: 12px;
+  text-align: left;
+  word-wrap: break-word;
+  font-weight: lighter;
+
+  @media screen and (min-width: 360px) {
+    font-size: 14px;
+  }
+
+  @media screen and (min-width: 1300px) {
+    font-size: 17px;
+  }
+}
+
+.announcementAuthor {
+  color: #fff;
+  font-size: 10px;
+  text-decoration: underline;
+  word-wrap: break-word;
+  font-weight: lighter;
+
+  @media screen and (min-width: 360px) {
+    font-size: 12px;
+  }
+
+  @media screen and (min-width: 1300px) {
+    font-size: 14px;
+  }
+}
+
+.announcementsButtonWrapper {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
