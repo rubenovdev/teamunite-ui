@@ -47,7 +47,7 @@ const AnnouncementBoard: FC = () => {
       <div className={styles.announcementsWrapper}>
         <div className={styles.announcements}>{renderAnnouncements()}</div>
         <div className={styles.announcementsButtonWrapper}>
-          <Button text={'Добавить'} />
+          <Button buttonStyle={'enter'} text={'Добавить'} />
         </div>
       </div>
     </div>

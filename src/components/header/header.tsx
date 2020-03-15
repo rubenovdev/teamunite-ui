@@ -1,13 +1,9 @@
-import React from 'react'
+import React, { FC } from 'react'
 import styles from './header.module.scss'
 import { NavLink } from 'react-router-dom'
-import Button from '../button'
 import logo from '../../assets/images/logo.svg'
-import useWindowSize from '../../custom-hooks/use-window-size'
 
-const Header = () => {
-  const [width] = useWindowSize()
-
+const Header: FC = () => {
   return (
     <header>
       <h1 className="visually-hidden">
@@ -24,7 +20,6 @@ const Header = () => {
             <img className={styles.logo} src={logo} alt="Московский Политех" />
           </NavLink>
         </div>
-        {width >= 1024 && <Button text={'Войти'} />}
       </div>
     </header>
   )
