@@ -4,7 +4,7 @@ import { NavLink } from 'react-router-dom'
 import Button from '../button'
 
 const AnnouncementBoard: FC = () => {
-  const announcements = [
+  const announcements: { id: number; text: string; author: string }[] = [
     {
       id: 0,
       text: 'Открыта регистрация на хакатон',
@@ -39,17 +39,27 @@ const AnnouncementBoard: FC = () => {
     })
   }
 
-  return (
-    <div className={styles.announcementBoard}>
-      <div className={styles.announcementBoardTitleWrapper}>
-        <h3 className={styles.announcementBoardTitle}>Доска объявлений</h3>
-      </div>
+  const renderAnnouncementsWrapperContent = (): JSX.Element => {
+    return announcements.length ? (
       <div className={styles.announcementsWrapper}>
         <div className={styles.announcements}>{renderAnnouncements()}</div>
         <div className={styles.announcementsButtonWrapper}>
           <Button buttonStyle={'enter'} text={'Добавить'} />
         </div>
       </div>
+    ) : (
+      <div className={styles.noAnnouncementsWrapper}>
+        <h3 className={styles.noAnnouncementsTitle}>Объявления отсутствуют</h3>
+      </div>
+    )
+  }
+
+  return (
+    <div className={styles.announcementBoard}>
+      <div className={styles.announcementBoardTitleWrapper}>
+        <h3 className={styles.announcementBoardTitle}>Доска объявлений</h3>
+      </div>
+      {renderAnnouncementsWrapperContent()}
     </div>
   )
 }
