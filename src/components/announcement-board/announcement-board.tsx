@@ -39,13 +39,21 @@ const AnnouncementBoard: FC = () => {
     })
   }
 
+  const renderButton = (): JSX.Element | false => {
+    return (
+      announcements.length >= 6 && (
+        <div className={styles.announcementsButtonWrapper}>
+          <Button buttonStyle={'detailed'} text={'Посмотреть все'} />
+        </div>
+      )
+    )
+  }
+
   const renderAnnouncementsWrapperContent = (): JSX.Element => {
     return announcements.length ? (
       <div className={styles.announcementsWrapper}>
         <div className={styles.announcements}>{renderAnnouncements()}</div>
-        <div className={styles.announcementsButtonWrapper}>
-          <Button buttonStyle={'enter'} text={'Добавить'} />
-        </div>
+        {renderButton()}
       </div>
     ) : (
       <div className={styles.noAnnouncementsWrapper}>
