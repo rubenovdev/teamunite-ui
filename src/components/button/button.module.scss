@@ -21,6 +21,18 @@
   background-color: black;
 }
 
+.detailed {
+  color: #242424;
+  font-size: 13px;
+  font-weight: 200;
+  border-bottom: 1px solid #242424;
+  padding-bottom: 5.5px;
+
+  @media (min-width: 768px) {
+    font-size: 17px;
+  }
+}
+
 @media (min-width: 414px) {
   .filters {
     width: 168px;
