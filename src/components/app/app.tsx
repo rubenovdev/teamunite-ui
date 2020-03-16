@@ -4,6 +4,7 @@ import styles from './app.module.scss'
 import Modal from '../modal'
 import Header from '../header'
 import Homepage from '../homepage'
+import AnnouncementsPage from '../announcements-page'
 import Wrapper from '../wrapper'
 
 const App: React.FC = () => {
@@ -58,6 +59,7 @@ const App: React.FC = () => {
         <Wrapper>
           <Switch>
             <Route exact path="/" component={Homepage} />
+            <Route path="/announcements" component={AnnouncementsPage} />
           </Switch>
         </Wrapper>
       </Router>
