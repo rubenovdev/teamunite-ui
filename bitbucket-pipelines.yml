@@ -10,8 +10,6 @@ pipelines:
     - step:
         caches:
           - node
-        script:
-          - pipe: atlassian/google-app-engine-deploy:0.6.1
-            variables:
-              KEY_FILE: $KEY_FILE
-              PROJECT: 'my-project'
+        script: # Modify the commands below to build your repository.
+          - npm install
+          - npm run build
