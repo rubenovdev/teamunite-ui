@@ -12,7 +12,7 @@ const CloseButton: React.FC = () => {
 
     return (): void =>
       window.removeEventListener('resize', () => setWidth(window.innerWidth))
-  })
+  }, [width])
 
   return width && width < 768 ? (
     <img
