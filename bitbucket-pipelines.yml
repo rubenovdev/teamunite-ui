@@ -10,6 +10,13 @@ pipelines:
     - step:
         caches:
           - node
-        script: # Modify the commands below to build your repository.
-          - npm install
-          - npm test
+        script:
+          - pipe: atlassian/aws-code-deploy:0.5.0
+            variables:
+              AWS_DEFAULT_REGION: 'ap-southeast-2'
+              AWS_ACCESS_KEY_ID: $AWS_ACCESS_KEY_ID
+              AWS_SECRET_ACCESS_KEY: $AWS_SECRET_ACCESS_KEY
+              COMMAND: 'deploy'
+              APPLICATION_NAME: 'my-application'
+              DEPLOYMENT_GROUP: 'my-deployment-group'
+              WAIT: 'true'
