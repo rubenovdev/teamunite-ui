@@ -10,6 +10,11 @@ pipelines:
     - step:
         caches:
           - node
-        script: # Modify the commands below to build your repository.
-          - npm install
-          - npm run build
+        script:
+          - pipe: atlassian/aws-code-deploy:0.5.0
+            variables:
+              AWS_DEFAULT_REGION: 'ap-southeast-2'
+              COMMAND: 'deploy'
+              APPLICATION_NAME: 'teams-ui'
+              DEPLOYMENT_GROUP: 'teams-ui-deployment-group'
+              WAIT: 'true'
