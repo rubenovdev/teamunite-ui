@@ -1,44 +1,17 @@
-import React, { FC /* useState */ } from 'react'
+import React, { FC, useState } from 'react'
 import styles from './announcements-page.module.scss'
-import bigWhiteStar from '../../assets/images/star/big-white-star.svg'
+import { NavLink } from 'react-router-dom'
+import { announcements } from '../../fixtures'
+import StarButton from '../star-button'
+import RightArrowButton from '../right-arrow-button'
 import leftArrow from '../../assets/images/arrows/left-arrow.svg'
-import rightArrow from '../../assets/images/arrows/right-arrow.svg'
 import danshina from '../../assets/images/authors/danshina.svg'
 
 const AnnouncementsPage: FC = () => {
-  const announcements: {
-    id: number
-    text: string
-    author: string
-    date: string
-  }[] = [
-    {
-      id: 0,
-      text: 'Открыта регистрация на хакатон',
-      author: 'Даньшина М.В.',
-      date: '20.02.2020',
-    },
-    {
-      id: 1,
-      text: 'Открыта регистрация на хакатон',
-      author: 'Даньшина М.В.',
-      date: '20.02.2020',
-    },
-    {
-      id: 2,
-      text: 'Открыта регистрация на хакатон',
-      author: 'Даньшина М.В.',
-      date: '20.02.2020',
-    },
-    {
-      id: 3,
-      text: 'Открыта регистрация на хакатон',
-      author: 'Даньшина М.В.',
-      date: '20.02.2020',
-    },
-  ]
+  const [selectedAnnouncementIndex, setSelectedAnnouncementIndex] = useState(0)
+  const { text, author, date } = announcements[selectedAnnouncementIndex]
 
-  // const [selectedAnnouncement, setSelectedAnnouncement] = useState(announcements[0])
+  const [starButtonClicked, isStarButtonClicked] = useState(false)
 
   const renderAnnouncements = (): JSX.Element[] => {
     return announcements.map(announcement => {
@@ -57,20 +30,52 @@ const AnnouncementsPage: FC = () => {
     })
   }
 
+  const onStarButtonClick = (): void => {
+    isStarButtonClicked(!starButtonClicked)
+  }
+
+  const onRightArrowClick = (): void => {
+    setSelectedAnnouncementIndex(
+      selectedAnnouncementIndex === announcements.length - 1
+        ? 0
+        : selectedAnnouncementIndex + 1
+    )
+  }
+
+  const announcementsWrapperStyle = {
+    gridTemplateColumns: announcements.length === 1 ? '1fr' : '',
+    minHeight: announcements.length === 1 ? '444px' : '',
+  }
+
+  const announcementsStyle = {
+    display: announcements.length === 1 ? 'none' : '',
+  }
+
+  const rightPanelSideStyle = {
+    display: announcements.length === 1 ? 'none' : '',
+  }
+
   return (
     <div>
       <h3 className={styles.pageTitle}>Объявления</h3>
-      <div className={styles.announcementsWrapper}>
+      <div
+        style={announcementsWrapperStyle}
+        className={styles.announcementsWrapper}
+      >
         <div className={styles.selectedAnnouncement}>
           <div className={styles.content}>
-            <h3 className={styles.title}>«Началась запись на проекты ИТ»</h3>
-            <div className={styles.saveWrapper}>
-              <img
-                className={styles.starButton}
-                src={bigWhiteStar}
-                alt="кнопка сохранить"
-              />
-              <h3 className={styles.saveButtonText}>Сохранить</h3>
+            <div className={styles.header}>
+              <h3 className={styles.title}>{text}</h3>
+              <div className={styles.saveWrapper}>
+                <button
+                  type="button"
+                  className={styles.starButton}
+                  onClick={onStarButtonClick}
+                >
+                  <StarButton clicked={starButtonClicked} />
+                </button>
+                <h3 className={styles.saveButtonText}>Сохранить</h3>
+              </div>
             </div>
             <p className={styles.text}>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
@@ -83,24 +88,32 @@ const AnnouncementsPage: FC = () => {
                 src={danshina}
                 alt="Даньшина Марина"
               />
-              <h3 className={styles.authorName}>Даньшина Марина</h3>
-              <h3 className={styles.publishDate}>20.02.2020</h3>
+              <h3 className={styles.authorName}>{author}</h3>
+              <h3 className={styles.publishDate}>{date}</h3>
             </div>
           </div>
           <div className={styles.controlPanel}>
-            <img
-              className={styles.leftArrow}
-              src={leftArrow}
-              alt="кнопка на главную"
-            />
-            <img
-              className={styles.rightArrow}
-              src={rightArrow}
-              alt="следующее объявление"
-            />
+            <div className={styles.leftPanelSide}>
+              <NavLink to="/" className={styles.leftArrow}>
+                <img src={leftArrow} alt="кнопка на главную" />
+              </NavLink>
+              <h3 className={styles.leftPanelText}>На главную</h3>
+            </div>
+            <div style={rightPanelSideStyle} className={styles.rightPanelSide}>
+              <h3 className={styles.rightPanelText}>Следующее</h3>
+              <button
+                type="button"
+                className={styles.rightArrow}
+                onClick={onRightArrowClick}
+              >
+                <RightArrowButton />
+              </button>
+            </div>
           </div>
         </div>
-        <ul className={styles.announcements}>{renderAnnouncements()}</ul>
+        <ul style={announcementsStyle} className={styles.announcements}>
+          {renderAnnouncements()}
+        </ul>
       </div>
     </div>
   )
