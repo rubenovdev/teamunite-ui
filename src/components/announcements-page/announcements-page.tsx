@@ -6,25 +6,56 @@ import rightArrow from '../../assets/images/arrows/right-arrow.svg'
 import danshina from '../../assets/images/authors/danshina.svg'
 
 const AnnouncementsPage: FC = () => {
-  // const announcements: { id: number; text: string; author: string }[] = [
-  //   {
-  //     id: 0,
-  //     text: 'Открыта регистрация на хакатон',
-  //     author: 'Даньшина М.В.',
-  //   },
-  //   {
-  //     id: 1,
-  //     text: 'Открыта регистрация на хакатон',
-  //     author: 'Даньшина М.В.',
-  //   },
-  //   {
-  //     id: 2,
-  //     text: 'Открыта регистрация на хакатон',
-  //     author: 'Даньшина М.В.',
-  //   },
-  // ]
+  const announcements: {
+    id: number
+    text: string
+    author: string
+    date: string
+  }[] = [
+    {
+      id: 0,
+      text: 'Открыта регистрация на хакатон',
+      author: 'Даньшина М.В.',
+      date: '20.02.2020',
+    },
+    {
+      id: 1,
+      text: 'Открыта регистрация на хакатон',
+      author: 'Даньшина М.В.',
+      date: '20.02.2020',
+    },
+    {
+      id: 2,
+      text: 'Открыта регистрация на хакатон',
+      author: 'Даньшина М.В.',
+      date: '20.02.2020',
+    },
+    {
+      id: 3,
+      text: 'Открыта регистрация на хакатон',
+      author: 'Даньшина М.В.',
+      date: '20.02.2020',
+    },
+  ]
 
   // const [selectedAnnouncement, setSelectedAnnouncement] = useState(announcements[0])
+
+  const renderAnnouncements = (): JSX.Element[] => {
+    return announcements.map(announcement => {
+      return (
+        <li className={styles.announcement} key={announcement.id}>
+          <h3 className={styles._text}>{announcement.text}</h3>
+          <img
+            className={styles._authorImage}
+            src={danshina}
+            alt="Даньшина Марина"
+          />
+          <h3 className={styles._author}>{announcement.author}</h3>
+          <h3 className={styles._date}>{announcement.date}</h3>
+        </li>
+      )
+    })
+  }
 
   return (
     <div>
@@ -69,6 +100,7 @@ const AnnouncementsPage: FC = () => {
             />
           </div>
         </div>
+        <ul className={styles.announcements}>{renderAnnouncements()}</ul>
       </div>
     </div>
   )
