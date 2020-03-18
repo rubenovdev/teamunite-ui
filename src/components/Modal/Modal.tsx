@@ -4,14 +4,6 @@ import { createPortal } from 'react-dom'
 import CloseButton from '../CloseButton/CloseButton'
 import styles from './Modal.module.scss'
 
-interface Props {
-  title: string
-  content: JSX.Element
-  action: JSX.Element
-  onEscape: (e: React.KeyboardEvent) => void
-  ref: React.Ref<unknown>
-}
-
 const Modal: FC<Props> = forwardRef(
   ({ title, content, action, onEscape }, ref) => {
     const [display, setDisplay] = useState<boolean>(false)
@@ -60,3 +52,11 @@ const Modal: FC<Props> = forwardRef(
 )
 
 export default Modal
+
+interface Props {
+  title: string
+  content: JSX.Element
+  action: JSX.Element
+  onEscape: (e: React.KeyboardEvent) => void
+  ref: React.Ref<unknown>
+}

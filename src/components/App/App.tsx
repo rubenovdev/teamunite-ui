@@ -1,5 +1,6 @@
 import React, { useRef, FC } from 'react'
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
+
 import styles from './App.module.scss'
 import Modal from '../Modal/Modal'
 import Header from '../Header/Header'

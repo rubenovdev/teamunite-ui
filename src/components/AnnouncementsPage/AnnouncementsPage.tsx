@@ -1,11 +1,12 @@
 import React, { FC, useState } from 'react'
-import styles from './AnnouncementsPage.module.scss'
 import { NavLink } from 'react-router-dom'
+
 import { announcements } from '../../fixtures'
-import StarButton from '../StarButton/StarButton'
-import RightArrowButton from '../RightArrowButton/RightArrowButton'
 import leftArrow from '../../assets/images/arrows/left-arrow.svg'
 import danshina from '../../assets/images/authors/danshina.svg'
+import styles from './AnnouncementsPage.module.scss'
+import StarButton from '../StarButton/StarButton'
+import RightArrowButton from '../RightArrowButton/RightArrowButton'
 
 interface Props {
   location: {

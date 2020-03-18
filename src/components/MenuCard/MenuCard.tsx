@@ -1,12 +1,7 @@
 import React, { FC } from 'react'
 import { NavLink } from 'react-router-dom'
-import styles from './MenuCard.module.scss'
 
-interface Props {
-  title: string
-  src: string
-  href: string
-}
+import styles from './MenuCard.module.scss'
 
 const MenuCard: FC<Props> = ({ title, href, src }: Props) => {
   const renderImgWrapperClassName = (): string | undefined => {
@@ -36,3 +31,9 @@ const MenuCard: FC<Props> = ({ title, href, src }: Props) => {
 }
 
 export default MenuCard
+
+interface Props {
+  title: string
+  src: string
+  href: string
+}
