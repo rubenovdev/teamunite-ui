@@ -7,11 +7,21 @@ import RightArrowButton from '../right-arrow-button'
 import leftArrow from '../../assets/images/arrows/left-arrow.svg'
 import danshina from '../../assets/images/authors/danshina.svg'
 
-const AnnouncementsPage: FC = () => {
-  const [selectedAnnouncementIndex, setSelectedAnnouncementIndex] = useState(0)
+interface Props {
+  location: {
+    state: {
+      selectedIndex: number
+    }
+  }
+}
+
+const AnnouncementsPage: FC<Props> = ({ location }: Props) => {
+  const [selectedAnnouncementIndex, setSelectedAnnouncementIndex] = useState(
+    location.state.selectedIndex
+  )
   const { text, author, date } = announcements[selectedAnnouncementIndex]
 
-  const [starButtonClicked, isStarButtonClicked] = useState(false)
+  const [isStarButtonClicked, setIsStarButtonClicked] = useState(false)
 
   const renderAnnouncements = (): JSX.Element[] => {
     return announcements.map(announcement => {
@@ -23,15 +33,15 @@ const AnnouncementsPage: FC = () => {
             src={danshina}
             alt="Даньшина Марина"
           />
-          <h3 className={styles._author}>{announcement.author}</h3>
-          <h3 className={styles._date}>{announcement.date}</h3>
+          <p className={styles._author}>{announcement.author}</p>
+          <time className={styles._date}>{announcement.date}</time>
         </li>
       )
     })
   }
 
   const onStarButtonClick = (): void => {
-    isStarButtonClicked(!starButtonClicked)
+    setIsStarButtonClicked(!isStarButtonClicked)
   }
 
   const onRightArrowClick = (): void => {
@@ -66,16 +76,14 @@ const AnnouncementsPage: FC = () => {
           <div className={styles.content}>
             <div className={styles.header}>
               <h3 className={styles.title}>{text}</h3>
-              <div className={styles.saveWrapper}>
-                <button
-                  type="button"
-                  className={styles.starButton}
-                  onClick={onStarButtonClick}
-                >
-                  <StarButton clicked={starButtonClicked} />
-                </button>
-                <h3 className={styles.saveButtonText}>Сохранить</h3>
-              </div>
+              <button
+                type="button"
+                className={styles.starButton}
+                onClick={onStarButtonClick}
+              >
+                <StarButton clicked={isStarButtonClicked} />
+                <span className={styles.saveButtonText}>Сохранить</span>
+              </button>
             </div>
             <p className={styles.text}>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
@@ -88,25 +96,30 @@ const AnnouncementsPage: FC = () => {
                 src={danshina}
                 alt="Даньшина Марина"
               />
-              <h3 className={styles.authorName}>{author}</h3>
-              <h3 className={styles.publishDate}>{date}</h3>
+              <p className={styles.authorName}>{author}</p>
+              <time className={styles.publishDate}>{date}</time>
             </div>
           </div>
           <div className={styles.controlPanel}>
-            <div className={styles.leftPanelSide}>
-              <NavLink to="/" className={styles.leftArrow}>
-                <img src={leftArrow} alt="кнопка на главную" />
-              </NavLink>
-              <h3 className={styles.leftPanelText}>На главную</h3>
-            </div>
-            <div style={rightPanelSideStyle} className={styles.rightPanelSide}>
-              <h3 className={styles.rightPanelText}>Следующее</h3>
+            <NavLink to="/" className={styles.leftPanelSide}>
+              <img
+                className={styles.leftArrow}
+                src={leftArrow}
+                alt="Перейти на главную"
+              />
+              <span className={styles.leftPanelText}>На главную</span>
+            </NavLink>
+            <div>
               <button
+                style={rightPanelSideStyle}
+                className={styles.rightPanelSide}
                 type="button"
-                className={styles.rightArrow}
                 onClick={onRightArrowClick}
               >
-                <RightArrowButton />
+                <span className={styles.rightPanelText}>Следующее</span>
+                <span className={styles.rightArrow}>
+                  <RightArrowButton />
+                </span>
               </button>
             </div>
           </div>
