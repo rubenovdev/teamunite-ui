@@ -1,4 +1,4 @@
-import React, { FC, useState, useMemo, useRef, useEffect } from 'react'
+import React, { FC, useState, useMemo } from 'react'
 import classNames from 'classnames'
 import styles from './custom-select.module.scss'
 import arrow from '../../assets/images/select-arrow.svg'
@@ -25,26 +25,8 @@ const CustomSelect: FC<Props> = ({
 
   const toggleList = (): void => setListOpen(!listOpen)
 
-  const selectRef = useRef<HTMLLabelElement>(null)
-
-  const handleClickOutside = (event: any): void => {
-    if (selectRef.current !== null && !selectRef.current.contains(event.target))
-      setListOpen(false)
-  }
-
-  useEffect(() => {
-    document.addEventListener('click', handleClickOutside)
-
-    return function cleanup() {
-      document.removeEventListener('click', handleClickOutside)
-    }
-  })
-
   return (
-    <label
-      ref={selectRef}
-      className={classNames(styles.selectWrapper, styles[selectStyle])}
-    >
+    <label className={classNames(styles.selectWrapper, styles[selectStyle])}>
       <div
         className={
           listOpen

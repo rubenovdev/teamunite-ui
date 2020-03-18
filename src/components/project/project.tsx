@@ -3,13 +3,12 @@ import styles from './project.module.scss'
 import logo from '../../assets/images/companyLogo.svg'
 
 interface Props {
-  key: string
   company: string
   places: number
   description: string
 }
 
-const Project: FC<Props> = ({ key, company, places, description }) => {
+const Project: FC<Props> = ({ company, places, description }) => {
   const placesCase = (count: number): string => {
     if (
       count % 10 === 0 ||
@@ -30,7 +29,7 @@ const Project: FC<Props> = ({ key, company, places, description }) => {
 
   return (
     <>
-      <li className={styles.project} key={key}>
+      <li className={styles.project}>
         <div className={styles.logoAndPlaces}>
           {logo ? (
             <button className={styles.logo}>

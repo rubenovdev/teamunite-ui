@@ -53,9 +53,6 @@ const App: React.FC = () => {
     <div onKeyDown={onEscape}>
       <Router>
         <Header />
-        {/* <button type="button" onClick={openModal}>
-          Добавить
-        </button> */}
         <Wrapper>
           <Switch>
             <Route exact path="/" component={Homepage} />
