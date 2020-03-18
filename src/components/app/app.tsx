@@ -5,6 +5,7 @@ import Modal from '../modal'
 import Header from '../header'
 import Homepage from '../homepage'
 import AnnouncementsPage from '../announcements-page'
+import ProjectSearch from '../project-search'
 import Wrapper from '../wrapper'
 
 const App: React.FC = () => {
@@ -53,13 +54,11 @@ const App: React.FC = () => {
     <div onKeyDown={onEscape}>
       <Router>
         <Header />
-        {/* <button type="button" onClick={openModal}>
-          Добавить
-        </button> */}
         <Wrapper>
           <Switch>
             <Route exact path="/" component={Homepage} />
             <Route path="/announcements" component={AnnouncementsPage} />
+            <Route exact path="/projects-search" component={ProjectSearch} />
           </Switch>
         </Wrapper>
       </Router>
