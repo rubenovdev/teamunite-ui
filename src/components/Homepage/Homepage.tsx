@@ -1,4 +1,4 @@
-import React, { FC } from 'react'
+import React, { FC } from './node_modules/react'
 import styles from './homepage.module.scss'
 import hourglass from '../../assets/images/hourglass.svg'
 import projectsSearch from '../../assets/images/projects-search.svg'

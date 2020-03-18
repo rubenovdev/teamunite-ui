@@ -1,4 +1,4 @@
-import React from 'react'
+import React from '../Homepage/node_modules/react'
 import styles from './Button.module.scss'
 
 interface Props {

@@ -1,4 +1,4 @@
-import React, { FC } from 'react'
+import React, { FC } from '../Homepage/node_modules/react'
 import { NavLink } from 'react-router-dom'
 import styles from './menu-card.module.scss'
 
