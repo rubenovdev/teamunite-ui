@@ -1,4 +1,4 @@
-import React, { FC } from 'react'
+import React, { FC } from './node_modules/react'
 import styles from './project.module.scss'
 import logo from '../../assets/images/companyLogo.svg'
 

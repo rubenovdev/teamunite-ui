@@ -1,5 +1,5 @@
-import React, { FC, ReactNode } from 'react'
-import PropTypes from 'prop-types'
+import React, { FC, ReactNode } from './node_modules/react'
+import PropTypes from './node_modules/prop-types'
 import styles from './wrapper.module.scss'
 
 interface Props {
