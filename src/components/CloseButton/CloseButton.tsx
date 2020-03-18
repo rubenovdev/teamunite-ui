@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from '../Modal/node_modules/react'
+import React, { useState, useEffect } from 'react'
 import boldCloseButton from '../../assets/images/bold-close-button.svg'
 import lightCloseButton from '../../assets/images/light-close-button.svg'
 

@@ -1,5 +1,6 @@
-import React, { FC, useState, forwardRef, useImperativeHandle } from './node_modules/react'
-import { createPortal } from './node_modules/react-dom'
+import React, { FC, useState, forwardRef, useImperativeHandle } from 'react'
+import { createPortal } from 'react-dom'
+
 import CloseButton from '../CloseButton/CloseButton'
 import styles from './modal.module.scss'
 

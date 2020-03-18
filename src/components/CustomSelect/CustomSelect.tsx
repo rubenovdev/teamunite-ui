@@ -1,5 +1,6 @@
 import React, { FC, useState, useMemo } from 'react'
 import classNames from 'classnames'
+
 import styles from './CustomSelect.module.scss'
 import arrow from '../../assets/images/select-arrow.svg'
 

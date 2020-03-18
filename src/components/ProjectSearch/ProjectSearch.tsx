@@ -1,9 +1,10 @@
 import React, { FC, useState } from 'react'
-import styles from './project-search.module.scss'
+
+import { projects } from '../../fixtures'
+import styles from './ProjectSearch.module.scss'
 import Button from '../Button/Button'
 import CustomSelect from '../CustomSelect/CustomSelect'
-import { projects } from '../../fixtures'
-import Project from '../project'
+import Project from '../Project/Project'
 
 const ProjectSearch: FC = () => {
   const [selectedItem, setSelectedItem] = useState<string>('Сначала новые')

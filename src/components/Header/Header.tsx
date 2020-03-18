@@ -1,7 +1,8 @@
-import React, { FC } from './node_modules/react'
-import styles from './Header.module.scss'
-import { NavLink } from './node_modules/react-router-dom'
+import React, { FC } from 'react'
+import { NavLink } from 'react-router-dom'
+
 import logo from '../../assets/images/logo.svg'
+import styles from './Header.module.scss'
 
 const Header: FC = () => {
   return (

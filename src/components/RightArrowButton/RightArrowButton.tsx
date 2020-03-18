@@ -1,4 +1,5 @@
 import React, { FC } from 'react'
+
 import boldRightArrow from '../../assets/images/arrows/bold-right-arrow.svg'
 import lightRightArrow from '../../assets/images/arrows/light-right-arrow.svg'
 import styles from './right-arrow-button.module.scss'

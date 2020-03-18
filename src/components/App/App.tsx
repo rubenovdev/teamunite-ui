@@ -1,12 +1,12 @@
 import React, { useRef, FC } from 'react'
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 import styles from './App.module.scss'
-import Modal from '../modal'
+import Modal from '../Modal/Modal'
 import Header from '../Header/Header'
-import Homepage from '../homepage'
+import Homepage from '../Homepage/Homepage'
 import AnnouncementsPage from '../AnnouncementsPage/AnnouncementsPage'
-import ProjectSearch from '../project-search'
-import Wrapper from '../wrapper'
+import ProjectSearch from '../ProjectSearch/ProjectSearch'
+import Wrapper from '../Wrapper/Wrapper'
 
 const App: FC = () => {
   const modalRef = useRef() as React.MutableRefObject<{

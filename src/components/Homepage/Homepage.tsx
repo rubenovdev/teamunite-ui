@@ -1,11 +1,12 @@
-import React, { FC } from './node_modules/react'
-import styles from './homepage.module.scss'
+import React, { FC } from 'react'
+
 import hourglass from '../../assets/images/hourglass.svg'
 import projectsSearch from '../../assets/images/projects-search.svg'
 import initiativeProject from '../../assets/images/initiative-project.svg'
 import engeneerActivity from '../../assets/images/engeneer-activity.svg'
 import partnersProjects from '../../assets/images/partners-projects.svg'
-import MenuCard from '../menu-card'
+import styles from './Homepage.module.scss'
+import MenuCard from '../MenuCard/MenuCard'
 import AnnouncementBoard from '../AnnouncementBoard/AnnouncementBoard'
 
 const Homepage: FC = () => {

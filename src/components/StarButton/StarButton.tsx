@@ -1,10 +1,7 @@
 import React, { FC } from 'react'
+
 import whiteStar from '../../assets/images/stars/white-star.svg'
 import blackStar from '../../assets/images/stars/black-star.svg'
-
-interface Props {
-  clicked: boolean
-}
 
 const StarButton: FC<Props> = ({ clicked }: Props) => {
   return clicked ? (
@@ -15,3 +12,7 @@ const StarButton: FC<Props> = ({ clicked }: Props) => {
 }
 
 export default StarButton
+
+interface Props {
+  clicked: boolean
+}

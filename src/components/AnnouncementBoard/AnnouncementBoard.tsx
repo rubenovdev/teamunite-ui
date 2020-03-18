@@ -1,4 +1,4 @@
-import React, { FC } from '../Homepage/node_modules/react'
+import React, { FC } from 'react'
 import styles from './AnnouncementBoard.module.scss'
 import { announcements } from '../../fixtures'
 import { NavLink } from 'react-router-dom'

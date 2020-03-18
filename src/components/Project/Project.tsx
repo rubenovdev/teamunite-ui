@@ -1,12 +1,7 @@
-import React, { FC } from './node_modules/react'
-import styles from './project.module.scss'
-import logo from '../../assets/images/companyLogo.svg'
+import React, { FC } from 'react'
 
-interface Props {
-  company: string
-  places: number
-  description: string
-}
+import logo from '../../assets/images/companyLogo.svg'
+import styles from './project.module.scss'
 
 const Project: FC<Props> = ({ company, places, description }) => {
   const placesCase = (count: number): string => {
@@ -50,3 +45,9 @@ const Project: FC<Props> = ({ company, places, description }) => {
 }
 
 export default Project
+
+interface Props {
+  company: string
+  places: number
+  description: string
+}
