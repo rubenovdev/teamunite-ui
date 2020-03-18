@@ -6,7 +6,7 @@ import initiativeProject from '../../assets/images/initiative-project.svg'
 import engeneerActivity from '../../assets/images/engeneer-activity.svg'
 import partnersProjects from '../../assets/images/partners-projects.svg'
 import MenuCard from '../menu-card'
-import AnnouncementBoard from '../announcement-board'
+import AnnouncementBoard from '../AnnouncementBoard/AnnouncementBoard'
 
 const Homepage: FC = () => {
   return (

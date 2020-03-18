@@ -1,5 +1,5 @@
 import React, { FC } from 'react'
-import styles from './header.module.scss'
+import styles from './Header.module.scss'
 import { NavLink } from 'react-router-dom'
 import logo from '../../assets/images/logo.svg'
 

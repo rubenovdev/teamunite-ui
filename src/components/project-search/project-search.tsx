@@ -1,7 +1,7 @@
 import React, { FC, useState } from 'react'
 import styles from './project-search.module.scss'
-import Button from '../button'
-import CustomSelect from '../custom-select'
+import Button from '../Button/Button'
+import CustomSelect from '../CustomSelect/CustomSelect'
 import { projects } from '../../fixtures'
 import Project from '../project'
 

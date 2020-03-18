@@ -1,5 +1,5 @@
 import React, { FC, useState } from 'react'
-import styles from './announcements-page.module.scss'
+import styles from './AnnouncementsPage.module.scss'
 import { NavLink } from 'react-router-dom'
 import { announcements } from '../../fixtures'
 import StarButton from '../star-button'

@@ -1,8 +1,8 @@
 import React, { FC } from 'react'
-import styles from './announcement-board.module.scss'
+import styles from './AnnouncementBoard.module.scss'
 import { announcements } from '../../fixtures'
 import { NavLink } from 'react-router-dom'
-import Button from '../button'
+import Button from '../Button/Button'
 
 const AnnouncementBoard: FC = () => {
   const renderAnnouncements = (): JSX.Element[] => {
