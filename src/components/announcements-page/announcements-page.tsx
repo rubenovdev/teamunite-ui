@@ -52,25 +52,15 @@ const AnnouncementsPage: FC<Props> = ({ location }: Props) => {
     )
   }
 
-  const announcementsWrapperStyle = {
-    gridTemplateColumns: announcements.length === 1 ? '1fr' : '',
-    minHeight: announcements.length === 1 ? '444px' : '',
-  }
-
-  const announcementsStyle = {
-    display: announcements.length === 1 ? 'none' : '',
-  }
-
-  const rightPanelSideStyle = {
-    display: announcements.length === 1 ? 'none' : '',
-  }
-
   return (
     <div>
       <h3 className={styles.pageTitle}>Объявления</h3>
       <div
-        style={announcementsWrapperStyle}
-        className={styles.announcementsWrapper}
+        className={
+          announcements.length > 1
+            ? styles.announcementsWrapper
+            : styles.noAnnouncementsWrapper
+        }
       >
         <div className={styles.selectedAnnouncement}>
           <div className={styles.content}>
@@ -111,8 +101,11 @@ const AnnouncementsPage: FC<Props> = ({ location }: Props) => {
             </NavLink>
             <div>
               <button
-                style={rightPanelSideStyle}
-                className={styles.rightPanelSide}
+                className={
+                  announcements.length > 1
+                    ? styles.rightPanelSide
+                    : styles.noRightPanelSide
+                }
                 type="button"
                 onClick={onRightArrowClick}
               >
@@ -124,7 +117,13 @@ const AnnouncementsPage: FC<Props> = ({ location }: Props) => {
             </div>
           </div>
         </div>
-        <ul style={announcementsStyle} className={styles.announcements}>
+        <ul
+          className={
+            announcements.length > 1
+              ? styles.announcements
+              : styles.noAnnouncements
+          }
+        >
           {renderAnnouncements()}
         </ul>
       </div>
