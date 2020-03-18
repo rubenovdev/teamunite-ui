@@ -1,7 +1,7 @@
 import React, { FC } from 'react'
 
 import logo from '../../assets/images/companyLogo.svg'
-import styles from './project.module.scss'
+import styles from './Project.module.scss'
 
 const Project: FC<Props> = ({ company, places, description }) => {
   const placesCase = (count: number): string => {

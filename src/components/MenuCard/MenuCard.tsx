@@ -1,6 +1,6 @@
 import React, { FC } from 'react'
 import { NavLink } from 'react-router-dom'
-import styles from './menu-card.module.scss'
+import styles from './MenuCard.module.scss'
 
 interface Props {
   title: string

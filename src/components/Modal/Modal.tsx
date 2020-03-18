@@ -2,7 +2,7 @@ import React, { FC, useState, forwardRef, useImperativeHandle } from 'react'
 import { createPortal } from 'react-dom'
 
 import CloseButton from '../CloseButton/CloseButton'
-import styles from './modal.module.scss'
+import styles from './Modal.module.scss'
 
 interface Props {
   title: string
