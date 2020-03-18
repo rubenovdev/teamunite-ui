@@ -49,3 +49,35 @@ export const projects = [
     company: 'tinkoff',
   },
 ]
+
+export const announcements: {
+  id: number
+  text: string
+  author: string
+  date: string
+}[] = [
+  {
+    id: 0,
+    text: '«Началась запись на проекты ИТ»',
+    author: 'Даньшина М.В.',
+    date: '20.02.2020',
+  },
+  {
+    id: 1,
+    text: 'Открыта регистрация на хакатон',
+    author: 'Даньшина М.В.',
+    date: '01.01.2020',
+  },
+  {
+    id: 2,
+    text: 'Гамлет - лучший в мире программист',
+    author: 'Даньшина М.В.',
+    date: '06.12.2020',
+  },
+  {
+    id: 3,
+    text: 'Проходят собеседования в веб-студию',
+    author: 'Даньшина М.В.',
+    date: '26.06.2020',
+  },
+]

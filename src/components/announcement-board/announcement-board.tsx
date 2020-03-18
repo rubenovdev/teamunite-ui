@@ -1,40 +1,29 @@
 import React, { FC } from 'react'
 import styles from './announcement-board.module.scss'
+import { announcements } from '../../fixtures'
 import { NavLink } from 'react-router-dom'
 import Button from '../button'
 
 const AnnouncementBoard: FC = () => {
-  const announcements: { id: number; text: string; author: string }[] = [
-    {
-      id: 0,
-      text: 'Открыта регистрация на хакатон',
-      author: 'Даньшина М.В.',
-    },
-    {
-      id: 1,
-      text: 'Открыта регистрация на хакатон',
-      author: 'Даньшина М.В.',
-    },
-    {
-      id: 2,
-      text: 'Открыта регистрация на хакатон',
-      author: 'Даньшина М.В.',
-    },
-  ]
-
   const renderAnnouncements = (): JSX.Element[] => {
     return announcements.map(announcement => {
       return (
-        <button
+        <NavLink
+          to={{
+            pathname: '/announcements',
+            state: {
+              selectedIndex: announcement.id,
+            },
+          }}
           key={announcement.id}
           type="button"
           className={styles.announcement}
         >
           <p className={styles.announcementText}>{announcement.text}</p>
-          <NavLink to="/author" className={styles.announcementAuthor}>
+          <button className={styles.announcementAuthor}>
             {announcement.author}
-          </NavLink>
-        </button>
+          </button>
+        </NavLink>
       )
     })
   }
