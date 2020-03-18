@@ -6,19 +6,6 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "typecheck": "tsc --noEmit",
-    "lint": "eslint ./src --ext .ts,.tsx,.js,.jsx --max-warnings=0",
-    "lint:fix": "npm run lint --fix"
-  },
-  "lint-staged": {
-    "*.{ts,tsx}": [
-      "npm run lint:fix"
-    ]
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
-    }
   },
   "dependencies": {
     "@testing-library/jest-dom": "4.2.4",
