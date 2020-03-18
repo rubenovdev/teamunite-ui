@@ -1,6 +1,6 @@
-import React, { useRef } from 'react'
+import React, { useRef, FC } from 'react'
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
-import styles from './app.module.scss'
+import styles from './App.module.scss'
 import Modal from '../modal'
 import Header from '../header'
 import Homepage from '../homepage'
@@ -8,15 +8,15 @@ import AnnouncementsPage from '../announcements-page'
 import ProjectSearch from '../project-search'
 import Wrapper from '../wrapper'
 
-const App: React.FC = () => {
+const App: FC = () => {
   const modalRef = useRef() as React.MutableRefObject<{
     openModal: () => void
     closeModal: () => void
   }>
 
-  const openModal = (): void => {
-    modalRef.current.openModal()
-  }
+  // const openModal = (): void => {
+  //   modalRef.current.openModal()
+  // }
 
   const closeModal = (): void => {
     modalRef.current.closeModal()

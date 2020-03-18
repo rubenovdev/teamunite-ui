@@ -1,7 +1,7 @@
-import React, { useState, forwardRef, useImperativeHandle } from 'react'
+import React, { FC, useState, forwardRef, useImperativeHandle } from 'react'
 import { createPortal } from 'react-dom'
-import styles from './modal.module.scss'
 import CloseButton from '../close-button'
+import styles from './modal.module.scss'
 
 interface Props {
   title: string
@@ -11,14 +11,9 @@ interface Props {
   ref: React.Ref<unknown>
 }
 
-const Modal: React.FC<Props> = forwardRef(
+const Modal: FC<Props> = forwardRef(
   ({ title, content, action, onEscape }, ref) => {
     const [display, setDisplay] = useState<boolean>(false)
-
-    useImperativeHandle(ref, (): {
-      openModal: () => void
-      closeModal: () => void
-    } => ({ openModal, closeModal }))
 
     const openModal = (): void => {
       setDisplay(true)
@@ -27,6 +22,11 @@ const Modal: React.FC<Props> = forwardRef(
     const closeModal = (): void => {
       setDisplay(false)
     }
+
+    useImperativeHandle(ref, (): {
+      openModal: () => void
+      closeModal: () => void
+    } => ({ openModal, closeModal }))
 
     return (
       <>
@@ -39,7 +39,11 @@ const Modal: React.FC<Props> = forwardRef(
             >
               <div onClick={closeModal} className={styles.modalBackdrop} />
               <div className={styles.modalBox}>
-                <button type="button" onClick={closeModal} className={styles.closeButton}>
+                <button
+                  type="button"
+                  onClick={closeModal}
+                  className={styles.closeButton}
+                >
                   <CloseButton />
                 </button>
                 <h2 className={styles.modalTitle}>{title}</h2>

@@ -20,10 +20,12 @@ const CustomSelect: FC<Props> = ({
   const [headerTitle, setHeaderTitle] = useState<string>(title)
   const optionList = useMemo(
     (): Array<string> => list.filter(item => item !== headerTitle),
-    [headerTitle]
+    [headerTitle, list]
   )
 
-  const toggleList = (): void => setListOpen(!listOpen)
+  const toggleList = (): void => {
+    setListOpen(!listOpen)
+  }
 
   return (
     <label className={classNames(styles.selectWrapper, styles[selectStyle])}>
@@ -33,7 +35,7 @@ const CustomSelect: FC<Props> = ({
             ? classNames(styles.selectHeader, styles.selectHeaderOpen)
             : styles.selectHeader
         }
-        onClick={() => toggleList()}
+        onClick={(): void => toggleList()}
       >
         <div className={styles.selectHeaderTitle}>{headerTitle}</div>
         {listOpen ? (
@@ -56,7 +58,7 @@ const CustomSelect: FC<Props> = ({
             <li
               key={index}
               className={styles.selectListItem}
-              onClick={() => {
+              onClick={(): void => {
                 setHeaderTitle(item)
                 selectedItem(item)
               }}
