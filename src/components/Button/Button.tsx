@@ -1,11 +1,6 @@
 import React from 'react'
 import styles from './Button.module.scss'
 
-interface Props {
-  buttonStyle: string
-  text: string
-}
-
 const Button = ({ text, buttonStyle }: Props): JSX.Element => {
   return (
     <button className={styles[buttonStyle]} type="button">
@@ -15,3 +10,8 @@ const Button = ({ text, buttonStyle }: Props): JSX.Element => {
 }
 
 export default Button
+
+interface Props {
+  buttonStyle: string
+  text: string
+}

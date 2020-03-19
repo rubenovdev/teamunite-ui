@@ -15,7 +15,7 @@ const App: FC = () => {
     closeModal: () => void
   }>
 
-  // const openModal = (): void => {
+  // const openModal = (): void => { // закомментил, тк неигда не используется
   //   modalRef.current.openModal()
   // }
 

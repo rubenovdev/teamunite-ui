@@ -7,13 +7,12 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "typecheck": "tsc --noEmit",
-    "lint": "eslint ./src --ext .ts,.tsx,.js,.jsx --max-warnings=0",
-    "lint:fix": "npm run lint --fix"
+    "lint": "eslint ./src --ext .ts,.tsx,.js,.jsx",
+    "lint:fix": "npm run lint -- --fix"
   },
   "lint-staged": {
     "*.{ts,tsx}": [
-      "npm run typecheck",
-      "npm run lint:fix"
+      "npm run lint:fix --max-warnings=0"
     ]
   },
   "husky": {

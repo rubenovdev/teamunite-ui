@@ -4,13 +4,6 @@ import classNames from 'classnames'
 import styles from './CustomSelect.module.scss'
 import arrow from '../../assets/images/select-arrow.svg'
 
-interface Props {
-  title: string
-  list: Array<string>
-  selectStyle: string
-  selectedItem(title: string): void
-}
-
 const CustomSelect: FC<Props> = ({
   title,
   list,
@@ -74,3 +67,10 @@ const CustomSelect: FC<Props> = ({
 }
 
 export default CustomSelect
+
+interface Props {
+  title: string
+  list: Array<string>
+  selectStyle: string
+  selectedItem(title: string): void
+}

@@ -8,14 +8,6 @@ import styles from './AnnouncementsPage.module.scss'
 import StarButton from '../StarButton/StarButton'
 import RightArrowButton from '../RightArrowButton/RightArrowButton'
 
-interface Props {
-  location: {
-    state: {
-      selectedIndex: number
-    }
-  }
-}
-
 const AnnouncementsPage: FC<Props> = ({ location }: Props) => {
   const [selectedAnnouncementIndex, setSelectedAnnouncementIndex] = useState(
     location.state.selectedIndex
@@ -133,3 +125,11 @@ const AnnouncementsPage: FC<Props> = ({ location }: Props) => {
 }
 
 export default AnnouncementsPage
+
+interface Props {
+  location: {
+    state: {
+      selectedIndex: number
+    }
+  }
+}
