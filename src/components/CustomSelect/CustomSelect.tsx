@@ -37,12 +37,12 @@ const CustomSelect: FC<Props> = ({
             <img
               style={{ transform: 'rotate(180deg)' }}
               src={arrow}
-              alt="стрелка вверх"
+              alt="Свернуть"
             />
           </div>
         ) : (
           <div className={styles.arrow}>
-            <img src={arrow} alt="стрелка вниз" />
+            <img src={arrow} alt="Развернуть" />
           </div>
         )}
       </div>
