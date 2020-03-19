@@ -9,22 +9,22 @@ const AnnouncementBoard: FC = () => {
   const renderAnnouncements = (): JSX.Element[] => {
     return announcements.map(announcement => {
       return (
-        <NavLink
-          to={{
-            pathname: '/announcements',
-            state: {
-              selectedIndex: announcement.id,
-            },
-          }}
-          key={announcement.id}
-          type="button"
-          className={styles.announcement}
-        >
-          <p className={styles.announcementText}>{announcement.text}</p>
-          <button className={styles.announcementAuthor}>
-            {announcement.author}
-          </button>
-        </NavLink>
+        <li key={announcement.id} className={styles.announcementWrapper}>
+          <NavLink
+            to={{
+              pathname: '/announcements',
+              state: {
+                selectedIndex: announcement.id,
+              },
+            }}
+            className={styles.announcement}
+          >
+            <p className={styles.announcementText}>{announcement.text}</p>
+            <button type="button" className={styles.announcementAuthor}>
+              {announcement.author}
+            </button>
+          </NavLink>
+        </li>
       )
     })
   }
@@ -32,7 +32,7 @@ const AnnouncementBoard: FC = () => {
   const renderAnnouncementsWrapperContent = (): JSX.Element => {
     return announcements.length ? (
       <div className={styles.announcementsWrapper}>
-        <div className={styles.announcements}>{renderAnnouncements()}</div>
+        <ul className={styles.announcements}>{renderAnnouncements()}</ul>
         <div className={styles.announcementsButtonWrapper}>
           <Button buttonStyle={'detailed'} text={'Посмотреть все'} />
         </div>
