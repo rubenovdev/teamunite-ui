@@ -8,6 +8,7 @@ import Homepage from '../Homepage/Homepage'
 import AnnouncementsPage from '../AnnouncementsPage/AnnouncementsPage'
 import ProjectSearch from '../ProjectSearch/ProjectSearch'
 import Wrapper from '../Wrapper/Wrapper'
+import Button from '../Button/Button'
 
 const App: FC = () => {
   const modalRef = useRef() as React.MutableRefObject<{
@@ -42,7 +43,7 @@ const App: FC = () => {
   const renderAction = (): JSX.Element => {
     return (
       <button className={styles.addButton} type="button" onClick={closeModal}>
-        Добавить
+        <Button text="Добавить" buttonStyle="enter" />
       </button>
     )
   }
@@ -56,6 +57,9 @@ const App: FC = () => {
       <Router>
         <Header />
         <Wrapper>
+          {/* <button type="button" onClick={openModal}>
+            Добавить
+          </button> */}
           <Switch>
             <Route exact path="/" component={Homepage} />
             <Route path="/announcements" component={AnnouncementsPage} />
