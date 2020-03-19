@@ -1,19 +1,25 @@
-import React, { FC, useState, forwardRef, useImperativeHandle } from 'react'
+import React, {
+  FC,
+  Ref,
+  useState,
+  forwardRef,
+  useImperativeHandle,
+} from 'react'
 import { createPortal } from 'react-dom'
 
 import CloseButton from '../CloseButton/CloseButton'
 import styles from './Modal.module.scss'
 
 const Modal: FC<Props> = forwardRef(
-  ({ title, content, action, onEscape }, ref) => {
-    const [display, setDisplay] = useState<boolean>(false)
+  ({ title, content, action, onEscape }: Props, ref: Ref<unknown>) => {
+    const [isDisplay, setIsDisplay] = useState<boolean>(false)
 
     const openModal = (): void => {
-      setDisplay(true)
+      setIsDisplay(true)
     }
 
     const closeModal = (): void => {
-      setDisplay(false)
+      setIsDisplay(false)
     }
 
     useImperativeHandle(ref, (): {
@@ -23,7 +29,7 @@ const Modal: FC<Props> = forwardRef(
 
     return (
       <>
-        {display &&
+        {isDisplay &&
           createPortal(
             <div
               className={styles.modalWrapper}
@@ -39,9 +45,13 @@ const Modal: FC<Props> = forwardRef(
                 >
                   <CloseButton />
                 </button>
-                <h2 className={styles.modalTitle}>{title}</h2>
-                {content}
-                {action}
+                <div className={styles.mainContent}>
+                  <h2 className={styles.modalTitle}>{title}</h2>
+                  <div className={styles.modalForm}>
+                    {content}
+                    {action}
+                  </div>
+                </div>
               </div>
             </div>,
             document.querySelector('#modal-root') as HTMLElement

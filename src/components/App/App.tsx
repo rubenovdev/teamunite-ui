@@ -61,15 +61,15 @@ const App: FC = () => {
             <Route path="/announcements" component={AnnouncementsPage} />
             <Route exact path="/projects-search" component={ProjectSearch} />
           </Switch>
+          <Modal
+            ref={modalRef}
+            title="Добавление объявления"
+            content={renderModalContent()}
+            action={renderAction()}
+            onEscape={onEscape}
+          />
         </Wrapper>
       </Router>
-      <Modal
-        ref={modalRef}
-        title="Добавление объявления"
-        content={renderModalContent()}
-        action={renderAction()}
-        onEscape={onEscape}
-      />
     </div>
   )
 }
