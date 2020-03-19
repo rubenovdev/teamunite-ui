@@ -51,25 +51,6 @@
   display: flex;
   padding: 22px 11px;
   flex-direction: column;
-  height: 240px;
-  margin-bottom: 43px;
-
-  @media (min-width: 360px) {
-    height: 260px;
-  }
-
-  @media (min-width: 768px) {
-    padding: 25px 15px;
-    height: 270px;
-  }
-
-  @media (min-width: 1024px) {
-    height: 340px;
-  }
-
-  @media (min-width: 1300px) {
-    height: 360px;
-  }
 }
 
 .announcement {
