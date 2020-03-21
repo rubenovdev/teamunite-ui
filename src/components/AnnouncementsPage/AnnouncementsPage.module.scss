@@ -35,9 +35,11 @@
   box-shadow: 0 3px 6px #0000003c;
   border-radius: 10px;
   position: relative;
+  grid-row: 1/-1;
 
   @media screen and (min-width: 768px) {
-    height: 459px;
+    max-height: 459px;
+    height: fit-content;
   }
 
   .content {
@@ -45,8 +47,7 @@
     overflow-y: auto;
 
     @media screen and (min-width: 768px) {
-      height: 408px;
-      position: relative;
+      max-height: 408px;
     }
 
     .title {
@@ -133,8 +134,7 @@
   width: fit-content;
 
   @media screen and (min-width: 768px) {
-    position: absolute;
-    bottom: 30px;
+    margin-bottom: 30px;
   }
 }
 
@@ -177,12 +177,6 @@
   background-color: #000000;
   border-radius: 0 0 10px 10px;
   height: 51px;
-
-  @media screen and (min-width: 768px) {
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-  }
 }
 
 .leftPanelSide,
