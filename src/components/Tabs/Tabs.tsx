@@ -9,7 +9,7 @@ interface Props {
 
 const Tabs: FC<Props> = ({ children }: Props) => {
   const [activeTab, setActiveTab] = useState<string>(
-    children[1].props['data-tabname']
+    children[0].props['data-tabname']
   )
 
   const onTabClick = (tabName: string): void => {
