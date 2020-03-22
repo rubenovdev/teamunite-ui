@@ -25,9 +25,11 @@ const ProjectPage: FC = () => {
 
   const renderSelectVancancyWarningOrSkills = (): JSX.Element | false => {
     return activeVacancyIndex === null ? (
-      <h3 className={styles.selectVacancyWarning}>
-        Выберите вакансию для просмотра
-      </h3>
+      <div className={styles.selectVacancyWarningWrapper}>
+        <h3 className={styles.selectVacancyWarning}>
+          Выберите вакансию для просмотра
+        </h3>
+      </div>
     ) : (
       <div className={styles.separateSkills}>
         <h3 className={styles.skillsTitle}>Необходимые навыки</h3>

@@ -153,15 +153,26 @@
   @media (min-width: 768px){
     display: flex;
     justify-content: space-between; 
-    // align-items: center;
+    align-items: center;
+  }
+}
+
+.selectVacancyWarningWrapper {
+  order: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  @media (min-width: 768px) {
+    width: 70%;
   }
 }
 
 .selectVacancyWarning {
+  order: 2;
   font-size: 13px;
   font-weight: 300;
   text-align: center;
-  order: 2;
   margin-bottom: 24px;
 
   @media (min-width: 768px){
