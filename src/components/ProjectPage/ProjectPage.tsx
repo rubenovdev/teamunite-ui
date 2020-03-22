@@ -14,10 +14,20 @@ import { vacancies } from '../../fixtures'
 import Button from '../Button/Button'
 import Tabs from '../Tabs/Tabs'
 
-const ProjectPage: FC = () => {
+interface Props {
+  location: {
+    state: {
+      description: string
+    }
+  }
+}
+
+const ProjectPage: FC<Props> = ({ location }: Props) => {
   const [activeVacancyIndex, setActiveVacancyIndex] = useState<number | null>(
     null
   )
+
+  const { description } = location.state
 
   const onVacancyClick = (id: number): void => {
     setActiveVacancyIndex(id)
@@ -109,9 +119,7 @@ const ProjectPage: FC = () => {
               <img src={Tinkoff} alt="Тинкофф" />
             </NavLink>
 
-            <h1 className={styles.headerTitle}>
-              Разработка мобильного приложения на базе Android
-            </h1>
+            <h1 className={styles.headerTitle}>{description}</h1>
           </div>
 
           <h6 className={styles.headerSubtitle}>
