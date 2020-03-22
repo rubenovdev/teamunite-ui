@@ -81,3 +81,32 @@ export const announcements: {
     date: '26.06.2020',
   },
 ]
+
+export const vacancies: {
+  id: number
+  name: string
+  rate: number
+  skills: string
+}[] = [
+  {
+    id: 0,
+    name: 'Frontend-разработчик',
+    rate: 5,
+    skills:
+      '1Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud',
+  },
+  {
+    id: 1,
+    name: 'Backend-разработчик',
+    rate: 3,
+    skills:
+      '2Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud',
+  },
+  {
+    id: 2,
+    name: 'Дизайнер',
+    rate: 2,
+    skills:
+      '3Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud',
+  },
+]

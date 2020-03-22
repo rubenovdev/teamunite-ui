@@ -1,0 +1,31 @@
+.tabs {
+  position: absolute;
+  left: 25px;
+  right: 25px;
+  margin-bottom: 48px;
+
+  @media (min-width: 400px){
+    position: static;
+  }
+}
+
+.tabsList {
+  background-color: #ffffff;
+  display: flex;
+  justify-content: space-between;
+
+  @media (min-width: 1024px){
+    max-width: 558px;
+  }
+}
+
+.tabContent {
+  background: #ffffff;
+  box-shadow: 0px 6px 6px 0px rgba(0,0,0,0.1);
+  border-radius: 0px 0px 10px 10px;
+  padding: 24px 16px;
+
+  @media (min-width: 1024px){
+    padding: 62px 48px;
+  }
+}
