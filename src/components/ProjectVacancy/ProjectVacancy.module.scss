@@ -57,8 +57,6 @@
 .skillsDescription {
   font-size: 13px;
   line-height: 22px;
-  max-height: 250px;
-  overflow-y: auto;
 
   @media (min-width: 786px){
     font-size: 15px;
@@ -66,7 +64,7 @@
 }
 
 .vacancies {
-  margin-right: 40px;
+  margin-right: 136px;
 }
 
 .vacancy {
@@ -161,6 +159,10 @@
     height: 31px;
     margin-left: 41px;
   }
+}
+
+.noRightChevron {
+  display: none;
 }
 
 .skills {

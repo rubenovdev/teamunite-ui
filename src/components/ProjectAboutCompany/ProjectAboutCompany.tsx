@@ -13,21 +13,25 @@ const ProjectAboutCompany: FC = () => {
         <NavLink to="/company" className={styles.aboutCompanyLogo}>
           <img src={Tinkoff} alt="Тинкофф" />
         </NavLink>
-        <h6 className={styles.companyDescription}>
+        <h3 className={styles.companyDescription}>
           Онлайн-экосистема, основанная на финансовых и лайфстайл-услугах
-        </h6>
+        </h3>
         <ul className={styles.benefits}>
           <li className={styles.benefit}>
-            <img
-              className={styles.benefitIcon}
-              src={Layers}
-              alt="Доступные проекты"
-            />
-            <span className={styles.benefitTitle}>Доступные проекты: 5</span>
+            <NavLink to="/company-skills" className={styles.benefitWrapper}>
+              <img
+                className={styles.benefitIcon}
+                src={Layers}
+                alt="Доступные проекты"
+              />
+              <span className={styles.benefitTitle}>Доступные проекты: 5</span>
+            </NavLink>
           </li>
           <li className={styles.benefit}>
-            <img className={styles.benefitIcon} src={Case} alt="Стажировка" />
-            <span className={styles.benefitTitle}>Возможна стажировка</span>
+            <NavLink to="/company-skills" className={styles.benefitWrapper}>
+              <img className={styles.benefitIcon} src={Case} alt="Стажировка" />
+              <span className={styles.benefitTitle}>Возможна стажировка</span>
+            </NavLink>
           </li>
         </ul>
       </div>

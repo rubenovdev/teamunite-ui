@@ -40,8 +40,9 @@ const Tabs: FC<Props> = ({ children }: Props) => {
   return (
     <div className={styles.tabs}>
       <ul className={styles.tabsList}>{renderTabsItems()}</ul>
-
-      <div className={styles.tabContent}>{renderTabContent()}</div>
+      <div className={styles.tabWrapper}>
+        <div className={styles.tabContent}>{renderTabContent()}</div>
+      </div>
     </div>
   )
 }

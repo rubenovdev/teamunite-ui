@@ -30,7 +30,8 @@ const ProjectVacancy: FC = () => {
   }
 
   const onVacancyClick = (id: number): void => {
-    setActiveVacancyIndex(id)
+    const index = id === activeVacancyIndex ? null : id
+    setActiveVacancyIndex(index)
   }
 
   const renderUserIcon = (id: number): JSX.Element => {
@@ -41,20 +42,10 @@ const ProjectVacancy: FC = () => {
     )
   }
 
-  // const renderRightChevron = (id: number): JSX.Element | false => {
-  //   return (
-  //     id === activeVacancyIndex && (
-  //       <img
-  //         className={styles.rightChevron}
-  //         src={RightChevron}
-  //         alt="Подробно"
-  //       />
-  //     )
-  //   )
-  // }
-
   const renderRightChevronVisibility = (id: number): string => {
-    return id === activeVacancyIndex ? 'block' : 'none'
+    return id === activeVacancyIndex
+      ? styles.rightChevron
+      : styles.noRightChevron
   }
 
   const renderVacancies = (): JSX.Element[] => {
@@ -74,12 +65,8 @@ const ProjectVacancy: FC = () => {
             <div className={styles.vacancyRateWrapper}>
               {renderUserIcon(vacancy.id)}
               <span className={styles.vacancyRate}>{vacancy.rate}</span>
-              {/* {renderRightChevron(vacancy.id)} */}
               <img
-                style={{
-                  display: `${renderRightChevronVisibility(vacancy.id)}`,
-                }}
-                className={styles.rightChevron}
+                className={renderRightChevronVisibility(vacancy.id)}
                 src={RightChevron}
                 alt="Подробно"
               />
