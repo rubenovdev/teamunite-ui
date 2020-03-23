@@ -68,6 +68,11 @@
   align-items: center;
 
   & button {
-    padding: 10px 10px;
+    width: 122px;
+    padding: 10px 5px;
+
+    @media (min-width: 1024px) {
+      width: 145px;
+    }
   }
 }

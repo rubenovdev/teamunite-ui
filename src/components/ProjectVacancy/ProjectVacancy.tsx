@@ -41,16 +41,20 @@ const ProjectVacancy: FC = () => {
     )
   }
 
-  const renderRightChevron = (id: number): JSX.Element | false => {
-    return (
-      id === activeVacancyIndex && (
-        <img
-          className={styles.rightChevron}
-          src={RightChevron}
-          alt="Подробно"
-        />
-      )
-    )
+  // const renderRightChevron = (id: number): JSX.Element | false => {
+  //   return (
+  //     id === activeVacancyIndex && (
+  //       <img
+  //         className={styles.rightChevron}
+  //         src={RightChevron}
+  //         alt="Подробно"
+  //       />
+  //     )
+  //   )
+  // }
+
+  const renderRightChevronVisibility = (id: number): string => {
+    return id === activeVacancyIndex ? 'block' : 'none'
   }
 
   const renderVacancies = (): JSX.Element[] => {
@@ -64,13 +68,21 @@ const ProjectVacancy: FC = () => {
         <li className={styles.vacancy} key={vacancy.id}>
           <div
             className={vacancyContentClass}
-            onClick={() => onVacancyClick(vacancy.id)}
+            onClick={(): void => onVacancyClick(vacancy.id)}
           >
             <h3 className={styles.vacancyName}>{vacancy.name}</h3>
             <div className={styles.vacancyRateWrapper}>
               {renderUserIcon(vacancy.id)}
               <span className={styles.vacancyRate}>{vacancy.rate}</span>
-              {renderRightChevron(vacancy.id)}
+              {/* {renderRightChevron(vacancy.id)} */}
+              <img
+                style={{
+                  display: `${renderRightChevronVisibility(vacancy.id)}`,
+                }}
+                className={styles.rightChevron}
+                src={RightChevron}
+                alt="Подробно"
+              />
             </div>
           </div>
           {activeVacancyIndex === vacancy.id && (

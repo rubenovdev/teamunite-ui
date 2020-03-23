@@ -16,7 +16,7 @@ const Tab: FC<Props> = ({ activeTab, tabName, onTabClick }: Props) => {
   )
 
   return (
-    <li className={tabClass} onClick={() => onTabClick(tabName)}>
+    <li className={tabClass} onClick={(): void => onTabClick(tabName)}>
       {tabName}
     </li>
   )

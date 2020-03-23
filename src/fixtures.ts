@@ -110,3 +110,25 @@ export const vacancies: {
       '3Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud',
   },
 ]
+
+export const curators: {
+  id: number
+  name: string
+  status: string
+}[] = [
+  {
+    id: 0,
+    name: 'Даньшина Марина',
+    status: 'Куратор',
+  },
+  {
+    id: 1,
+    name: 'Даньшина Марина',
+    status: 'Куратор',
+  },
+  {
+    id: 2,
+    name: 'Даньшина Марина',
+    status: 'Куратор',
+  },
+]

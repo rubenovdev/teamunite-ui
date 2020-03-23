@@ -24,7 +24,16 @@
   }
 }
 
-.authorWrapper {
+.curators {
+  display: flex;
+  flex-direction: column;
+}
+
+.curator:not(:last-of-type) {
+  margin-bottom: 20px;
+}
+
+.curatorWrapper {
   display: grid;
   column-gap: 11px;
   row-gap: 2px;
@@ -32,7 +41,7 @@
   width: fit-content;
 }
 
-.authorImg {
+.curatorImg {
   width: 33px;
   height: 33px;
   grid-row: 1/3;
@@ -44,7 +53,7 @@
   }
 }
 
-.authorName {
+.curatorName {
   font-size: 11px;
   font-weight: 900;
   align-self: flex-end;
@@ -58,7 +67,7 @@
   }
 }
 
-.authorStatus {
+.curatorStatus {
   font-size: 10px;
   color: #b1b1b1;
   font-weight: 900;
