@@ -14,20 +14,14 @@ import { vacancies } from '../../fixtures'
 import Button from '../Button/Button'
 import Tabs from '../Tabs/Tabs'
 
-interface Props {
+const ProjectPage: FC<Props> = ({
   location: {
-    state: {
-      description: string
-    }
-  }
-}
-
-const ProjectPage: FC<Props> = ({ location }: Props) => {
+    state: { description },
+  },
+}) => {
   const [activeVacancyIndex, setActiveVacancyIndex] = useState<number | null>(
     null
   )
-
-  const { description } = location.state
 
   const onVacancyClick = (id: number): void => {
     setActiveVacancyIndex(id)
@@ -51,18 +45,10 @@ const ProjectPage: FC<Props> = ({ location }: Props) => {
   }
 
   const renderUserIcon = (id: number): JSX.Element => {
-    return id === activeVacancyIndex ? (
-      <img
-        className={styles.userIcon}
-        src={WhiteUser}
-        alt="Иконка пользователя"
-      />
-    ) : (
-      <img
-        className={styles.userIcon}
-        src={BlackUser}
-        alt="Иконка пользователя"
-      />
+    const src = id === activeVacancyIndex ? WhiteUser : BlackUser
+
+    return (
+      <img className={styles.userIcon} src={src} alt="Иконка пользователя" />
     )
   }
 
@@ -203,3 +189,11 @@ const ProjectPage: FC<Props> = ({ location }: Props) => {
 }
 
 export default ProjectPage
+
+interface Props {
+  location: {
+    state: {
+      description: string
+    }
+  }
+}
