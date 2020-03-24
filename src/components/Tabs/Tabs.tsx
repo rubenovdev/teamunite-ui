@@ -3,11 +3,7 @@ import React, { FC, useState } from 'react'
 import styles from './Tabs.module.scss'
 import Tab from '../Tab/Tab'
 
-interface Props {
-  children: JSX.Element[]
-}
-
-const Tabs: FC<Props> = ({ children }: Props) => {
+const Tabs: FC<Props> = ({ children }) => {
   const [activeTab, setActiveTab] = useState<string>(
     children[0].props['data-tabname']
   )
@@ -48,3 +44,7 @@ const Tabs: FC<Props> = ({ children }: Props) => {
 }
 
 export default Tabs
+
+interface Props {
+  children: JSX.Element[]
+}
