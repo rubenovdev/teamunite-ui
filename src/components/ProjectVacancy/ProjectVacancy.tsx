@@ -35,10 +35,10 @@ const ProjectVacancy: FC = () => {
   }
 
   const renderUserIcon = (id: number): JSX.Element => {
-    const src = id === activeVacancyIndex ? WhiteUser : BlackUser
+    const path = id === activeVacancyIndex ? WhiteUser : BlackUser
 
     return (
-      <img className={styles.userIcon} src={src} alt="Иконка пользователя" />
+      <img className={styles.userIcon} src={path} alt="Иконка пользователя" />
     )
   }
 
