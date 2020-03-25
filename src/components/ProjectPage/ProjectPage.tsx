@@ -2,10 +2,10 @@ import React, { FC } from 'react'
 
 import styles from './ProjectPage.module.scss'
 import Tabs from '../Tabs/Tabs'
-import ProjectHeader from '../ProjectHeader/ProjectHeader'
-import ProjectDescription from '../ProjectDescription/ProjectDescription'
-import ProjectVanacy from '../ProjectVacancy/ProjectVacancy'
-import ProjectAboutCompany from '../ProjectAboutCompany/ProjectAboutCompany'
+import ProjectHeader from './ProjectHeader/ProjectHeader'
+import ProjectDescription from './ProjectDescription/ProjectDescription'
+import ProjectVanacy from './ProjectVacancy/ProjectVacancy'
+import ProjectAboutCompany from './ProjectAboutCompany/ProjectAboutCompany'
 
 const ProjectPage: FC<Props> = ({
   location: {

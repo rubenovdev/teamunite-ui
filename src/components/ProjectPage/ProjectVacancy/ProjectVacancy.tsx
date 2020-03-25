@@ -2,10 +2,10 @@ import React, { FC, useState } from 'react'
 import classNames from 'classnames'
 
 import styles from './ProjectVacancy.module.scss'
-import { vacancies } from '../../fixtures'
-import BlackUser from '../../assets/images/black-user.svg'
-import WhiteUser from '../../assets/images/white-user.svg'
-import RightChevron from '../../assets/images/right-chevron.svg'
+import { vacancies } from '../../../fixtures'
+import BlackUser from '../../../assets/images/black-user.svg'
+import WhiteUser from '../../../assets/images/white-user.svg'
+import RightChevron from '../../../assets/images/right-chevron.svg'
 
 const ProjectVacancy: FC = () => {
   const [activeVacancyIndex, setActiveVacancyIndex] = useState<number | null>(

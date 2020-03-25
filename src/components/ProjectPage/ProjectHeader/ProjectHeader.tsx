@@ -2,8 +2,8 @@ import React, { FC } from 'react'
 import { NavLink } from 'react-router-dom'
 
 import styles from './ProjectHeader.module.scss'
-import Tinkoff from '../../assets/images/tinkoff.svg'
-import Button from '../Button/Button'
+import Tinkoff from '../../../assets/images/tinkoff.svg'
+import Button from '../../Button/Button'
 
 const ProjectHeader: FC<Props> = ({ description }) => {
   return (
@@ -11,7 +11,7 @@ const ProjectHeader: FC<Props> = ({ description }) => {
       <div className={styles.headerContent}>
         <div className={styles.logoAndTitle}>
           <NavLink to="/company" className={styles.headerCompanyLogo}>
-            <img src={Tinkoff} alt="Тинкофф" />
+            <img src={Tinkoff} alt="Логотип компании" />
           </NavLink>
 
           <h1 className={styles.headerTitle}>{description}</h1>

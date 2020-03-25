@@ -2,16 +2,16 @@ import React, { FC } from 'react'
 import { NavLink } from 'react-router-dom'
 
 import styles from './ProjectAboutCompany.module.scss'
-import Tinkoff from '../../assets/images/tinkoff.svg'
-import Layers from '../../assets/images/layers.svg'
-import Case from '../../assets/images/case.svg'
+import Tinkoff from '../../../assets/images/tinkoff.svg'
+import Layers from '../../../assets/images/layers.svg'
+import Case from '../../../assets/images/case.svg'
 
 const ProjectAboutCompany: FC = () => {
   return (
     <div className={styles.aboutCompany}>
       <div className={styles.aboutCompanyInfo}>
         <NavLink to="/company" className={styles.aboutCompanyLogo}>
-          <img src={Tinkoff} alt="Тинкофф" />
+          <img src={Tinkoff} alt="Логотип компании" />
         </NavLink>
         <h3 className={styles.companyDescription}>
           Онлайн-экосистема, основанная на финансовых и лайфстайл-услугах
