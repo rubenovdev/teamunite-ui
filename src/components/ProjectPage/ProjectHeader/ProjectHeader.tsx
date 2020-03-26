@@ -17,9 +17,9 @@ const ProjectHeader: FC<Props> = ({ description }) => {
           <h1 className={styles.headerTitle}>{description}</h1>
         </div>
 
-        <h6 className={styles.headerSubtitle}>
+        <h3 className={styles.headerSubtitle}>
           Факультет информационных технологий
-        </h6>
+        </h3>
       </div>
 
       <NavLink to="/sign" className={styles.signBtn}>
