@@ -1,0 +1,21 @@
+.tab {
+  cursor: pointer;
+  text-align: center;
+  width: 100%;
+  font-size: 13px;
+  font-weight: 300;
+  padding: 11px 9px;
+
+  @media (min-width: 768px){
+    font-size: 17px;
+  }
+
+  @media (min-width: 1024px){
+    font-size: 20px;
+  }
+}
+
+.tabActive {
+  color: #ffffff;
+  background: #242424;
+}

@@ -1,4 +1,5 @@
 import React, { FC } from 'react'
+import { NavLink } from 'react-router-dom'
 
 import logo from '../../assets/images/companyLogo.svg'
 import styles from './Project.module.scss'
@@ -38,7 +39,17 @@ const Project: FC<Props> = ({ company, places, description }) => {
           </span>
         </div>
         <p className={styles.description}>{description}</p>
-        <button className={styles.detailed}>Подробнее</button>
+        <NavLink
+          to={{
+            pathname: '/project',
+            state: {
+              description,
+            },
+          }}
+          className={styles.detailed}
+        >
+          Подробнее
+        </NavLink>
       </li>
     </>
   )

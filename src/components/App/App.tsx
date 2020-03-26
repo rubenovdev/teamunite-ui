@@ -7,6 +7,7 @@ import Header from '../Header/Header'
 import Homepage from '../Homepage/Homepage'
 import AnnouncementsPage from '../AnnouncementsPage/AnnouncementsPage'
 import ProjectSearch from '../ProjectSearch/ProjectSearch'
+import ProjectPage from '../ProjectPage/ProjectPage'
 import Wrapper from '../Wrapper/Wrapper'
 import Button from '../Button/Button'
 
@@ -64,6 +65,7 @@ const App: FC = () => {
             <Route exact path="/" component={Homepage} />
             <Route path="/announcements" component={AnnouncementsPage} />
             <Route exact path="/projects-search" component={ProjectSearch} />
+            <Route path="/project" component={ProjectPage} />
           </Switch>
           <Modal
             ref={modalRef}
