@@ -20,9 +20,9 @@ const AnnouncementBoard: FC = () => {
             className={styles.announcement}
           >
             <p className={styles.announcementText}>{announcement.text}</p>
-            <button type="button" className={styles.announcementAuthor}>
+            <NavLink to="/author" className={styles.announcementAuthor}>
               {announcement.author}
-            </button>
+            </NavLink>
           </NavLink>
         </li>
       )
