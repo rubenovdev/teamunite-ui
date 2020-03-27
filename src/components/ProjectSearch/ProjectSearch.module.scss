@@ -33,10 +33,10 @@
       margin-bottom: 22px;
       border-radius: 10px;
       font-size: 14px;
-      box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3);
+      box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
 
       &::placeholder {
-        color: rgba(0, 0, 0, 0.3);
+        color: rgba(0, 0, 0, 0.1);
       }
     }
   }
@@ -73,7 +73,7 @@
         margin-bottom: 32px;
         padding-left: 49px;
         font-size: 17px;
-        box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3);
+        box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
       }
     }
   }
