@@ -1,8 +1,7 @@
 export const projects = [
   {
     id: 'a757a0e9-03c1-4a2a-b384-8ac21dbe2fb2',
-    description:
-      'Разработка мобильного сервиса для организации работы. Разработка мобильного сервиса для организации работы.',
+    description: 'Разработка мобильного сервиса для организации работы',
     places: 0,
     company: 'tinkoff',
   },
@@ -93,42 +92,41 @@ export const vacancies: {
     name: 'Frontend-разработчик',
     rate: 5,
     skills:
-      '1Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud',
+      'Отличное знание Js, опыт работы с фреймворками от года, владение препроцессорами Sass, Less',
   },
   {
     id: 1,
     name: 'Backend-разработчик',
     rate: 3,
-    skills:
-      '2Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud',
+    skills: 'Знание Node.js. Опыт работы над проектами от года',
   },
   {
     id: 2,
     name: 'Дизайнер',
     rate: 2,
     skills:
-      '3Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud',
+      'Знание и опыт работы в Figma (а также Sketch, Photoshop, Illustrator). Понимание принципов HTML-верстки, возможностей CSS, JS. Понимание принципов работы и создания адаптивных сайтов.',
   },
 ]
 
 export const curators: {
   id: number
   name: string
+  image: string
   status: string
 }[] = [
   {
     id: 0,
     name: 'Даньшина Марина',
+    image:
+      'https://sun9-37.userapi.com/c636721/v636721819/3d621/bnzuxrvLVto.jpg',
     status: 'Куратор',
   },
   {
     id: 1,
-    name: 'Даньшина Марина',
-    status: 'Куратор',
-  },
-  {
-    id: 2,
-    name: 'Даньшина Марина',
+    name: 'Филиппович Андрей',
+    image:
+      'https://scontent.fhel5-1.fna.fbcdn.net/v/t1.0-9/23621550_10155940932069559_5208435270027613032_n.jpg?_nc_cat=100&_nc_sid=7aed08&_nc_ohc=uecibc9H25YAX_SG3kU&_nc_ht=scontent.fhel5-1.fna&oh=83074f280b95e93dd79c8618fe2b05d6&oe=5EA528C3',
     status: 'Куратор',
   },
 ]

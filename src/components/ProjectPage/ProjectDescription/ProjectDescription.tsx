@@ -2,7 +2,7 @@ import React, { FC } from 'react'
 import { NavLink } from 'react-router-dom'
 
 import styles from './ProjectDescription.module.scss'
-import Danshina from '../../../assets/images/authors/danshina.svg'
+// import Danshina from '../../../assets/images/authors/danshina.svg'
 import { curators } from '../../../fixtures'
 
 const ProjectDescription: FC = () => {
@@ -13,7 +13,7 @@ const ProjectDescription: FC = () => {
           <NavLink to="/curators" className={styles.curatorWrapper}>
             <img
               className={styles.curatorImg}
-              src={Danshina}
+              src={curator.image}
               alt="Фото куратора"
             />
             <h3 className={styles.curatorName}>{curator.name}</h3>
@@ -27,9 +27,13 @@ const ProjectDescription: FC = () => {
   return (
     <div className={styles.description}>
       <p className={styles.descriptionContent}>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-        veniam, quis nostrud
+        Приложение можно назвать «родным» для операционных систем – Android,
+        IOS, WinPhone . Такие мобильные приложения пишутся на языках
+        программирования, утвержденных разработчиками программного обеспечения
+        под каждую конкретную платформу, а потому органично встраиваются в сами
+        операционные системы. Приложения загружаются через магазины приложений
+        (App Store, Google Play и т.д.) и соответствуют требованиям этих
+        магазинов.
       </p>
       <ul className={styles.curators}>{renderCurators()}</ul>
     </div>

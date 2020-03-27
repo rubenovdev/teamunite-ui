@@ -36,9 +36,9 @@ const ProjectAboutCompany: FC = () => {
         </ul>
       </div>
       <p className={styles.addInfo}>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-        veniam, quis nostrud
+        Тинькофф — технологическая компания с банковской лицензией. Примерно 70%
+        сотрудников штаб-квартиры — IT-специалисты, которые каждый день создают
+        лучшие цифровые продукты в России
       </p>
     </div>
   )
