@@ -1,6 +1,8 @@
 import React, { useRef, FC } from 'react'
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
+import { Provider } from 'react-redux'
 
+import store from '../../store'
 import styles from './App.module.scss'
 import Modal from '../Modal/Modal'
 import Header from '../Header/Header'
@@ -54,29 +56,31 @@ const App: FC = () => {
   }
 
   return (
-    <div onKeyDown={onEscape}>
-      <Router>
-        <Header />
-        <Wrapper>
-          {/* <button type="button" onClick={openModal}>
-            Добавить
-          </button> */}
-          <Switch>
-            <Route exact path="/" component={Homepage} />
-            <Route path="/announcements" component={AnnouncementsPage} />
-            <Route exact path="/projects-search" component={ProjectSearch} />
-            <Route path="/project" component={ProjectPage} />
-          </Switch>
-          <Modal
-            ref={modalRef}
-            title="Добавление объявления"
-            content={renderModalContent()}
-            action={renderAction()}
-            onEscape={onEscape}
-          />
-        </Wrapper>
-      </Router>
-    </div>
+    <Provider store={store}>
+      <div onKeyDown={onEscape}>
+        <Router>
+          <Header />
+          <Wrapper>
+            {/* <button type="button" onClick={openModal}>
+              Добавить
+            </button> */}
+            <Switch>
+              <Route exact path="/" component={Homepage} />
+              <Route path="/announcements" component={AnnouncementsPage} />
+              <Route exact path="/projects-search" component={ProjectSearch} />
+              <Route path="/project" component={ProjectPage} />
+            </Switch>
+            <Modal
+              ref={modalRef}
+              title="Добавление объявления"
+              content={renderModalContent()}
+              action={renderAction()}
+              onEscape={onEscape}
+            />
+          </Wrapper>
+        </Router>
+      </div>
+    </Provider>
   )
 }
 
