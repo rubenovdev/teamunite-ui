@@ -12,40 +12,43 @@ import AnnouncementBoard from '../AnnouncementBoard/AnnouncementBoard'
 const Homepage: FC = () => {
   return (
     <>
-      <h3 className={styles.homeTitle}>Главная</h3>
+      <h1 className={styles.homeTitle}>Главная</h1>
 
       <div className={styles.mainContent}>
-        <div className={styles.daysTimer}>
+        <article className={styles.daysTimer}>
           <p className={styles.daysTimerText}>До защиты осталось</p>
           <div className={styles.daysTimerCounter}>
             <p className={styles.daysTimerCounterText}>15 дней</p>
             <div className={styles.daysTimerCounterImg}>
-              <img src={hourglass} alt="песочные часы" />
+              <img src={hourglass} alt="Песочные часы" />
             </div>
           </div>
-        </div>
-        <div className={styles.mainMenu}>
-          <MenuCard
-            title="Поиск проектов"
-            href="projects-search"
-            src={projectsSearch}
-          />
-          <MenuCard
-            title="Инженерное проектирование"
-            href="engeneer-activity"
-            src={engeneerActivity}
-          />
-          <MenuCard
-            title="Инициативный проект"
-            href="initiative-project"
-            src={initiativeProject}
-          />
-          <MenuCard
-            title="Проекты партнеров"
-            href="partners-projects"
-            src={partnersProjects}
-          />
-        </div>
+        </article>
+        <section>
+          <h2 className="visually-hidden">Меню</h2>
+          <ul className={styles.mainMenu}>
+            <MenuCard
+              title="Поиск проектов"
+              href="projects-search"
+              path={projectsSearch}
+            />
+            <MenuCard
+              title="Инженерное проектирование"
+              href="engeneer-activity"
+              path={engeneerActivity}
+            />
+            <MenuCard
+              title="Инициативный проект"
+              href="initiative-project"
+              path={initiativeProject}
+            />
+            <MenuCard
+              title="Проекты партнеров"
+              href="partners-projects"
+              path={partnersProjects}
+            />
+          </ul>
+        </section>
         <AnnouncementBoard />
       </div>
     </>
