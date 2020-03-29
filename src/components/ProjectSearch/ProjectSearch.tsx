@@ -8,14 +8,14 @@ import CustomSelect from '../CustomSelect/CustomSelect'
 import Project from '../Project/Project'
 
 const ProjectSearch: FC<Props> = ({
-    projects,
-    projectsLoading,
-    projectsLoaded,
-    fetchProjects,
-  }) => {
-    useEffect(() => {
-      !projectsLoading && !projectsLoaded && fetchProjects()
-    }, [fetchProjects, projectsLoading, projectsLoaded])
+  projects,
+  projectsLoading,
+  projectsLoaded,
+  fetchProjects,
+}) => {
+  useEffect(() => {
+    !projectsLoading && !projectsLoaded && fetchProjects()
+  }, [fetchProjects, projectsLoading, projectsLoaded])
 
   const [selectedItem, setSelectedItem] = useState<string>('Сначала новые')
 
