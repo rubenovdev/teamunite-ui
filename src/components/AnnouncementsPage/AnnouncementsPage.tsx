@@ -20,11 +20,11 @@ const AnnouncementsPage: FC<Props> = ({ location }: Props) => {
     return announcements.map(announcement => {
       return (
         <li className={styles.announcement} key={announcement.id}>
-          <h3 className={styles._text}>{announcement.text}</h3>
+          <p className={styles._text}>{announcement.text}</p>
           <img
             className={styles._authorImage}
             src={danshina}
-            alt="Даньшина Марина"
+            alt="Автор объявления"
           />
           <p className={styles._author}>{announcement.author}</p>
           <time className={styles._date}>{announcement.date}</time>
@@ -46,8 +46,8 @@ const AnnouncementsPage: FC<Props> = ({ location }: Props) => {
   }
 
   return (
-    <div>
-      <h3 className={styles.pageTitle}>Объявления</h3>
+    <>
+      <h1 className={styles.pageTitle}>Объявления</h1>
       <div
         className={
           announcements.length > 1
@@ -55,10 +55,11 @@ const AnnouncementsPage: FC<Props> = ({ location }: Props) => {
             : styles.noAnnouncementsWrapper
         }
       >
-        <div className={styles.selectedAnnouncement}>
+        <section className={styles.selectedAnnouncement}>
+          <h2 className="visually-hidden">Объявление</h2>
           <div className={styles.content}>
             <div className={styles.header}>
-              <h3 className={styles.title}>{text}</h3>
+              <p className={styles.title}>{text}</p>
               <button
                 type="button"
                 className={styles.starButton}
@@ -77,7 +78,7 @@ const AnnouncementsPage: FC<Props> = ({ location }: Props) => {
               <img
                 className={styles.authorImage}
                 src={danshina}
-                alt="Даньшина Марина"
+                alt="Автор объявления"
               />
               <p className={styles.authorName}>{author}</p>
               <time className={styles.publishDate}>{date}</time>
@@ -109,18 +110,21 @@ const AnnouncementsPage: FC<Props> = ({ location }: Props) => {
               </button>
             </div>
           </div>
-        </div>
-        <ul
-          className={
-            announcements.length > 1
-              ? styles.announcements
-              : styles.noAnnouncements
-          }
-        >
-          {renderAnnouncements()}
-        </ul>
+        </section>
+        <section>
+          <h2 className="visually-hidden">Следующие объявления</h2>
+          <ul
+            className={
+              announcements.length > 1
+                ? styles.announcements
+                : styles.noAnnouncements
+            }
+          >
+            {renderAnnouncements()}
+          </ul>
+        </section>
       </div>
-    </div>
+    </>
   )
 }
 
