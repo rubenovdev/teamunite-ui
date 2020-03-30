@@ -6,16 +6,18 @@ import styles from './ProjectSearch.module.scss'
 import Button from '../Button/Button'
 import CustomSelect from '../CustomSelect/CustomSelect'
 import Project from '../Project/Project'
+import { RootState } from '../../store/reducers'
+import { ProfilesData } from '../../models/store/profile'
 
 const ProjectSearch: FC<Props> = ({
-    projects,
-    projectsLoading,
-    projectsLoaded,
-    fetchProjects,
-  }) => {
-    useEffect(() => {
-      !projectsLoading && !projectsLoaded && fetchProjects()
-    }, [fetchProjects, projectsLoading, projectsLoaded])
+  projects,
+  projectsLoading,
+  projectsLoaded,
+  fetchProjects,
+}) => {
+  useEffect(() => {
+    !projectsLoading && !projectsLoaded && fetchProjects()
+  }, [fetchProjects, projectsLoading, projectsLoaded])
 
   const [selectedItem, setSelectedItem] = useState<string>('Сначала новые')
 
@@ -29,7 +31,7 @@ const ProjectSearch: FC<Props> = ({
   const countPlaces = (): number => {
     let places = 0
     for (let i = 0; i < projects.length; i++) {
-      for (let j = 0; i < projects[i].vacancies.length; i++) {
+      for (let j = 0; j < projects[i].vacancies.length; j++) {
         places += projects[i].vacancies[j].quantity
       }
     }
@@ -78,13 +80,13 @@ const ProjectSearch: FC<Props> = ({
 }
 
 interface Props {
-  projects: Array<any>
+  projects: Array<ProfilesData>
   projectsLoading: boolean
   projectsLoaded: boolean
   fetchProjects: Function
 }
 
-const mapStateToProps = (state: any): Record<string, any> => ({
+const mapStateToProps = (state: RootState) => ({
   projects: state.projects.entities,
   projectsLoading: state.projects.loading,
   projectsLoaded: state.projects.loaded,

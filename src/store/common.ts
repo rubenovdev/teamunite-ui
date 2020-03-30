@@ -1,7 +1,5 @@
-export const START = '_START'
+export const FETCH_PROJECTS_START = 'FETCH_PROJECTS_START'
 
-export const SUCCESS = '_SUCCESS'
+export const FETCH_PROJECTS_SUCCESS = 'FETCH_PROJECTS_SUCCESS'
 
-export const FAIL = '_FAIL'
-
-export const FETCH_PROJECTS = 'FETCH_PROJECTS'
+export const FETCH_PROJECTS_FAIL = 'FETCH_PROJECTS_FAIL'
