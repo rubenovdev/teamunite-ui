@@ -47,7 +47,7 @@ const AnnouncementsPage: FC<Props> = ({ location }: Props) => {
 
   return (
     <>
-      <h1 className={styles.pageTitle}>Объявления</h1>
+      <h2 className={styles.pageTitle}>Объявления</h2>
       <div
         className={
           announcements.length > 1
