@@ -12,7 +12,7 @@ import AnnouncementBoard from '../AnnouncementBoard/AnnouncementBoard'
 const Homepage: FC = () => {
   return (
     <>
-      <h1 className={styles.homeTitle}>Главная</h1>
+      <h2 className={styles.homeTitle}>Главная</h2>
 
       <div className={styles.mainContent}>
         <article className={styles.daysTimer}>

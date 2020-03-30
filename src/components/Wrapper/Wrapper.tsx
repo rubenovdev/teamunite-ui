@@ -4,7 +4,7 @@ import styles from './Wrapper.module.scss'
 
 const Wrapper: FC<Props> = ({ children }) => {
   return (
-    <main>
+    <main role="main">
       <div className={styles.wrapper}>{children}</div>
     </main>
   )
