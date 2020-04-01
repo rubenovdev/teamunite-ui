@@ -70,6 +70,7 @@ const ProjectSearch: FC<Props> = ({
           <Project
             key={project._id}
             company={project.company.name}
+            logo={project.company.logo}
             places={countPlaces()}
             description={project.description}
           />
