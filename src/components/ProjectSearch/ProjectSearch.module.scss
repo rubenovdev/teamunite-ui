@@ -13,7 +13,7 @@
   .searchLabel {
     position: relative;
 
-    &:before {
+    &::before {
       content: '';
       position: absolute;
       left: 16px;
@@ -60,7 +60,7 @@
     align-items: center;
 
     .searchLabel {
-      &:before {
+      &::before {
         left: 17px;
         top: 20px;
         width: 17px;

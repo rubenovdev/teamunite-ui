@@ -17,14 +17,14 @@ header {
 
         .line,
         .line::before,
-        .line:after {
+        .line::after {
           position: absolute;
           top: 50%;
           left: 0;
           margin-top: -1px;
           width: 45px;
           height: 2px;
-          background-color: #222222;
+          background-color: #222;
           transition: width 0.2s;
         }
 
