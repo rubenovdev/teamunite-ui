@@ -1,10 +1,9 @@
 import React, { FC } from 'react'
 import { NavLink } from 'react-router-dom'
 
-import logo from '../../assets/images/companyLogo.svg'
 import styles from './Project.module.scss'
 
-const Project: FC<Props> = ({ company, places, description }) => {
+const Project: FC<Props> = ({ company, places, description, logo }) => {
   const placesCase = (count: number): string => {
     if (
       count % 10 === 0 ||
@@ -59,6 +58,7 @@ export default Project
 
 interface Props {
   company: string
+  logo: string
   places: number
   description: string
 }
