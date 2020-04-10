@@ -1,7 +1,10 @@
 import React, { FC } from 'react'
 import { NavLink } from 'react-router-dom'
+import { connect } from 'react-redux'
 
+import { selectCountPlaces } from '../../store/selectors'
 import styles from './Project.module.scss'
+import { RootState } from '../../store/reducers'
 
 const Project: FC<Props> = ({ company, places, description, logo }) => {
   const placesCase = (count: number): string => {
@@ -54,11 +57,21 @@ const Project: FC<Props> = ({ company, places, description, logo }) => {
   )
 }
 
-export default Project
-
-interface Props {
+interface OwnProps {
+  id: string
   company: string
   logo: string
-  places: number
   description: string
 }
+
+interface StateProps {
+  places: number
+}
+
+type Props = OwnProps & StateProps
+
+const mapStateToProps = (state: RootState, ownProps: OwnProps) => ({
+  places: selectCountPlaces(state, ownProps),
+})
+
+export default connect(mapStateToProps)(Project)

@@ -28,24 +28,14 @@ const ProjectSearch: FC<Props> = ({
     'Сначала краткосрочные',
   ]
 
-  const countPlaces = (): number => {
-    let places = 0
-    for (let i = 0; i < projects.length; i++) {
-      for (let j = 0; j < projects[i].vacancies.length; j++) {
-        places += projects[i].vacancies[j].quantity
-      }
-    }
-    return places
-  }
-
   if (!projects && projectsLoaded) {
     return <div>Данные отсутствуют</div>
   }
-
+  console.log(projectsLoading)
   if (projectsLoading) {
     return <div>Загрузка...</div>
   }
-
+  console.log(projects, projectsLoading)
   return (
     <>
       <h1 className={styles.tittle}>Поиск проектов</h1>
@@ -69,9 +59,9 @@ const ProjectSearch: FC<Props> = ({
         {projects.map(project => (
           <Project
             key={project._id}
+            id={project._id}
             company={project.company.name}
             logo={project.company.logo}
-            places={countPlaces()}
             description={project.description}
           />
         ))}
