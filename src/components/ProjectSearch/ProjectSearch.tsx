@@ -31,11 +31,11 @@ const ProjectSearch: FC<Props> = ({
   if (!projects && projectsLoaded) {
     return <div>Данные отсутствуют</div>
   }
-  console.log(projectsLoading)
+
   if (projectsLoading) {
     return <div>Загрузка...</div>
   }
-  console.log(projects, projectsLoading)
+
   return (
     <>
       <h1 className={styles.tittle}>Поиск проектов</h1>
