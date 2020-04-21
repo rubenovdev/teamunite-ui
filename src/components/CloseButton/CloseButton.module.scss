@@ -1,7 +1,7 @@
 .lightCloseButton {
   display: block;
 
-  @media screen and (min-width: 1024px){
+  @media screen and (min-width: 1024px) {
     display: none;
   }
 }
@@ -9,7 +9,7 @@
 .boldCloseButton {
   display: none;
 
-  @media screen and (min-width: 1024px){
+  @media screen and (min-width: 1024px) {
     display: block;
   }
 }

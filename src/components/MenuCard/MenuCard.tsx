@@ -3,7 +3,7 @@ import { NavLink } from 'react-router-dom'
 
 import styles from './MenuCard.module.scss'
 
-const MenuCard: FC<Props> = ({ title, href, src }: Props) => {
+const MenuCard: FC<Props> = ({ title, href, path }: Props) => {
   const renderImgWrapperClassName = (): string | undefined => {
     switch (title) {
       case 'Поиск проектов':
@@ -18,15 +18,17 @@ const MenuCard: FC<Props> = ({ title, href, src }: Props) => {
   }
 
   return (
-    <NavLink className={styles.menuCard} to={href}>
-      <div className={styles.menuCardContent}>
-        <h3 className={styles.menuCardTitle}>{title}</h3>
-        <div className={renderImgWrapperClassName()}>
-          <img className={styles.menuCardImg} src={src} alt={title} />
+    <li className={styles.menuCard}>
+      <NavLink to={href}>
+        <div className={styles.menuCardContent}>
+          <h3 className={styles.menuCardTitle}>{title}</h3>
+          <div className={renderImgWrapperClassName()}>
+            <img className={styles.menuCardImg} src={path} alt="" />
+          </div>
         </div>
-      </div>
-      <div className={styles.blackBorderBottom}>&nbsp;</div>
-    </NavLink>
+        <div className={styles.blackBorderBottom}>&nbsp;</div>
+      </NavLink>
+    </li>
   )
 }
 
@@ -34,6 +36,6 @@ export default MenuCard
 
 interface Props {
   title: string
-  src: string
+  path: string
   href: string
 }

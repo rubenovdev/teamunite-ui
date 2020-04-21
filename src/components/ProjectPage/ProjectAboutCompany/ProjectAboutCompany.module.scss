@@ -1,5 +1,5 @@
 .aboutCompany {
-  @media (min-width: 1024px){
+  @media (min-width: 1024px) {
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
@@ -7,7 +7,7 @@
 }
 
 .aboutCompanyInfo {
-  @media (min-width: 1024px){
+  @media (min-width: 1024px) {
     max-width: 324px;
     margin-right: 136px;
   }
@@ -45,8 +45,8 @@
 }
 
 .benefit:not(:last-of-type) {
-    margin-bottom: 28px;
-  }
+  margin-bottom: 28px;
+}
 
 .benefitWrapper {
   display: inline-flex;

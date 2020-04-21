@@ -31,7 +31,7 @@
 }
 
 .selectedAnnouncement {
-  background-color: #ffffff;
+  background-color: #fff;
   box-shadow: 0 3px 6px #0000003c;
   border-radius: 10px;
   position: relative;
@@ -173,7 +173,7 @@
   justify-content: space-between;
   align-items: center;
   padding: 0 14.5px;
-  background-color: #000000;
+  background-color: #000;
   border-radius: 0 0 10px 10px;
   height: 51px;
 }
@@ -190,7 +190,7 @@
 
 .leftPanelText,
 .rightPanelText {
-  color: #ffffff;
+  color: #fff;
   font-size: 11px;
   font-weight: lighter;
   text-transform: uppercase;
@@ -258,7 +258,7 @@
 }
 
 .announcement {
-  background-color: #ffffff;
+  background-color: #fff;
   box-shadow: 0 3px 6px #0000003c;
   border-radius: 10px;
   display: grid;

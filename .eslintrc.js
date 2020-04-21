@@ -15,8 +15,8 @@ module.exports = {
   ],
   rules: {
     "@typescript-eslint/interface-name-prefix": "off",
+    "@typescript-eslint/no-unused-vars": "off",
     "react/display-name": "off",
-
     "react/prop-types": "off",
   },
   settings: {

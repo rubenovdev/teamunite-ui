@@ -45,12 +45,12 @@ const AnnouncementBoard: FC = () => {
   }
 
   return (
-    <div className={styles.announcementBoard}>
+    <section className={styles.announcementBoard}>
       <div className={styles.announcementBoardTitleWrapper}>
-        <h3 className={styles.announcementBoardTitle}>Доска объявлений</h3>
+        <h2 className={styles.announcementBoardTitle}>Доска объявлений</h2>
       </div>
       {renderAnnouncementsWrapperContent()}
-    </div>
+    </section>
   )
 }
 
