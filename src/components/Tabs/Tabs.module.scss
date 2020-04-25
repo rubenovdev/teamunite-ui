@@ -1,8 +1,8 @@
-.tabs {
+.projectPageTabs {
   min-width: 270px;
 }
 
-.tabsList {
+.projectPageTabsList {
   background-color: #fff;
   display: flex;
   justify-content: space-between;
@@ -12,7 +12,7 @@
   }
 }
 
-.tabContent {
+.projectPageTabContent {
   background: #fff;
   border-radius: 0 0 10px 10px;
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
@@ -21,4 +21,19 @@
   @media (min-width: 1024px) {
     padding: 62px 48px;
   }
+}
+
+.projectSearchFiltersTabs {
+  padding-top: 40px;
+  width: 250px;
+
+  @media (min-width: 1024px) {
+    width: 100%;
+  }
+}
+
+.projectSearchFiltersTabsList {
+  display: flex;
+  justify-content: start;
+  margin-bottom: 27px;
 }

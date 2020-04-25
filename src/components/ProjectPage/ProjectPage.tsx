@@ -15,7 +15,7 @@ const ProjectPage: FC<Props> = ({
   return (
     <div className={styles.mainContent}>
       <ProjectHeader description={description} />
-      <Tabs>
+      <Tabs style={'projectPage'}>
         <ProjectDescription data-tabname="Описание" />
         <ProjectVanacy data-tabname="Вакансии" />
         <ProjectAboutCompany data-tabname="О компании" />

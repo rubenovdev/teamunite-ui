@@ -7,12 +7,13 @@ interface Props {
   activeTab: string
   tabName: string
   onTabClick: (tabName: string) => void
+  style: string
 }
 
-const Tab: FC<Props> = ({ activeTab, tabName, onTabClick }: Props) => {
+const Tab: FC<Props> = ({ activeTab, tabName, onTabClick, style }: Props) => {
   const tabClass = classNames(
-    styles.tab,
-    activeTab === tabName && styles.tabActive
+    styles[style + 'Tab'],
+    activeTab === tabName && styles[style + 'TabActive']
   )
 
   return (

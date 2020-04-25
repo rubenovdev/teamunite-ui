@@ -3,11 +3,12 @@ import { connect } from 'react-redux'
 
 import { fetchProjects } from '../../store/action-creators'
 import styles from './ProjectSearch.module.scss'
-import Button from '../Button/Button'
+import InteractiveButton from '../InteractiveButton/InteractiveButton'
 import CustomSelect from '../CustomSelect/CustomSelect'
 import Project from '../Project/Project'
 import { RootState } from '../../store/reducers'
 import { ProfilesData } from '../../models/store/profile'
+import ProjectSearchFilters from '../ProjectSearchFilters/ProjectSearchFilters'
 
 const ProjectSearch: FC<Props> = ({
   projects,
@@ -27,6 +28,8 @@ const ProjectSearch: FC<Props> = ({
     'Сначала долгосрочные',
     'Сначала краткосрочные',
   ]
+
+  const [filtersIsActive, setFiltersIsActive] = useState<boolean>(false)
 
   if (!projects && projectsLoaded) {
     return <div>Данные отсутствуют</div>
@@ -53,7 +56,13 @@ const ProjectSearch: FC<Props> = ({
           selectedItem={setSelectedItem}
           selectStyle={'searchProject'}
         />
-        <Button buttonStyle={'filters'} text={'Фильтры'} />
+        <InteractiveButton
+          buttonStyle={'filters'}
+          text={'Фильтры'}
+          isActive={filtersIsActive}
+          setIsActive={setFiltersIsActive}
+        />
+        {filtersIsActive ? <ProjectSearchFilters /> : null}
       </div>
       <ul className={styles.projects}>
         {projects.map(project => (
