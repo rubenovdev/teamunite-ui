@@ -1,27 +1,24 @@
-import React from 'react'
+import React, { FC } from 'react'
 import classNames from 'classnames'
 
 import styles from './InteractiveButton.module.scss'
 
-const InteractiveButton = ({
+const InteractiveButton: FC<Props> = ({
   text,
-  icon = undefined,
+  icon,
   buttonStyle,
   isActive,
   setIsActive,
-}: Props): JSX.Element => {
-  const changeColor = () => (isActive ? setIsActive(false) : setIsActive(true))
+}) => {
+  const changeColor = () => setIsActive(!isActive)
+
+  const selectClass = () =>
+    isActive
+      ? classNames(styles[buttonStyle], styles.activeFilters)
+      : styles[buttonStyle]
 
   return (
-    <button
-      className={
-        isActive
-          ? classNames(styles[buttonStyle], styles.activeFilters)
-          : styles[buttonStyle]
-      }
-      type="button"
-      onClick={changeColor}
-    >
+    <button className={selectClass()} type="button" onClick={changeColor}>
       {icon ? <img className={styles.icon} src={icon} alt={text} /> : text}
     </button>
   )

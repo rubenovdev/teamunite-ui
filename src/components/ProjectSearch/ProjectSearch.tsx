@@ -62,7 +62,7 @@ const ProjectSearch: FC<Props> = ({
           isActive={filtersIsActive}
           setIsActive={setFiltersIsActive}
         />
-        {filtersIsActive ? <ProjectSearchFilters /> : null}
+        {filtersIsActive && <ProjectSearchFilters />}
       </div>
       <ul className={styles.projects}>
         {projects.map(project => (

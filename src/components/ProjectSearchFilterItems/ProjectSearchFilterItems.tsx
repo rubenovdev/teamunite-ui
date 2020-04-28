@@ -8,19 +8,24 @@ const ProjectSearchFilterItems: FC<Props> = ({ items }) => {
 
   const [isFull, setIsFull] = useState(false)
 
+  const showCheckboxes = () =>
+    (isFull || preview.length === 0 ? items : preview).map((item, index) => (
+      <CustomCheckbox key={index} text={item} /> // TODO: заменить key
+    ))
+
+  const buttonName = () => (isFull ? 'Скрыть' : 'Показать еще')
+
   return (
     <div className={styles.items}>
-      {(isFull ? items : preview).map((item, index) => (
-        <CustomCheckbox key={index} text={item} />
-      ))}
-      {preview.length > 0 ? (
+      {showCheckboxes()}
+      {preview.length !== 0 && (
         <button
           className={styles.allFiltersButton}
-          onClick={() => (isFull ? setIsFull(false) : setIsFull(true))}
+          onClick={() => setIsFull(prevState => !prevState)}
         >
-          {isFull ? 'Скрыть' : 'Показать еще'}
+          {buttonName()}
         </button>
-      ) : null}
+      )}
     </div>
   )
 }

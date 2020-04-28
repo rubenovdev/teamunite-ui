@@ -25,17 +25,10 @@ const ProjectSearchFilters = () => {
     'Сбербанк',
   ]
 
-  const status = [
-    'статус 1',
-    'статус 2',
-    'статус 3',
-    'статус 4',
-    'статус 5',
-    'статус 6',
-  ]
+  const status = ['статус 1', 'статус 2']
 
   return (
-    <Tabs style={'projectSearchFilters'}>
+    <Tabs tabsStyle={'projectSearchFilters'}>
       <ProjectSearchFilterItems data-tabname="Направления" items={directions} />
       <ProjectSearchFilterItems data-tabname="Партнеры" items={partners} />
       <ProjectSearchFilterItems data-tabname="Статус" items={status} />

@@ -1,21 +1,17 @@
-import React, { FC, useState, useMemo, CSSProperties } from 'react'
+import React, { FC, useState, CSSProperties } from 'react'
 
 import styles from './CustomCheckbox.module.scss'
 
 const CustomCheckbox: FC<Props> = ({ text }) => {
   const [isChecked, setIsChecked] = useState(false)
 
-  const labelStyles = useMemo<CSSProperties>(
-    () => ({
-      color: '#ffffff',
-      backgroundColor: '#242424',
-      boxShadow: '0 3px 6px rgba(#000000)',
-    }),
-    [isChecked]
-  )
+  const labelStyles: CSSProperties = {
+    color: '#ffffff',
+    backgroundColor: '#242424',
+    boxShadow: '0 3px 6px rgba(#000000)',
+  }
 
-  const handleChange = () =>
-    isChecked ? setIsChecked(false) : setIsChecked(true)
+  const handleChange = () => setIsChecked(prevState => !prevState)
 
   return (
     <label className={styles.check} style={isChecked ? labelStyles : {}}>

@@ -3,7 +3,7 @@ import React, { FC, useState } from 'react'
 import styles from './Tabs.module.scss'
 import Tab from '../Tab/Tab'
 
-const Tabs: FC<Props> = ({ children, style }) => {
+const Tabs: FC<Props> = ({ children, tabsStyle }) => {
   const [activeTab, setActiveTab] = useState<string>(
     children[0].props['data-tabname']
   )
@@ -22,7 +22,7 @@ const Tabs: FC<Props> = ({ children, style }) => {
           activeTab={activeTab}
           tabName={tabName}
           onTabClick={onTabClick}
-          style={style}
+          tabsStyle={tabsStyle}
         />
       )
     })
@@ -35,9 +35,11 @@ const Tabs: FC<Props> = ({ children, style }) => {
   }
 
   return (
-    <div className={styles[style + 'Tabs']}>
-      <ul className={styles[style + 'TabsList']}>{renderTabsItems()}</ul>
-      <div className={styles[style + 'TabContent']}>{renderTabContent()}</div>
+    <div className={styles[tabsStyle + 'Tabs']}>
+      <ul className={styles[tabsStyle + 'TabsList']}>{renderTabsItems()}</ul>
+      <div className={styles[tabsStyle + 'TabContent']}>
+        {renderTabContent()}
+      </div>
     </div>
   )
 }
@@ -46,5 +48,5 @@ export default Tabs
 
 interface Props {
   children: JSX.Element[]
-  style: string
+  tabsStyle: string
 }
