@@ -5,7 +5,7 @@ import styles from './ProjectHeader.module.scss'
 import Tinkoff from '../../../assets/images/tinkoff.svg'
 import Button from '../../Button/Button'
 
-const ProjectHeader: FC<Props> = ({ description }) => {
+const ProjectHeader: FC<Props> = ({ description, subtitle, isButton }) => {
   return (
     <div className={styles.header}>
       <div className={styles.headerContent}>
@@ -17,20 +17,22 @@ const ProjectHeader: FC<Props> = ({ description }) => {
           <h1 className={styles.headerTitle}>{description}</h1>
         </div>
 
-        <h3 className={styles.headerSubtitle}>
-          Факультет информационных технологий
-        </h3>
+        <h3 className={styles.headerSubtitle}>{subtitle}</h3>
       </div>
 
-      <NavLink to="/sign" className={styles.signBtn}>
-        <Button text="Записаться" buttonStyle="enter" />
-      </NavLink>
+      {isButton && (
+        <NavLink to="/sign" className={styles.signBtn}>
+          <Button text="Записаться" buttonStyle="enter" />
+        </NavLink>
+      )}
     </div>
   )
 }
 
 interface Props {
   description: string
+  subtitle: string
+  isButton: boolean
 }
 
 export default ProjectHeader

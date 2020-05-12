@@ -63,7 +63,9 @@
 }
 
 .vacancies {
-  margin-right: 136px;
+  @media (min-width: 768px) {
+    margin-right: 136px;
+  }
 }
 
 .vacancy {
