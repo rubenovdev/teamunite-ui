@@ -6,7 +6,7 @@ import React, {
   ChangeEvent,
 } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { createMember, deleteMember } from '../../../store/members/actions'
+import { createMember } from '../../../store/members/actions'
 import { Member } from '../../../store/members/types'
 import { curators } from '../../../fixtures'
 import { RootState } from '../../../store/reducers'

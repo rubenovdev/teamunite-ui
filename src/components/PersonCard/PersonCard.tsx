@@ -23,7 +23,7 @@ const PersonCard: FC<Props> = ({
 
   useEffect(() => {
     setIsActive(currIndex === id ? true : false)
-  }, [currIndex])
+  }, [currIndex, id])
 
   const renderClassName = (className: string): string => {
     return classNames(
