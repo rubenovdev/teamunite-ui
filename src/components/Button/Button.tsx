@@ -1,10 +1,14 @@
 import React from 'react'
 import styles from './Button.module.scss'
 
-const Button = ({ text, buttonStyle }: Props): JSX.Element => {
+const Button = ({
+  text,
+  icon = undefined,
+  buttonStyle,
+}: Props): JSX.Element => {
   return (
     <button className={styles[buttonStyle]} type="button">
-      {text}
+      {icon ? <img className={styles.icon} src={icon} alt={text} /> : text}
     </button>
   )
 }
@@ -14,4 +18,5 @@ export default Button
 interface Props {
   buttonStyle: string
   text: string
+  icon?: string | undefined
 }

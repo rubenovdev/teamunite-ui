@@ -19,7 +19,7 @@ const ProjectPage: FC<Props> = ({
         subtitle="Факультет информационных технологий"
         isButton={true}
       />
-      <Tabs>
+      <Tabs tabsStyle={'projectPage'}>
         <ProjectDescription data-tabname="Описание" />
         <ProjectVanacy data-tabname="Вакансии" />
         <ProjectAboutCompany data-tabname="О компании" />

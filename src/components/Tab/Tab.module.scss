@@ -1,4 +1,4 @@
-.tab {
+.projectPageTab {
   cursor: pointer;
   text-align: center;
   width: 100%;
@@ -15,7 +15,26 @@
   }
 }
 
-.tabActive {
+.projectPageTabActive {
   color: #fff;
   background: #242424;
+}
+
+.projectSearchFiltersTab {
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 200;
+
+  &:not(:last-child) {
+    margin-right: 18px;
+
+    @media (min-width: 1024px) {
+      margin-right: 73px;
+    }
+  }
+}
+
+.projectSearchFiltersTabActive {
+  padding-bottom: 4px;
+  border-bottom: 0.5px solid black;
 }

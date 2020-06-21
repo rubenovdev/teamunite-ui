@@ -84,11 +84,14 @@
 @media (min-width: 1024px) {
   .selectWrapper {
     .selectHeader {
-      width: 276px;
+      width: 268px;
+      height: 40px;
+      font-size: 14px;
     }
 
     .selectList {
-      width: 276px;
+      width: 268px;
+      top: 40px;
     }
   }
 
