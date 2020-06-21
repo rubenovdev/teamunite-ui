@@ -48,5 +48,5 @@ export default Tabs
 
 interface Props {
   children: JSX.Element[]
-  tabsStyle: string
+  tabsStyle?: string
 }
