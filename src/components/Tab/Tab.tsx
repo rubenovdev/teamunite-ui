@@ -7,7 +7,7 @@ interface Props {
   activeTab: string
   tabName: string
   onTabClick: (tabName: string) => void
-  tabsStyle: string
+  tabsStyle: string | undefined
 }
 
 const Tab: FC<Props> = ({ activeTab, tabName, onTabClick, tabsStyle }) => {

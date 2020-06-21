@@ -14,7 +14,11 @@ const ProjectPage: FC<Props> = ({
 }) => {
   return (
     <div className={styles.mainContent}>
-      <ProjectHeader description={description} />
+      <ProjectHeader
+        description={description}
+        subtitle="Факультет информационных технологий"
+        isButton={true}
+      />
       <Tabs tabsStyle={'projectPage'}>
         <ProjectDescription data-tabname="Описание" />
         <ProjectVanacy data-tabname="Вакансии" />
