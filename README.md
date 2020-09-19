@@ -20,7 +20,7 @@ git commit -m 'описываем, что сделали'
 git push origin название-ветки
 ```
 
-**После выполнения задачи** пушим последние изменения в ветку задачи и создаем [Pull Request](https://github.com/rubenovdev/teamunite-ui/compare) на Bitbucket
+**После выполнения задачи** пушим последние изменения в ветку задачи и создаем [Pull Request](https://github.com/rubenovdev/teamunite-ui/compare) на GitHub
 
 В Pull Request описываем что было сделано, указываем reviewers, и в assignees указываем себя
 
