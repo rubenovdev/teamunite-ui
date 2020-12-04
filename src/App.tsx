@@ -1,19 +1,14 @@
 import React, { FC } from 'react'
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
+import Assets from './pages/Assets/Assets'
 
 const App: FC = () => {
   return (
-    <div>
-      <h3>Environmental variables:</h3>
-      <p>
-        process.env.PRODUCTION: <b>{process.env.PRODUCTION.toString()}</b>
-      </p>
-      <p>
-        process.env.NAME: <b>{process.env.NAME}</b>
-      </p>
-      <p>
-        process.env.VERSION: <b>{process.env.VERSION}</b>
-      </p>
-    </div>
+    <Router>
+      <Switch>
+        <Route path='/assets' component={Assets} />
+      </Switch>
+    </Router>
   )
 }
 
