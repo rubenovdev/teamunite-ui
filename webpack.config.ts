@@ -29,6 +29,23 @@ const webpackConfig = (env): Configuration => ({
         },
         exclude: /dist/,
       },
+      {
+        test: /\.scss$/,
+        use: [
+          'style-loader',
+          'typings-for-css-modules-loader?modules&namedExport&camelCase',
+          'sass-loader',
+        ],
+      },
+      {
+        test: /\.(png|jpg|svg|gif)$/,
+        use: {
+          loader: 'file-loader',
+          options: {
+            esModule: false,
+          },
+        },
+      },
     ],
   },
   plugins: [
