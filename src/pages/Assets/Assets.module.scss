@@ -5,3 +5,12 @@
 .inputGroup {
   margin-bottom: 30px;
 }
+
+.buttons {
+  display: flex;
+  flex-direction: column;
+}
+
+.button {
+  margin-bottom: 30px;
+}
