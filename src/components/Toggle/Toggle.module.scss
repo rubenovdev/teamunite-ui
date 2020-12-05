@@ -26,6 +26,16 @@
   height: 0;
 
   opacity: 0;
+
+  &:checked {
+    & + .slider {
+      background-color: #000000;
+    }
+
+    & + .slider::before {
+      transform: translateX(14px);
+    }
+  }
 }
 
 .slider {
@@ -54,17 +64,5 @@
 
     background-color: #ffffff;
     transition: all 0.2s;
-  }
-}
-
-.checkbox {
-  &:checked {
-    & + .slider {
-      background-color: #000000;
-    }
-
-    & + .slider::before {
-      transform: translateX(14px);
-    }
   }
 }

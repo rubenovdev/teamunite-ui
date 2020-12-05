@@ -5,6 +5,7 @@ import Button from '../../components/Button/Button'
 import AddButton from '../../components/AddButton/AddButton'
 import DeleteButton from '../../components/DeleteButton/DeleteButton'
 import Toggle from '../../components/Toggle/Toggle'
+import Checkbox from '../../components/Checkbox/Checkbox'
 
 import styles from './Assets.module.scss'
 
@@ -105,6 +106,8 @@ const Assets: FC = () => {
       />
       <Toggle name="toggle3" onChange={() => console.log('toggle3')} toggleWrapperClassName={styles.toggle} />
       <Toggle name="toggle4" isChecked onChange={() => console.log('toggle4')} toggleWrapperClassName={styles.toggle} />
+      <Checkbox name="checkbox1" onChange={() => console.log('checkbox1')} className={styles.checkbox} />
+      <Checkbox name="checkbox2" isChecked onChange={() => console.log('checkbox2')} />
     </div>
   )
 }

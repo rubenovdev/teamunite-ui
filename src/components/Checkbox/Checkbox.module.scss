@@ -1,0 +1,56 @@
+.checkboxWrapper {
+  position: relative;
+
+  display: inline-block;
+
+  width: 24px;
+  height: 24px;
+}
+
+.checkbox {
+  width: 0;
+  height: 0;
+
+  opacity: 0;
+
+  &:checked {
+    & + .box {
+      border: 1px solid #000000;
+    }
+
+    & + .box::before {
+      top: 29%;
+      left: 30%;
+
+      background-image: url('../../assets/images/markIcon.svg');
+      background-repeat: no-repeat;
+      background-size: 9px 10px;
+      transition: all 0.2s;
+    }
+  }
+}
+
+.box {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+
+  border: 1px solid #a4a4a4;
+  border-radius: 5px;
+
+  transition: all 0.2s;
+  cursor: pointer;
+
+  &::before {
+    content: '';
+
+    position: absolute;
+
+    width: 9px;
+    height: 10px;
+
+    transition: all 0.2s;
+  }
+}
