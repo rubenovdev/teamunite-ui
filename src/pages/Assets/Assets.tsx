@@ -4,6 +4,7 @@ import Input from '../../components/Input/Input'
 import Button from '../../components/Button/Button'
 import AddButton from '../../components/AddButton/AddButton'
 import DeleteButton from '../../components/DeleteButton/DeleteButton'
+import Toggle from '../../components/Toggle/Toggle'
 
 import styles from './Assets.module.scss'
 
@@ -50,7 +51,7 @@ const Assets: FC = () => {
         />
         <Button
           type="button"
-          isDisabled={true}
+          isDisabled
           style="primary"
           text="Disabled"
           onClick={() => console.log('disabled')}
@@ -75,7 +76,7 @@ const Assets: FC = () => {
           style="primary"
           text="Large primary"
           onClick={() => console.log('large primary')}
-          isLarge={true}
+          isLarge
           className={styles.button}
         />
         <Button
@@ -83,12 +84,27 @@ const Assets: FC = () => {
           style="delete"
           text="Large delete"
           onClick={() => console.log('large delete')}
-          isLarge={true}
+          isLarge
           className={styles.button}
         />
         <AddButton type="button" onClick={() => console.log('add button')} className={styles.button} />
         <DeleteButton type="button" onClick={() => console.log('delete button')} className={styles.button} />
       </div>
+      <Toggle
+        label="Текст"
+        name="toggle1"
+        onChange={() => console.log('toggle1')}
+        toggleWrapperClassName={styles.toggle}
+      />
+      <Toggle
+        label="Текст"
+        name="toggle2"
+        isChecked
+        onChange={() => console.log('toggle2')}
+        toggleWrapperClassName={styles.toggle}
+      />
+      <Toggle name="toggle3" onChange={() => console.log('toggle3')} toggleWrapperClassName={styles.toggle} />
+      <Toggle name="toggle4" isChecked onChange={() => console.log('toggle4')} toggleWrapperClassName={styles.toggle} />
     </div>
   )
 }
