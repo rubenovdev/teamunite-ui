@@ -1,0 +1,28 @@
+.selectGroup {
+  display: flex;
+  flex-direction: column;
+}
+
+.label {
+  margin-bottom: 8px;
+
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 24px;
+}
+
+.select {
+  padding-top: 16px;
+  padding-bottom: 16px;
+  padding-left: 16px;
+
+  height: 56px;
+  border: 1px solid #a4a4a4;
+  border-radius: 5px;
+
+  background-image: url('../../assets/images/arrowDown.svg');
+  background-repeat: no-repeat;
+  background-size: 24px 12px;
+  background-position: calc(100% - 16px) 50%;
+  color: #a4a4a4;
+}

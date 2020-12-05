@@ -16,8 +16,18 @@ li {
   list-style: none;
 }
 
-input {
+input,
+select {
   outline: none;
+}
+
+select {
+  -webkit-appearance: none;
+  appearance: none;
+
+  &::-ms-expand {
+    display: none;
+  }
 }
 
 button {

@@ -6,13 +6,22 @@ import AddButton from '../../components/AddButton/AddButton'
 import DeleteButton from '../../components/DeleteButton/DeleteButton'
 import Toggle from '../../components/Toggle/Toggle'
 import Checkbox from '../../components/Checkbox/Checkbox'
+import Select from '../../components/Select/Select'
 
 import styles from './Assets.module.scss'
+const OPTIONS = [
+  { text: 'Выберите вид спорта', value: '' },
+  { text: 'Футбол', value: 'soccer' },
+  { text: 'Баскетбол', value: 'basketball' },
+  { text: 'Теннис', value: 'tennis' },
+]
 
 const Assets: FC = () => {
   const test1 = useInput('')
   const test2 = useInput('Самый лучший из армян – это Генрих Мхитарян')
   const test3 = useInput('')
+  const select1 = useInput('')
+  const select2 = useInput('tennis')
 
   return (
     <div className={styles.container}>
@@ -108,6 +117,20 @@ const Assets: FC = () => {
       <Toggle name="toggle4" isChecked onChange={() => console.log('toggle4')} toggleWrapperClassName={styles.toggle} />
       <Checkbox name="checkbox1" onChange={() => console.log('checkbox1')} className={styles.checkbox} />
       <Checkbox name="checkbox2" isChecked onChange={() => console.log('checkbox2')} />
+      <Select
+        options={OPTIONS}
+        value={select1.value}
+        onChange={select1.onChange}
+        isLarge
+        selectGroupClassName={styles.select}
+      />
+      <Select
+        label="Вид спорта"
+        options={OPTIONS}
+        value={select2.value}
+        onChange={select2.onChange}
+        selectGroupClassName={styles.select}
+      />
     </div>
   )
 }
