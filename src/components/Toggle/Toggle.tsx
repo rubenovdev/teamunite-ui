@@ -25,6 +25,6 @@ interface Props {
   label?: string
   name: string
   isChecked?: boolean
-  onChange: () => void
-  toggleWrapperClassName?: unknown
+  onChange?: () => void
+  toggleWrapperClassName?: string
 }

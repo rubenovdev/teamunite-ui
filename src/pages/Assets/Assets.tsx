@@ -31,6 +31,7 @@ const Assets: FC = () => {
         value={test1.value}
         onChange={test1.onChange}
         inputGroupClassName={styles.inputGroup}
+        inputWidth={136}
       />
       <Input
         label="Лейбл 1"

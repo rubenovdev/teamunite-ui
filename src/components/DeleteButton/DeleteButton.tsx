@@ -11,6 +11,6 @@ export default DeleteButton
 
 interface Props {
   type: 'button' | 'submit' | 'reset'
-  onClick: () => void
-  className?: unknown
+  onClick?: () => void
+  className?: string
 }

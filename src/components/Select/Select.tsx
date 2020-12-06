@@ -21,7 +21,7 @@ const Select: FC<Props> = ({ label, name, value, onChange, isLarge = false, opti
       >
         {options.map(({ text, value: optionValue }) => {
           return (
-            <option key={optionValue} value={optionValue} selected={!optionValue} disabled={!optionValue}>
+            <option key={optionValue} value={optionValue} disabled={!optionValue}>
               {text}
             </option>
           )
@@ -36,12 +36,12 @@ export default Select
 interface Props {
   label?: string
   name?: string
-  value: string | number
-  onChange: (e?: ChangeEvent<HTMLSelectElement>) => void
+  value?: string | number
+  onChange?: (e?: ChangeEvent<HTMLSelectElement>) => void
   isLarge?: boolean
   options: {
     text: string
     value: string
   }[]
-  selectGroupClassName?: unknown
+  selectGroupClassName?: string
 }

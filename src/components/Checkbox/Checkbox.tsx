@@ -17,6 +17,6 @@ export default Checkbox
 interface Props {
   name: string
   isChecked?: boolean
-  onChange: () => void
-  className?: unknown
+  onChange?: () => void
+  className?: string
 }

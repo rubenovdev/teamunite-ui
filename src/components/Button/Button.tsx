@@ -24,7 +24,7 @@ interface Props {
   style: 'primary' | 'secondary' | 'delete' | 'large'
   isDisabled?: boolean
   text: string
-  onClick: () => void
+  onClick?: () => void
   isLarge?: boolean
-  className?: unknown
+  className?: string
 }

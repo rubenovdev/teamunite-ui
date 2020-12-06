@@ -28,7 +28,7 @@ const Input: FC<Props> = ({
           placeholder={placeholder}
           value={value}
           onChange={onChange}
-          style={{ width: inputWidth || '480px' }}
+          style={{ width: `${inputWidth || 480}px` }}
           className={classNames(styles.input, value && styles.inputActive, error && styles.inputError)}
         />
         {error && <span className={styles.errorMessage}>* {error}</span>}
@@ -43,10 +43,10 @@ interface Props {
   label?: string
   name?: string
   type: string
-  placeholder: string
-  value: string | number
-  onChange: (e?: ChangeEvent<HTMLInputElement>) => void
+  placeholder?: string
+  value?: string | number
+  onChange?: (e?: ChangeEvent<HTMLInputElement>) => void
   error?: string
-  inputGroupClassName?: unknown
-  inputWidth?: string
+  inputGroupClassName?: string
+  inputWidth?: number
 }
