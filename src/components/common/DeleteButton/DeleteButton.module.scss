@@ -4,7 +4,7 @@
   border: 1px solid #fc4a60;
   border-radius: 5px;
 
-  background-image: url('../../assets/images/deleteIconRed.svg');
+  background-image: url('../../../assets/images/deleteIconRed.svg');
   background-repeat: no-repeat;
   background-size: 11px 11px;
   background-position: 50% 50%;
@@ -12,7 +12,7 @@
 
   &:hover,
   &:active {
-    background-image: url('../../assets/images/deleteIconWhite.svg');
+    background-image: url('../../../assets/images/deleteIconWhite.svg');
     transition: all 0.2s;
   }
 

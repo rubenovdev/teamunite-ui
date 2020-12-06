@@ -1,9 +1,8 @@
 import React, { FC } from 'react'
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
-import Wrapper from './components/Wrapper/Wrapper'
-import Header from './components/Header/Header'
-import SideMenu from './components/SideMenu/SideMenu'
-import Assets from './pages/Assets/Assets'
+import { BrowserRouter as Router, Switch } from 'react-router-dom'
+import Wrapper from 'components/Wrapper/Wrapper'
+import Header from 'components/Header/Header'
+import SideMenu from 'components/SideMenu/SideMenu'
 
 const App: FC = () => {
   return (
@@ -11,9 +10,7 @@ const App: FC = () => {
       <Wrapper>
         <Header />
         <SideMenu />
-        <Switch>
-          <Route path="/assets" component={Assets} />
-        </Switch>
+        <Switch></Switch>
       </Wrapper>
     </Router>
   )
