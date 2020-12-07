@@ -38,6 +38,7 @@
     "webpack-dev-server": "3.11.0"
   },
   "dependencies": {
+    "@types/redux-logger": "^3.0.8",
     "react": "16.13.1",
     "react-dom": "16.13.1",
     "react-redux": "7.2.2",
