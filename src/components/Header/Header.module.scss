@@ -1,0 +1,52 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+
+  padding-top: 40px;
+}
+
+.logo {
+  width: 140px;
+  height: 37px;
+}
+
+.menu {
+  display: flex;
+}
+
+.menuItem {
+  &:not(:last-of-type) {
+    margin-right: 40px;
+  }
+}
+
+.menuLink {
+  display: inline-block;
+
+  background-repeat: no-repeat;
+}
+
+.addFileIcon {
+  width: 15px;
+  height: 16px;
+
+  background-image: url('../../assets/images/addFileIcon.svg');
+  background-size: 15px 16px;
+}
+
+.layersIcon {
+  width: 18px;
+  height: 16px;
+
+  background-image: url('../../assets/images/layersIcon.svg');
+  background-size: 18px 16px;
+}
+
+.logoutIcon {
+  width: 14px;
+  height: 16px;
+
+  background-image: url('../../assets/images/logoutIcon.svg');
+  background-size: 14px 16px;
+}

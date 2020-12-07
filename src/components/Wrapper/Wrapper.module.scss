@@ -1,0 +1,11 @@
+@import '../../variables';
+
+.wrapper {
+  max-width: 890px;
+  margin: 0 auto;
+  padding-left: 55px;
+
+  @media (min-width: $laptop-m) {
+    padding-left: unset;
+  }
+}

@@ -1,19 +1,18 @@
 import React, { FC } from 'react'
+import { BrowserRouter as Router, Switch } from 'react-router-dom'
+import Wrapper from 'components/Wrapper/Wrapper'
+import Header from 'components/Header/Header'
+import SideMenu from 'components/SideMenu/SideMenu'
 
 const App: FC = () => {
   return (
-    <div>
-      <h3>Environmental variables:</h3>
-      <p>
-        process.env.PRODUCTION: <b>{process.env.PRODUCTION.toString()}</b>
-      </p>
-      <p>
-        process.env.NAME: <b>{process.env.NAME}</b>
-      </p>
-      <p>
-        process.env.VERSION: <b>{process.env.VERSION}</b>
-      </p>
-    </div>
+    <Router>
+      <Wrapper>
+        <Header />
+        <SideMenu />
+        <Switch></Switch>
+      </Wrapper>
+    </Router>
   )
 }
 
