@@ -21,6 +21,18 @@ select {
   outline: none;
 }
 
+input {
+  &::-webkit-outer-spin-button,
+  &::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+
+  &[type='number'] {
+    -moz-appearance: textfield;
+  }
+}
+
 select {
   -webkit-appearance: none;
   appearance: none;

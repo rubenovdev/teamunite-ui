@@ -1,0 +1,124 @@
+.container {
+  padding-bottom: 217px;
+}
+
+.pageHeader {
+  display: flex;
+  align-items: flex-end;
+
+  margin-bottom: 32px;
+}
+
+.pageTitle {
+  margin-right: 126px;
+
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 32px;
+}
+
+.mainInfo {
+  margin-bottom: 88px;
+}
+
+.mb24 {
+  margin-bottom: 24px;
+}
+
+.box {
+  margin-bottom: 88px;
+
+  &Header {
+    display: flex;
+    align-items: center;
+  }
+
+  &Title {
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 32px;
+  }
+
+  &Toggler {
+    margin-left: 48px;
+
+    &WithLabel {
+      margin-left: 130px;
+    }
+  }
+
+  &Message {
+    max-width: 480px;
+    margin-top: 16px;
+
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 24px;
+  }
+
+  &Body {
+    margin-top: 32px;
+  }
+
+  &Buttons {
+    margin-top: 32px;
+  }
+}
+
+.deleteButton {
+  margin-right: 48px;
+}
+
+.blocks {
+  margin-bottom: 80px;
+}
+
+.block {
+  background-color: transparent;
+
+  &Body {
+    border-bottom: 1px solid #6d6d6d;
+  }
+
+  &Title {
+    margin-bottom: 32px;
+
+    font-size: 30px;
+    font-weight: 700;
+    line-height: 32px;
+  }
+
+  &ChooseTemplateSection {
+    display: flex;
+  }
+
+  &Buttons {
+    width: 480px;
+    padding-top: 32px;
+    border-top: 1px solid #6d6d6d;
+  }
+}
+
+.templateSelect {
+  margin-right: 48px;
+  margin-bottom: 24px;
+}
+
+.mb32 {
+  margin-bottom: 32px;
+}
+
+.mark {
+  display: flex;
+  align-items: flex-end;
+
+  margin-bottom: 24px;
+}
+
+.markInput {
+  margin-right: 32px;
+}
+
+.createTask {
+  margin-left: calc(50% - 240px);
+}
