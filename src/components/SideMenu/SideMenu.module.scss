@@ -1,0 +1,74 @@
+.sideMenu {
+  position: absolute;
+  left: 0;
+  top: 0;
+
+  background-color: #000000;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+
+  height: 100vh;
+  padding-right: 18px;
+  padding-left: 18px;
+}
+
+.menu {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.menuItem {
+  &:not(:last-of-type) {
+    margin-bottom: 32px;
+  }
+}
+
+.menuLink {
+  position: relative;
+
+  display: inline-block;
+
+  width: 20px;
+  height: 20px;
+
+  background-repeat: no-repeat;
+  background-size: 20px 20px;
+
+  &:hover {
+    &::after {
+      content: '';
+
+      position: absolute;
+      top: -50%;
+      left: -50%;
+
+      display: inline-block;
+
+      width: 40px;
+      height: 40px;
+      border-radius: 5px;
+
+      background-color: rgba($color: #ffffff, $alpha: 0.5);
+    }
+  }
+}
+
+.checkIcon {
+  background-image: url('../../assets/images/checkIcon.svg');
+}
+
+.retakeIcon {
+  background-image: url('../../assets/images/retakeIcon.svg');
+}
+
+.dashboardIcon {
+  background-image: url('../../assets/images/dashboardIcon.svg');
+}
+
+.addAdminIcon {
+  background-image: url('../../assets/images/addAdminIcon.svg');
+}

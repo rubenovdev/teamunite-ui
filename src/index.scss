@@ -1,0 +1,39 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body,
+html {
+  font-family: 'Roboto', sans-serif;
+}
+
+ul,
+li {
+  list-style: none;
+}
+
+input,
+select {
+  outline: none;
+}
+
+select {
+  -webkit-appearance: none;
+  appearance: none;
+
+  &::-ms-expand {
+    display: none;
+  }
+}
+
+button {
+  border: none;
+  outline: none;
+
+  background-color: transparent;
+  cursor: pointer;
+}

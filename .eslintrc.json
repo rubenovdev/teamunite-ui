@@ -52,6 +52,10 @@
         "hoist": "functions",
         "allow": []
       }
+    ],
+    "jsx-quotes": [
+      "error",
+      "prefer-double"
     ]
   },
   "settings": {
