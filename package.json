@@ -15,6 +15,7 @@
     "@types/node": "13.13.32",
     "@types/react": "16.14.1",
     "@types/react-dom": "16.9.10",
+    "@types/redux-logger": "3.0.8",
     "@types/react-router-dom": "5.1.6",
     "@types/webpack": "4.41.25",
     "@types/webpack-dev-server": "3.11.1",
@@ -31,6 +32,8 @@
     "fork-ts-checker-webpack-plugin": "5.2.1",
     "html-webpack-plugin": "4.5.0",
     "prettier": "2.2.0",
+    "redux-devtools-extension": "2.13.8",
+    "redux-logger": "3.0.6",
     "sass-loader": "10.1.0",
     "style-loader": "2.0.0",
     "ts-loader": "8.0.11",
@@ -47,6 +50,10 @@
     "node-sass": "4.14.1",
     "react": "16.13.1",
     "react-dom": "16.13.1",
+    "react-redux": "7.2.2",
+    "redux": "4.0.5",
+    "redux-thunk": "2.3.0",
+    "reselect": "4.0.0"
     "react-router-dom": "5.2.0"
   }
 }
