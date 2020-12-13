@@ -13,6 +13,7 @@ const Input: FC<Props> = ({
   error,
   inputGroupClassName,
   inputWidth,
+  required,
 }) => {
   return (
     <div className={classNames(styles.inputGroup, inputGroupClassName)}>
@@ -23,8 +24,10 @@ const Input: FC<Props> = ({
       )}
       <div className={styles.mainContent}>
         <input
+          required={required}
           type={type}
           id={name}
+          name={name}
           placeholder={placeholder}
           value={value}
           onChange={onChange}
@@ -49,4 +52,5 @@ interface Props {
   error?: string
   inputGroupClassName?: string
   inputWidth?: number
+  required?: boolean
 }
