@@ -1,4 +1,5 @@
-import React, { FC, useState } from 'react'
+import React, { FC, useState, FormEvent } from 'react'
+import useInput from '../../hooks/useInput'
 import Toggle from 'components/common/Toggle/Toggle'
 import Input from 'components/common/Input/Input'
 import Button from 'components/common/Button/Button'
@@ -8,36 +9,56 @@ import AddButton from 'components/common/AddButton/AddButton'
 import styles from './AddTask.module.scss'
 
 const AddTask: FC = () => {
+  const [isRetake, setIsRetake] = useState(false)
+  const title = useInput('')
+  const comment = useInput('')
+  const excellentMin = useInput('')
+  const excellentMax = useInput('')
+  const goodMin = useInput('')
+  const goodMax = useInput('')
+  const satisfactoryMin = useInput('')
+  const satisfactoryMax = useInput('')
+
   const [isTeamPosibilityBoxOpen, setIsTeamPosibilityBoxOpen] = useState(false)
   const [isGiveVariantsBoxOpen, setIsGiveVariantsBoxOpen] = useState(false)
-  const [isCommentBoxOpen, setIsCommentBoxOpen] = useState(false)
+  const [isCommentBoxOpen, setIsCommentBoxOpen] = useState(true)
 
-  const onBoxToggle = (boxName: string) => {
-    switch (boxName) {
-      case 'team-posibility':
+  const onToggle = (name: string) => {
+    switch (name) {
+      case 'retake':
+        setIsRetake(prevState => !prevState)
+        break
+      case 'team-posibility-box':
         setIsTeamPosibilityBoxOpen(prevState => !prevState)
         break
-      case 'give-variants':
+      case 'give-variants-box':
         setIsGiveVariantsBoxOpen(prevState => !prevState)
         break
-      case 'comment':
+      case 'comment-box':
         setIsCommentBoxOpen(prevState => !prevState)
+        comment.clear()
         break
     }
   }
 
+  const onSubmit = (e: FormEvent<HTMLFormElement>) => {
+    e.preventDefault()
+  }
+
   return (
-    <div className={styles.container}>
+    <form className={styles.container} onSubmit={onSubmit}>
       <div className={styles.pageHeader}>
         <h2 className={styles.pageTitle}>Добавление задания</h2>
-        <Toggle label="Пересдача" name="retake-toggle" />
+        <Toggle label="Пересдача" name="retake-toggle" onChange={() => onToggle('retake')} />
       </div>
       <div className={styles.box}>
         <Input
           label="Название"
-          name="name"
+          name="title"
           type="text"
           placeholder="Введите название"
+          value={title.value}
+          onChange={title.onChange}
           inputGroupClassName={styles.mb24}
         />
         <Input
@@ -54,7 +75,7 @@ const AddTask: FC = () => {
           placeholder="Введите фамилию проверяющего"
           inputGroupClassName={styles.mb24}
         />
-        <Input label="Срок сдачи" name="date" type="text" placeholder="Введите срок сдачи в формате дд.мм.гг" />
+        <Input label="Срок сдачи" name="deadline" type="text" placeholder="Введите срок сдачи в формате дд.мм.гг" />
       </div>
       <div className={styles.box}>
         <div className={styles.boxHeader}>
@@ -62,7 +83,7 @@ const AddTask: FC = () => {
           <Toggle
             name="team-posibility-toggle"
             toggleWrapperClassName={styles.boxToggler}
-            onChange={() => onBoxToggle('team-posibility')}
+            onChange={() => onToggle('team-posibility-box')}
           />
         </div>
         <div className={styles.boxBody} style={{ display: isTeamPosibilityBoxOpen ? 'block' : 'none' }}>
@@ -81,7 +102,7 @@ const AddTask: FC = () => {
           <Toggle
             name="give-variants-toggle"
             toggleWrapperClassName={styles.boxToggler}
-            onChange={() => onBoxToggle('give-variants')}
+            onChange={() => onToggle('give-variants-box')}
           />
         </div>
         <p className={styles.boxMessage}>Варианты будут назначены студентам в случайном порядке</p>
@@ -107,12 +128,20 @@ const AddTask: FC = () => {
           <h3 className={styles.boxTitle}>Поле для уточнения</h3>
           <Toggle
             name="comment-toggle"
+            isChecked
             toggleWrapperClassName={styles.boxToggler}
-            onChange={() => onBoxToggle('comment')}
+            onChange={() => onToggle('comment-box')}
           />
         </div>
         <div className={styles.boxBody} style={{ display: isCommentBoxOpen ? 'block' : 'none' }}>
-          <Input label="Комментарий" name="comment" type="text" placeholder="Введите текст" />
+          <Input
+            label="Комментарий"
+            name="comment"
+            type="text"
+            placeholder="Введите текст"
+            value={comment.value}
+            onChange={comment.onChange}
+          />
         </div>
       </div>
       <div className={styles.box}>
@@ -197,10 +226,18 @@ const AddTask: FC = () => {
               name="excellent-mark"
               type="number"
               placeholder="От"
+              value={excellentMin.value}
+              onChange={excellentMin.onChange}
               inputGroupClassName={styles.markInput}
               inputWidth={136}
             />
-            <Input type="number" placeholder="До" inputWidth={136} />
+            <Input
+              type="number"
+              placeholder="До"
+              value={excellentMax.value}
+              onChange={excellentMax.onChange}
+              inputWidth={136}
+            />
           </div>
           <div className={styles.mark}>
             <Input
@@ -208,10 +245,12 @@ const AddTask: FC = () => {
               name="good-mark"
               type="number"
               placeholder="От"
+              value={goodMin.value}
+              onChange={goodMin.onChange}
               inputGroupClassName={styles.markInput}
               inputWidth={136}
             />
-            <Input type="number" placeholder="До" inputWidth={136} />
+            <Input type="number" placeholder="До" value={goodMax.value} onChange={goodMax.onChange} inputWidth={136} />
           </div>
           <div className={styles.mark}>
             <Input
@@ -219,15 +258,23 @@ const AddTask: FC = () => {
               name="satisfactory-mark"
               type="number"
               placeholder="От"
+              value={satisfactoryMin.value}
+              onChange={satisfactoryMin.onChange}
               inputGroupClassName={styles.markInput}
               inputWidth={136}
             />
-            <Input type="number" placeholder="До" inputWidth={136} />
+            <Input
+              type="number"
+              placeholder="До"
+              value={satisfactoryMax.value}
+              onChange={satisfactoryMax.onChange}
+              inputWidth={136}
+            />
           </div>
         </div>
       </div>
-      <Button type="button" style="primary" text="Создать задание" isLarge className={styles.createTask} />
-    </div>
+      <Button type="submit" style="primary" text="Создать задание" isLarge className={styles.createTask} />
+    </form>
   )
 }
 
