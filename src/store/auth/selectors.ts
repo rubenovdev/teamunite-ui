@@ -1,3 +1,3 @@
 import { RootState } from 'src/store/reducers'
 
-export const selectError = (state: RootState) => state.account.errorMessage
+export const selectError = (state: RootState): string => state.account.errorMessage
