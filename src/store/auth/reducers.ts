@@ -1,13 +1,13 @@
-import { LOGIN_SUCCESS, LOGIN_ERROR } from './constants'
-import { IAccountState, ILoginActionType } from './types'
+import Cookies from 'js-cookie'
 
-const initialState = { accessToken: localStorage.getItem('accessToken') || '', errorMessage: null }
+import { LOGIN_ERROR } from './constants'
+import { AccountState, LoginActionType } from './types'
+import { token } from 'src/static'
 
-export const accountReducer = (state: IAccountState = initialState, action: ILoginActionType): IAccountState => {
+const initialState = { accessToken: Cookies.get(token) || '', errorMessage: null }
+
+export const accountReducer = (state: AccountState = initialState, action: LoginActionType): AccountState => {
   switch (action.type) {
-    case LOGIN_SUCCESS:
-      const accessToken = action.payload
-      return { ...state, accessToken }
     case LOGIN_ERROR:
       const errorMessage = action.payload
       return { ...state, errorMessage }

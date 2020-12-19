@@ -1,13 +1,14 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import axios from 'axios'
+import { Provider } from 'react-redux'
 
+import store from './store'
 import App from './App'
 import './index.scss'
 
-const accessToken = localStorage.getItem('accessToken')
-if (accessToken) {
-  axios.defaults.headers.common['Authorization'] = `Bearer ${accessToken}`
-}
-
-ReactDOM.render(<App />, document.getElementById('root'))
+ReactDOM.render(
+  <Provider store={store}>
+    <App />
+  </Provider>,
+  document.getElementById('root')
+)

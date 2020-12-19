@@ -1,1 +1,1 @@
-export const URL = 'https://api.teamunite.ru/v1'
+export const token = 'accessToken'

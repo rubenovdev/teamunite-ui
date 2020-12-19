@@ -1,42 +1,17 @@
-import React, { FC, useState } from 'react'
+import React, { FC } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { useHistory } from 'react-router-dom'
 
-import { login } from '../../store/auth/actions'
+import { login } from 'src/store/auth/actions'
+import { selectError } from 'src/store/auth/selectors'
 import AuthorizationView from './AuthorizationView'
 
 const Authorization: FC = () => {
   const dispatch = useDispatch()
-  const history = useHistory()
-  const accessToken = useSelector(state => state.account.accessToken)
-  const errorMessage = useSelector(state => state.account.errorMessage)
-  const initialFormState = { email: '', password: '' }
-  const [userData, setUserData] = useState(initialFormState)
+  const errorMessage = useSelector(state => selectError(state))
 
-  if (accessToken) {
-    history.push('/tasks')
-  }
+  const loginCallback = data => dispatch(login(data))
 
-  const handleInputChange = event => {
-    const name = event.currentTarget.name
-    const value = event.currentTarget.value
-
-    setUserData({ ...userData, [name]: value })
-  }
-
-  const handleSubmit = event => {
-    event.preventDefault()
-    dispatch(login(userData))
-  }
-
-  return (
-    <AuthorizationView
-      userData={userData}
-      handleInputChange={handleInputChange}
-      handleSubmit={handleSubmit}
-      errorMessage={errorMessage}
-    />
-  )
+  return <AuthorizationView loginCallback={loginCallback} errorMessage={errorMessage} />
 }
 
 export default Authorization
