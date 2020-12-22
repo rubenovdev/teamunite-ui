@@ -1,16 +1,31 @@
 import React, { FC } from 'react'
-import { BrowserRouter as Router, Switch } from 'react-router-dom'
+import { BrowserRouter as Router, Switch, Route, Redirect } from 'react-router-dom'
+import Cookies from 'js-cookie'
+
+import { token } from 'src/static'
 import Wrapper from 'components/Wrapper/Wrapper'
 import Header from 'components/Header/Header'
 import SideMenu from 'components/SideMenu/SideMenu'
+import Authorization from './pages/Authorization/Authorization'
 
 const App: FC = () => {
+  const privateRoute = page => {
+    if (Cookies.get(token)) {
+      return page
+    } else {
+      return <Redirect to="/auth" />
+    }
+  }
+
   return (
     <Router>
       <Wrapper>
         <Header />
         <SideMenu />
-        <Switch></Switch>
+        <Switch>
+          <Route exact path="/auth" component={Authorization} />
+          <Route exact path="/tasks" render={() => privateRoute(<div>Список заданий</div>)} />
+        </Switch>
       </Wrapper>
     </Router>
   )

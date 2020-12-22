@@ -1,0 +1,29 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 90px;
+}
+
+.title {
+  margin-bottom: 16px;
+}
+
+.prompt {
+  margin-bottom: 32px;
+}
+
+.loginForm {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.inputGutter {
+  margin-bottom: 24px;
+}
+
+.errorMessage {
+  margin-bottom: 20px;
+  color: red;
+}
