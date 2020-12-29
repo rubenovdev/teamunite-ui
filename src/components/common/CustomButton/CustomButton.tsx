@@ -3,14 +3,15 @@ import classNames from 'classnames'
 
 import styles from './CustomButton.module.scss'
 
-const AddButton: FC<Props> = ({ type, onClick, className, children }) => {
-  return <button type={type} onClick={onClick} className={classNames(styles.button, className)}>{children ? children : null}</button>
+const CustomButton: FC<Props> = ({ type, onClick, className, icon }) => {
+  return <button type={type} onClick={onClick} className={classNames(styles.button, className)} style={{ backgroundImage:`url(${icon})` }} ></button>
 }
 
-export default AddButton
+export default CustomButton
 
 interface Props {
   type: 'button' | 'submit' | 'reset'
   onClick?: () => void
   className?: string
+  icon?: string
 }

@@ -1,19 +1,24 @@
+import React, { FC } from 'react'
+
 import CustomButton from 'components/common/CustomButton/CustomButton'
 import Button from 'components/common/Button/Button'
-import React, { FC } from 'react'
+
+import styles from './AdminCheckView.module.scss' 
 
 import layersIcon from '../../assets/images/layersIcon.svg'
 
 const AdminCheckView: FC = () => {
-    return (
-        <div>
-            <h1>Очень сложный проект</h1>
-
-            <Button text = 'Скачать в pdf' type = 'button' isDisabled style = 'primary' />
-            <Button text = 'Редактировать' type = 'button' isDisabled style = 'primary' />
-            <CustomButton type = 'button'><img src= {layersIcon} alt="dfssdf"/></CustomButton>
-        </div>
-    )
+  return (
+    <div className = {styles.container}> 
+      <p className = {styles.caption}>Очень сложный проект</p>
+        <div className={styles.buttons}>
+          <Button text="Скачать в pdf" type="button" isDisabled style="primary" />
+          <Button text="Редактировать" type="button" isDisabled style="primary" />
+          <CustomButton type="button" icon={layersIcon} />
+      </div>
+      
+    </div>
+  )
 }
 
 export default AdminCheckView
