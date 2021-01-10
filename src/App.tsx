@@ -7,6 +7,7 @@ import Wrapper from 'components/Wrapper/Wrapper'
 import Header from 'components/Header/Header'
 import SideMenu from 'components/SideMenu/SideMenu'
 import Authorization from './pages/Authorization/Authorization'
+import Tasks from './pages/Tasks/Tasks'
 
 const App: FC = () => {
   const privateRoute = page => {
@@ -24,7 +25,7 @@ const App: FC = () => {
         <SideMenu />
         <Switch>
           <Route exact path="/auth" component={Authorization} />
-          <Route exact path="/tasks" render={() => privateRoute(<div>Список заданий</div>)} />
+          <Route exact path="/tasks" render={() => privateRoute(<Tasks />)} />
         </Switch>
       </Wrapper>
     </Router>

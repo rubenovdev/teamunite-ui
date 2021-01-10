@@ -28,6 +28,7 @@ const AuthorizationView: FC<Props> = ({ errorMessage, loginCallback }) => {
 
   if (Cookies.get(token)) {
     history.push('/tasks')
+    window.location.reload() // TODO убрать, когда будет понятно, как решать проблему с куками
   }
 
   return (
