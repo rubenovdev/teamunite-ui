@@ -17,6 +17,7 @@ const Input: ForwardRefRenderFunction<HTMLInputElement, Props> = (
     isError,
     inputGroupClassName,
     inputWidth,
+    required,
   },
   ref
 ) => {
@@ -29,6 +30,7 @@ const Input: ForwardRefRenderFunction<HTMLInputElement, Props> = (
       )}
       <div className={styles.mainContent}>
         <input
+          required={required}
           type={type}
           id={name}
           name={name}
@@ -62,6 +64,7 @@ type Props = {
   inputGroupClassName?: string
   inputWidth?: number
   ref?: Ref<HTMLInputElement>
+  required?: boolean
 }
 
 export default forwardRef(Input)
