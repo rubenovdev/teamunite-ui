@@ -22,4 +22,4 @@ export const templateSelect: string;
 export const mb32: string;
 export const mark: string;
 export const markInput: string;
-export const createTask: string;
+export const createTaskButton: string;

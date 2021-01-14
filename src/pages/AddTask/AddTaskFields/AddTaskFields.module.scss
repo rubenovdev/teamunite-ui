@@ -1,0 +1,34 @@
+.box {
+  margin-bottom: 88px;
+
+  &Title {
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 32px;
+  }
+
+  &Message {
+    max-width: 480px;
+    margin-top: 16px;
+
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 24px;
+  }
+
+  &Body {
+    margin-top: 32px;
+  }
+
+  &Buttons {
+    margin-top: 32px;
+  }
+}
+
+.mb24 {
+  margin-bottom: 24px;
+}
+
+.deleteButton {
+  margin-right: 48px;
+}

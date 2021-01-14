@@ -1,9 +1,12 @@
-import React, { FC } from 'react'
+import React, { ForwardRefRenderFunction, forwardRef, Ref } from 'react'
 import classNames from 'classnames'
 
 import styles from './Toggle.module.scss'
 
-const Toggle: FC<Props> = ({ label, name, isChecked = false, onChange, toggleWrapperClassName }) => {
+const Toggle: ForwardRefRenderFunction<HTMLInputElement, Props> = (
+  { label, name, isChecked = false, onChange, toggleWrapperClassName },
+  ref
+) => {
   return (
     <div className={classNames(styles.toggleWrapper, toggleWrapperClassName)}>
       {label && (
@@ -12,14 +15,20 @@ const Toggle: FC<Props> = ({ label, name, isChecked = false, onChange, toggleWra
         </label>
       )}
       <label htmlFor={name} className={styles.toggle}>
-        <input type="checkbox" id={name} defaultChecked={isChecked} onChange={onChange} className={styles.checkbox} />
+        <input
+          type="checkbox"
+          id={name}
+          name={name}
+          defaultChecked={isChecked}
+          ref={ref}
+          onChange={onChange}
+          className={styles.checkbox}
+        />
         <span className={styles.slider}></span>
       </label>
     </div>
   )
 }
-
-export default Toggle
 
 interface Props {
   label?: string
@@ -27,4 +36,7 @@ interface Props {
   isChecked?: boolean
   onChange?: () => void
   toggleWrapperClassName?: string
+  ref?: Ref<HTMLInputElement>
 }
+
+export default forwardRef(Toggle)

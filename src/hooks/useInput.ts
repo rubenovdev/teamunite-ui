@@ -3,7 +3,7 @@ import { useState, ChangeEvent } from 'react'
 const useInput = (initialValue: string | number): returnData => {
   const [value, setValue] = useState(initialValue)
 
-  const onChange = (e: ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
+  const onChange = (e: ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
     setValue(e.target.value)
   }
 
@@ -20,6 +20,6 @@ export default useInput
 
 interface returnData {
   value: string | number
-  onChange: (e: ChangeEvent<HTMLInputElement | HTMLSelectElement>) => void
+  onChange: (e: ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => void
   clear: () => void
 }
