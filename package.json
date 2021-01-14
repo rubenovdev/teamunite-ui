@@ -55,22 +55,14 @@
     "@types/redux-logger": "^3.0.8",
     "react": "16.13.1",
     "react-dom": "16.13.1",
-<<<<<<< HEAD
-    "react-router-dom": "5.2.0",
-=======
     "react-hook-form": "6.13.1",
->>>>>>> destructured AddTask component
     "react-redux": "7.2.2",
     "react-router-dom": "5.2.0",
     "redux": "4.0.5",
     "redux-form": "^8.3.7",
     "redux-thunk": "2.3.0",
-<<<<<<< HEAD
-    "reselect": "4.0.0"
-=======
     "reselect": "4.0.0",
     "string-mask": "^0.3.0",
     "yup": "0.32.8"
->>>>>>> destructured AddTask component
   }
 }
