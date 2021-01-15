@@ -78,6 +78,7 @@ const AddTaskAdditional: FC = () => {
             name="optionsToggle"
             toggleWrapperClassName={styles.boxToggler}
             onChange={() => onToggleChange('options')}
+            ref={register}
           />
         </div>
         <p className={styles.boxMessage}>Варианты будут назначены студентам в случайном порядке</p>

@@ -1,4 +1,6 @@
 import React, { FC } from 'react'
+import { useDispatch } from 'react-redux'
+import { addTask } from '../../store/addTask/actions'
 import { useForm, FormProvider } from 'react-hook-form'
 import resolver from '../../utils/addTaskValidationSchema'
 import AddTaskMain from './AddTaskMain/AddTaskMain'
@@ -24,6 +26,8 @@ const defaultValues = {
 }
 
 const AddTask: FC = () => {
+  const dispatch = useDispatch()
+
   const methods = useForm({
     defaultValues,
     mode: 'onBlur',
@@ -34,7 +38,32 @@ const AddTask: FC = () => {
   const { register, handleSubmit } = methods
 
   const onSubmit = data => {
-    console.log(data)
+    const marks = [
+      ...data.marks,
+      {
+        mark: data.marks.length === 1 ? 'Не зачет' : 'Неудовл.',
+        min: 0,
+        max: data.marks[data.marks.length - 1].min - 1,
+      },
+    ]
+
+    const task = {
+      title: data.title,
+      groups: [data.groups],
+      curators: ['5fbe5aa3e36336344c1d8bfe'],
+      retake: data.retake,
+      description: data.description,
+      descriptionFile: data.descriptionFile?.[0]?.name || '',
+      deadline: new Date(data.deadline),
+      comment: data.commentToggle ? data.comment : '',
+      quantity: data.quantity,
+      options: data.optionsToggle ? data.options : 1,
+      fields: data.fields,
+      marks,
+      criteriaGroups: data.criteriaGroups,
+    }
+
+    dispatch(addTask(task))
   }
 
   return (
