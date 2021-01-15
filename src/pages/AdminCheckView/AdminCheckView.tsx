@@ -8,6 +8,9 @@ import styles from './AdminCheckView.module.scss'
 import layersIcon from '../../assets/images/layersIcon.svg'
 
 const AdminCheckView: FC = () => {
+
+  const list = ['181-322','181-321']
+
   return (
     <div className = {styles.container}> 
       <p className = {styles.caption}>Очень сложный проект</p>
@@ -16,6 +19,26 @@ const AdminCheckView: FC = () => {
           <Button text="Редактировать" type="button" isDisabled style="primary" />
           <CustomButton type="button" icon={layersIcon} />
       </div>
+
+      <ul>
+
+      </ul>
+
+      <ul>
+
+      </ul>
+
+      <ul>
+
+      </ul>
+
+      <ul>
+
+      </ul>
+      
+      <ul>
+
+      </ul>
       
     </div>
   )
