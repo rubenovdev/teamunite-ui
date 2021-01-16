@@ -19,9 +19,15 @@ const AddTaskAdditional: FC = () => {
   }
 
   useEffect(() => {
-    if (!togglesState.quantity) setValue('quantity', '1', { shouldValidate: true })
-    if (!togglesState.options) setValue('options', '2', { shouldValidate: true })
-    if (!togglesState.comment) setValue('comment', '', { shouldValidate: true })
+    if (!togglesState.quantity) {
+      setValue('quantity', '1', { shouldValidate: true })
+    }
+    if (!togglesState.options) {
+      setValue('options', '2', { shouldValidate: true })
+    }
+    if (!togglesState.comment) {
+      setValue('comment', '', { shouldValidate: true })
+    }
   }, [togglesState.quantity, togglesState.options, togglesState.comment, setValue])
 
   const onNumbersChange = (event: ChangeEvent<HTMLInputElement>): void => {
