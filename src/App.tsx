@@ -24,7 +24,7 @@ const App: FC = () => {
         <Header />
         <SideMenu />
         <Switch>
-          <Route exact path ='/test' component ={AdminCheckView}/>
+          <Route exact path="/test" component={AdminCheckView} />
           <Route exact path="/auth" component={Authorization} />
           <Route exact path="/tasks" render={() => privateRoute(<div>Список заданий</div>)} />
         </Switch>
