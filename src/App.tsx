@@ -7,6 +7,7 @@ import Wrapper from 'components/Wrapper/Wrapper'
 import Header from 'components/Header/Header'
 import SideMenu from 'components/SideMenu/SideMenu'
 import Authorization from './pages/Authorization/Authorization'
+import AdminCheckView from './pages/AdminCheckView/AdminCheckView'
 
 const App: FC = () => {
   const privateRoute = page => {
@@ -23,6 +24,7 @@ const App: FC = () => {
         <Header />
         <SideMenu />
         <Switch>
+          <Route exact path="/test" component={AdminCheckView} />
           <Route exact path="/auth" component={Authorization} />
           <Route exact path="/tasks" render={() => privateRoute(<div>Список заданий</div>)} />
         </Switch>
