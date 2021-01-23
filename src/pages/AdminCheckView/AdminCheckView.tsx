@@ -28,16 +28,20 @@ const AdminCheckView: FC = () => {
   useEffect(() => {
     const fetchData = async () => {
       const data = await getData()
-      setData(data)
+      setData(data[0])
     }
     fetchData()
   }, [])
 
-  console.log(data)
+  function renderItems(list) {
+    return list.map(item => {
+      return <li key = {`${data._id}_${item}` }>{item}</li>
+    })
+  }
 
-  return (
+  return data ? (
     <div className={styles.container}>
-      <h2 className={styles.caption}>Очень сложный проект</h2>
+      <h2 className={styles.caption}>{data.title}</h2>
       <div className={styles.buttons}>
         <Button text="Скачать в pdf" type="button" isDisabled style="primary" />
         <Button text="Редактировать" type="button" isDisabled style="primary" />
@@ -48,21 +52,21 @@ const AdminCheckView: FC = () => {
           <li>
             <h3>Номера групп</h3>
           </li>
-          <li>181-322,181-321</li>
+          {renderItems(data.groups)}
         </ul>
 
         <ul>
           <li>
             <h3>Проверяющие</h3>
           </li>
-          <li>Чикунов И.М</li>
+          {renderItems(data.curators)}
         </ul>
 
         <ul>
           <li>
             <h3>Срок сдачи</h3>
           </li>
-          <li>23.02.21</li>
+          <li>{Date.parse(data.deadline)}</li>
         </ul>
 
         <ul>
@@ -74,28 +78,13 @@ const AdminCheckView: FC = () => {
         </ul>
       </div>
     </div>
+  ) : (
+    <Loading />
   )
 }
 
 export default AdminCheckView
 
-interface Data {
-  _id: string
-  owner: string
-  title: string
-  groups: [] | any
-  curators: [] | any
-  retake: boolean
-  description: string
-  descriptionFile: string
-  deadline: any
-  comment: string
-  quantity: number
-  options: number
-  fields: [] | any
-  marks: [] | any
-  criteriaGroups: [] | any
-  archive: boolean
-  createdAt: any
-  updatedAt: any
+const Loading: FC = () => {
+  return <div>Загрузка</div>
 }
