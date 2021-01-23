@@ -1,0 +1,52 @@
+.textAreaGroup {
+  display: flex;
+  flex-direction: column;
+}
+
+.label {
+  margin-bottom: 8px;
+
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 24px;
+}
+
+.mainContent {
+  display: flex;
+  align-items: center;
+}
+
+.textArea {
+  height: 56px;
+  padding-top: 16px;
+  padding-right: 16px;
+  padding-bottom: 16px;
+  padding-left: 16px;
+  border: 1px solid #a4a4a4;
+  border-radius: 5px;
+
+  font-family: 'Roboto', sans-serif;
+  font-size: 15px;
+  line-height: 24px;
+
+  &Active,
+  &:focus {
+    border: 1px solid #000000;
+  }
+
+  &Error {
+    border: 1px solid #ff1c45 !important;
+  }
+
+  &::placeholder {
+    color: #a4a4a4;
+  }
+}
+
+.errorMessage {
+  margin-left: 16px;
+
+  font-size: 15px;
+  line-height: 24px;
+  color: #ff2222;
+}

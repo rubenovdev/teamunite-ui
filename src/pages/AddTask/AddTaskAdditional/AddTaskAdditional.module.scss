@@ -1,0 +1,39 @@
+.box {
+  margin-bottom: 88px;
+
+  &Header {
+    display: flex;
+    align-items: center;
+  }
+
+  &Title {
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 32px;
+  }
+
+  &Toggler {
+    margin-left: 48px;
+  }
+
+  &Message {
+    max-width: 480px;
+    margin-top: 16px;
+
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 24px;
+  }
+
+  &Body {
+    margin-top: 32px;
+  }
+
+  &Buttons {
+    margin-top: 32px;
+  }
+}
+
+.descriptionFileInput {
+  display: none;
+}
