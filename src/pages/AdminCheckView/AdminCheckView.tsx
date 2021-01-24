@@ -35,8 +35,13 @@ const AdminCheckView: FC = () => {
 
   function renderItems(list) {
     return list.map(item => {
-      return <li key = {`${data._id}_${item}` }>{item}</li>
+      return <li key={`${data._id}_${item}`}>{item}</li>
     })
+  }
+
+  function getTime(time) {
+    const date = new Date(time)
+    return date
   }
 
   return data ? (
@@ -66,15 +71,25 @@ const AdminCheckView: FC = () => {
           <li>
             <h3>Срок сдачи</h3>
           </li>
-          <li>{Date.parse(data.deadline)}</li>
+          <li>{`${getTime(data.deadline).getDate() - 1}
+          .${getTime(data.deadline).getMonth() + 1}
+          .${getTime(data.deadline).getFullYear()}`}</li>
         </ul>
 
         <ul>
-          <h3>Раздача вариантов</h3>
+          <li>
+            <h3>Раздача вариантов</h3>
+          </li>
+          <li>Количество вариантов</li>
+          <li>{data.quantity}</li>
         </ul>
 
         <ul>
-          <h3>Возможность работать в команде</h3>
+          <li>
+            <h3>Возможность работать в команде</h3>
+          </li>
+          <li>Максимальное количество участников</li>
+          <li>{data.options}</li>
         </ul>
       </div>
     </div>
