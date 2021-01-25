@@ -1,13 +1,16 @@
 import React, { FC } from 'react'
 import { BrowserRouter as Router, Switch, Route, Redirect } from 'react-router-dom'
 import Cookies from 'js-cookie'
-
-import { token } from 'src/static'
 import Wrapper from 'components/Wrapper/Wrapper'
 import Header from 'components/Header/Header'
 import SideMenu from 'components/SideMenu/SideMenu'
+import AddTask from './pages/AddTask/AddTask'
 import Authorization from './pages/Authorization/Authorization'
 import Tasks from './pages/Tasks/Tasks'
+
+import styles from './App.module.scss'
+
+import { token } from 'src/static'
 
 const App: FC = () => {
   const privateRoute = page => {
@@ -23,10 +26,13 @@ const App: FC = () => {
       <Wrapper>
         <Header />
         <SideMenu />
-        <Switch>
-          <Route exact path="/auth" component={Authorization} />
-          <Route exact path="/tasks" render={() => privateRoute(<Tasks />)} />
-        </Switch>
+        <main role="main" className={styles.main}>
+          <Switch>
+            <Route path="/add-task" component={AddTask} />
+            <Route exact path="/auth" component={Authorization} />
+            <Route exact path="/tasks" render={() => privateRoute(<Tasks />)} />
+          </Switch>
+        </main>
       </Wrapper>
     </Router>
   )

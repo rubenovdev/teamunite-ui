@@ -1,20 +1,26 @@
-import React, { FC, ChangeEvent } from 'react'
+import React, { ForwardRefRenderFunction, forwardRef, Ref, ChangeEvent, KeyboardEvent, FocusEvent } from 'react'
 import classNames from 'classnames'
 
 import styles from './Input.module.scss'
 
-const Input: FC<Props> = ({
-  label,
-  name,
-  type,
-  placeholder,
-  value,
-  onChange,
-  error,
-  inputGroupClassName,
-  inputWidth,
-  required,
-}) => {
+const Input: ForwardRefRenderFunction<HTMLInputElement, Props> = (
+  {
+    label,
+    name,
+    type,
+    placeholder,
+    value,
+    onChange,
+    onKeyDown,
+    onBlur,
+    error,
+    isError,
+    inputGroupClassName,
+    inputWidth,
+    required,
+  },
+  ref
+) => {
   return (
     <div className={classNames(styles.inputGroup, inputGroupClassName)}>
       {label && (
@@ -31,8 +37,11 @@ const Input: FC<Props> = ({
           placeholder={placeholder}
           value={value}
           onChange={onChange}
+          onKeyDown={onKeyDown}
+          onBlur={onBlur}
+          ref={ref}
           style={{ width: `${inputWidth || 480}px` }}
-          className={classNames(styles.input, value && styles.inputActive, error && styles.inputError)}
+          className={classNames(styles.input, value && styles.inputActive, (error || isError) && styles.inputError)}
         />
         {error && <span className={styles.errorMessage}>* {error}</span>}
       </div>
@@ -40,17 +49,22 @@ const Input: FC<Props> = ({
   )
 }
 
-export default Input
-
-interface Props {
+type Props = {
   label?: string
   name?: string
   type: string
   placeholder?: string
   value?: string | number
-  onChange?: (e?: ChangeEvent<HTMLInputElement>) => void
+  defaultValue?: string | number
+  onChange?: (event?: ChangeEvent<HTMLInputElement>) => void
+  onKeyDown?: (event?: KeyboardEvent<HTMLInputElement>) => void
+  onBlur?: (event?: FocusEvent<HTMLInputElement>) => void
+  isError?: boolean
   error?: string
   inputGroupClassName?: string
   inputWidth?: number
+  ref?: Ref<HTMLInputElement>
   required?: boolean
 }
+
+export default forwardRef(Input)
