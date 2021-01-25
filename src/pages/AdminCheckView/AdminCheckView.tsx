@@ -28,12 +28,6 @@ const AdminCheckView: FC = () => {
     fetchTasks()
   }, [])
 
-  const renderItems = list => {
-    return list.map(item => {
-      return <li key={`${tasks._id}_${item}`}>{item}</li>
-    })
-  }
-
   return tasks ? (
     <div className={styles.container}>
       <h2 className={styles.caption}>{tasks.title}</h2>
@@ -43,28 +37,42 @@ const AdminCheckView: FC = () => {
         <CustomButton type="button" icon={layersIcon} />
       </div>
       <div className={styles.description}>
-        <ul>
+        <ul className={styles.descriptionList}>
           <li>
             <h3>Номера групп</h3>
           </li>
-          {renderItems(tasks.groups)}
+          {tasks.groups
+            .join(', ')
+            .split(' ')
+            .join(' ')
+            .split('  ')
+            .map(item => {
+              return (
+                <li className={styles.inlineLi} key={`${tasks._id}_${item}`}>
+                  {item}
+                </li>
+              )
+            })}
         </ul>
 
-        <ul>
+        <ul className={styles.descriptionList}>
           <li>
             <h3>Проверяющие</h3>
           </li>
-          {renderItems(tasks.curators)}
+          {tasks.curators.map(item => {
+              return <li key={`${tasks._id}_${item}`}>{item}</li>
+            })}
         </ul>
 
-        <ul>
+        <ul className={styles.descriptionList}>
           <li>
             <h3>Срок сдачи</h3>
           </li>
           <li>{<TimeHandler time={tasks.deadline} />}</li>
         </ul>
-
-        <ul>
+      </div>
+      <div className={styles.description}>
+        <ul className={styles.descriptionList}>
           <li>
             <h3>Раздача вариантов</h3>
           </li>
@@ -72,7 +80,7 @@ const AdminCheckView: FC = () => {
           <li>{tasks.quantity}</li>
         </ul>
 
-        <ul>
+        <ul className={styles.descriptionList}>
           <li>
             <h3>Возможность работать в команде</h3>
           </li>
@@ -104,7 +112,7 @@ const AdminCheckView: FC = () => {
             const { title } = item
             return (
               <li key={`${tasks._id}_${title}`}>
-                <a href="#">{title}</a>{' '}
+                <a href="#">{title}</a>
               </li>
             )
           })}
@@ -126,13 +134,13 @@ const AdminCheckView: FC = () => {
           const { title } = item
           return (
             <ul>
-              <li key = {title}>{title}</li>
+              <li key={title}>{title}</li>
               {item.criteria.map(crit => {
                 const { title, max } = crit
                 return (
                   <ul>
-                    <li key = {title} >{title}</li>
-                    <li key = {`${title}_${max}`} >{max}</li>
+                    <li key={title}>{title}</li>
+                    <li key={`${title}_${max}`}>{max}</li>
                   </ul>
                 )
               })}

@@ -12,7 +12,15 @@
   }
 }
 
+.inline-li{
+  display: inline-block;
+}
+
 .description {
+  display: flex;
+  flex-direction: row;
+  max-width: 600px;
+  justify-content: space-between;
   h3 {
     font-size: 20px;
   }
@@ -20,9 +28,13 @@
     font-size: 15px;
   }
 }
+.description-list{
+  font-size: 15px
+}
 
 .task-description {
-  display: block;
+  display: flex;
+  flex-direction: row;
 }
 
 .clarification {
