@@ -6,6 +6,7 @@ import Header from 'components/Header/Header'
 import SideMenu from 'components/SideMenu/SideMenu'
 import AddTask from './pages/AddTask/AddTask'
 import Authorization from './pages/Authorization/Authorization'
+import Tasks from './pages/Tasks/Tasks'
 
 import styles from './App.module.scss'
 
@@ -29,7 +30,7 @@ const App: FC = () => {
           <Switch>
             <Route path="/add-task" component={AddTask} />
             <Route exact path="/auth" component={Authorization} />
-            <Route exact path="/tasks" render={() => privateRoute(<div>Список заданий</div>)} />
+            <Route exact path="/tasks" render={() => privateRoute(<Tasks />)} />
           </Switch>
         </main>
       </Wrapper>
