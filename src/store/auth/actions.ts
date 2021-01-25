@@ -15,6 +15,6 @@ export const login = (userData: UserData) => async (dispatch: Dispatch<LoginActi
     const history = useHistory()
     history.push('/tasks')
   } catch (err) {
-    dispatch({ type: LOGIN_ERROR, payload: err.message })
+    dispatch({ type: LOGIN_ERROR, payload: err?.response?.data?.message ?? 'Ошибка!' })
   }
 }
