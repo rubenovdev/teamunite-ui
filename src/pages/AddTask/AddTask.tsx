@@ -32,7 +32,7 @@ const AddTask: FC = () => {
     defaultValues,
     mode: 'onBlur',
     shouldUnregister: false,
-    // resolver,
+    resolver,
   })
 
   const { register, handleSubmit } = methods
