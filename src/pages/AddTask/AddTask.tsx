@@ -38,6 +38,8 @@ const AddTask: FC = () => {
   const { register, handleSubmit } = methods
 
   const onSubmit = data => {
+    const deadline = data.deadline.split('.')
+
     const marks = [
       ...data.marks,
       {
@@ -54,7 +56,7 @@ const AddTask: FC = () => {
       retake: data.retake,
       description: data.description,
       descriptionFile: data.descriptionFile?.[0]?.name || '',
-      deadline: new Date(data.deadline),
+      deadline: new Date(`${deadline[1]}.${deadline[0]}.${deadline[2]}`),
       comment: data.commentToggle ? data.comment : '',
       quantity: data.quantity,
       options: data.optionsToggle ? data.options : 1,
