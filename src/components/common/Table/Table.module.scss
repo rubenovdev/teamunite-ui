@@ -1,0 +1,40 @@
+.table {
+  width: 100%;
+
+  border-collapse: collapse;
+}
+
+.th {
+  padding-bottom: 8px;
+
+  color: #a4a4a4;
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 24px;
+  text-align: right;
+
+  &:first-of-type {
+    text-align: left;
+  }
+}
+
+.tr {
+  border-top: 1px solid #a4a4a4;
+}
+
+.td {
+  max-width: 130px;
+  padding-top: 16px;
+  padding-bottom: 16px;
+
+  font-size: 15px;
+  line-height: 24px;
+  text-align: right;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+
+  &:first-of-type {
+    text-align: left;
+  }
+}

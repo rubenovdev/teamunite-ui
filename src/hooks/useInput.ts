@@ -19,7 +19,7 @@ const useInput = (initialValue: string | number): returnData => {
 export default useInput
 
 interface returnData {
-  value: string | number
+  value: string
   onChange: (e: ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => void
   clear: () => void
 }
