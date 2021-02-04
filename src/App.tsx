@@ -7,6 +7,7 @@ import SideMenu from 'components/SideMenu/SideMenu'
 import AddTask from './pages/AddTask/AddTask'
 import Authorization from './pages/Authorization/Authorization'
 import Tasks from './pages/Tasks/Tasks'
+import AdminCheckAssess from './pages/AdminCheckAssess/AdminCheckAssess'
 
 import styles from './App.module.scss'
 
@@ -29,6 +30,7 @@ const App: FC = () => {
         <main role="main" className={styles.main}>
           <Switch>
             <Route path="/add-task" component={AddTask} />
+            <Route path="/admin-check-assess" component={AdminCheckAssess} />
             <Route exact path="/auth" component={Authorization} />
             <Route exact path="/tasks" render={() => privateRoute(<Tasks />)} />
           </Switch>
