@@ -8,6 +8,7 @@ import AddTask from './pages/AddTask/AddTask'
 import Authorization from './pages/Authorization/Authorization'
 import Tasks from './pages/Tasks/Tasks'
 import AdminCheckAssess from './pages/AdminCheckAssess/AdminCheckAssess'
+import AdminCheckStudent from './pages/AdminCheckStudent/AdminCheckStudent'
 
 import styles from './App.module.scss'
 
@@ -31,6 +32,7 @@ const App: FC = () => {
           <Switch>
             <Route path="/add-task" component={AddTask} />
             <Route path="/admin-check-assess" component={AdminCheckAssess} />
+            <Route path="/admin-check-student" component={AdminCheckStudent} />
             <Route exact path="/auth" component={Authorization} />
             <Route exact path="/tasks" render={() => privateRoute(<Tasks />)} />
           </Switch>

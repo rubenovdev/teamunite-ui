@@ -16,6 +16,10 @@ li {
   list-style: none;
 }
 
+li:not(:last-child) {
+  margin-bottom: 8px;
+}
+
 input,
 select,
 textarea {

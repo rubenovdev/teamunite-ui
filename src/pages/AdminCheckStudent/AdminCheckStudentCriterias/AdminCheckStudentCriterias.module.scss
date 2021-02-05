@@ -1,0 +1,45 @@
+.box {
+  margin-bottom: 56px;
+
+  &Title {
+    font-size: 20px;
+    line-height: 32px;
+  }
+
+  &Body {
+    margin-top: 32px;
+
+    font-size: 15px;
+    line-height: 24px;
+  }
+}
+
+.criteria {
+  &:not(:last-child) {
+    margin-bottom: 32px;
+  }
+
+  &Title {
+    margin-bottom: 24px;
+  }
+}
+
+.tables {
+  display: flex;
+}
+
+.checkTable {
+  margin-left: 31px;
+
+  &Title {
+    margin-bottom: 16px;
+
+    color: #a4a4a4;
+    font-weight: 700;
+    text-align: right;
+  }
+
+  &Input:not(:last-child) {
+    margin-bottom: 16px;
+  }
+}
