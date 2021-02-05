@@ -49,7 +49,11 @@ const AdminCheckAssessGroup: FC<Props> = ({ group, students, nameSearch }) => {
         />
         <Button type="button" style="primary" text="Скачать ведомость" onClick={onDownloadListButtonClick} />
       </div>
-      {filteredStudents.length ? <Table columns={COLUMNS} data={filteredStudents} /> : <p>Нет данных</p>}
+      {filteredStudents.length ? (
+        <Table columns={COLUMNS} data={filteredStudents} link="/admin-check-student" />
+      ) : (
+        <p>Нет данных</p>
+      )}
     </div>
   )
 }

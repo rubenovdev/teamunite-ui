@@ -1,0 +1,70 @@
+.container {
+  margin-bottom: 90px;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  margin-bottom: 32px;
+}
+
+.studentName {
+  grid-area: name;
+
+  margin-bottom: 8px;
+
+  font-size: 24px;
+  line-height: 32px;
+}
+
+.status {
+  grid-area: status;
+
+  font-size: 15px;
+  line-height: 24px;
+
+  &Message {
+    color: #f4c10b;
+  }
+}
+
+.box {
+  margin-bottom: 88px;
+
+  &Header {
+    display: flex;
+    align-items: center;
+  }
+
+  &Title {
+    font-size: 20px;
+    line-height: 32px;
+  }
+
+  &Body {
+    margin-top: 16px;
+
+    font-size: 15px;
+    line-height: 24px;
+
+    &Small {
+      margin-top: 8px;
+    }
+  }
+}
+
+.mark {
+  margin-right: 37px;
+}
+
+.buttons {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.checkButton {
+  margin-bottom: 25px;
+}

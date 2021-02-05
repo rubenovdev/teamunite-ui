@@ -20,6 +20,16 @@
 
 .tr {
   border-top: 1px solid #a4a4a4;
+
+  &Hover {
+    transition: all 0.2s;
+
+    &:hover {
+      background-color: rgba($color: #a4a4a4, $alpha: 0.2);
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+  }
 }
 
 .td {
@@ -36,5 +46,10 @@
 
   &:first-of-type {
     text-align: left;
+  }
+
+  &Big {
+    padding-top: 24px;
+    padding-bottom: 24px;
   }
 }

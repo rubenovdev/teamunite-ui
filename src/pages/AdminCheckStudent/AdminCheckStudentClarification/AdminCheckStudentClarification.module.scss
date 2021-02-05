@@ -1,0 +1,28 @@
+.box {
+  margin-bottom: 88px;
+
+  &Header {
+    display: flex;
+    align-items: center;
+  }
+
+  &Title {
+    font-size: 20px;
+    line-height: 32px;
+  }
+
+  &Body {
+    margin-top: 16px;
+
+    font-size: 15px;
+    line-height: 24px;
+  }
+}
+
+.notApprovedToggle {
+  margin-left: 48px;
+}
+
+.projectName {
+  margin-bottom: 32px;
+}
